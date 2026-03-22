@@ -162,17 +162,7 @@ jobs:
           current_time=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
           movies_count=$(jq -r ".movies | length" tools/schedule.json 2>/dev/null || echo "unknown")
 
-          commit_message="chore: update cinema schedule - $current_time
-
-📅 Scheduled update of cinema schedule data
-🎬 Movies processed: $movies_count
-📊 Updated at: $current_time
-
-Files updated:
-- tools/page.html (source webpage)
-- tools/schedule.json (parsed schedule data)
-
-This is an automated update from the cinema schedule workflow."
+          commit_message="chore: update cinema schedule - $current_time"
 
           git commit -m "$commit_message"
 
