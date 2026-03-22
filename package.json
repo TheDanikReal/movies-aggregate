@@ -13,6 +13,7 @@
     "parse:schedule": "node --experimental-strip-types tools/parse.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.8",
     "cheerio": "^1.2.0",
     "dotenv": "^17.3.1",

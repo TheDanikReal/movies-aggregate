@@ -1,9 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
-    image: {
-        domains: ["image.tmdb.org"]
-    }
+  site: 'https://kinoslon.netlify.app',
+
+  image: {
+      domains: ["image.tmdb.org"]
+  },
+
+  integrations: [sitemap()]
 });

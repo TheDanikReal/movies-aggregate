@@ -3,9 +3,12 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+const defaultDescription = "КиноСлон - расписание кинотеатра в Слониме, РДК Слоним, кино в Слониме. Актуальная афиша фильмов Слонимского центра культуры.";
+const pageDescription = description || defaultDescription;
 ---
 
 <!DOCTYPE html>
@@ -14,10 +17,52 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="КиноСлон - аггрегатор кинотеатров города Слонима" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content="кинотеатр слоним, рдк слоним, кино в слониме, слонимский центр культуры, расписание кино слоним, афиша слоним, фильмы слоним, кинопоказы слоним, кинотеатр, РДК, Слоним, Беларусь, cinema slonim" />
+    <meta name="author" content="КиноСлон" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="BY-GR" />
+    <meta name="geo.placename" content="Слоним, Гродненская область, Беларусь" />
+
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:locale" content="ru_BY" />
+    <meta property="og:site_name" content="КиноСлон" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={pageDescription} />
+
+    <!-- Local Business Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MovieTheater",
+      "name": "Кинотеатр РДК Слоним",
+      "alternateName": ["РДК Слоним", "Слонимский центр культуры", "Дворец культуры Слоним"],
+      "description": "Расписание кино в Слониме, афиша фильмов РДК",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Слоним",
+        "addressRegion": "Гродненская область",
+        "addressCountry": "BY"
+      }
+    }
+    </script>
+
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
   </head>
   <body>
     <slot />
