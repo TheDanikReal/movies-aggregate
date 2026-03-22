@@ -1,0 +1,223 @@
+name: Update Cinema Schedule
+
+on:
+  # Run every Wednesday at 17:00 UTC (20:00 UTC+3)
+  schedule:
+    - cron: '0 17 * * 3'
+
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      force_commit:
+        description: 'Force commit even if no changes detected'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  # Node.js version matching project requirements
+  NODE_VERSION: '22.12.0'
+
+jobs:
+  update-schedule:
+    name: Fetch and Parse Cinema Schedule
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Required for checking out code
+      contents: write
+      # Required for creating commits and pushing
+      actions: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history to enable proper git operations
+          fetch-depth: 0
+          # Use the default token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          # Cache npm dependencies for faster builds
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Install dependencies
+        run: |
+          npm ci --prefer-offline --no-audit
+          echo "Dependencies installed successfully"
+
+      - name: Download cinema schedule page
+        run: |
+          echo "Downloading cinema schedule from source..."
+
+          # Create tools directory if it doesn't exist
+          mkdir -p tools
+
+          # Download with retry logic and error handling
+          max_retries=3
+          retry_count=0
+
+          while [ $retry_count -lt $max_retries ]; do
+            if wget \
+              --timeout=30 \
+              --tries=1 \
+              --user-agent="Mozilla/5.0 (compatible; KinoSlon/1.0)" \
+              --output-document="tools/page.html.tmp" \
+              "http://kinoteatr.megamag.by/index.php?cPath=353299"; then
+            fi
+
+            retry_count=$((retry_count + 1))
+            if [ $retry_count -lt $max_retries ]; then
+              echo "⏳ Download failed, retrying in 10 seconds... (attempt $retry_count/$max_retries)"
+              sleep 10
+            else
+              echo "❌ Failed to download after $max_retries attempts"
+              exit 1
+            fi
+          done
+
+      - name: Parse schedule data
+        env:
+          # Use GitHub secret for TMDB API access
+          TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
+        run: |
+          echo "Parsing cinema schedule data..."
+
+          # Verify TMDB token is available
+          if [ -z "$TMDB_TOKEN" ]; then
+            echo "❌ TMDB_TOKEN secret not configured"
+            echo "Please add your TMDB API token as a repository secret named 'TMDB_TOKEN'"
+            exit 1
+          fi
+
+          # Run the parse script with Node.js experimental TypeScript support
+          if npm run parse:schedule; then
+            echo "✅ Successfully parsed cinema schedule"
+
+            # Verify output file was created and is valid JSON
+            if [ -f "tools/schedule.json" ]; then
+              echo "📊 Schedule data generated:"
+              jq -r ".updated_at" tools/schedule.json 2>/dev/null || echo "Invalid JSON generated"
+              echo "Movies found: $(jq -r ".movies | length" tools/schedule.json 2>/dev/null || echo "unknown")"
+              ls -lh tools/schedule.json
+            else
+              echo "❌ Schedule file not generated"
+              exit 1
+            fi
+          else
+            echo "❌ Failed to parse cinema schedule"
+            echo "Parse script output above may contain error details"
+            exit 1
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          echo "Checking for changes in schedule files..."
+
+          # Check if files have changed
+          if git diff --quiet tools/page.html tools/schedule.json; then
+            echo "No changes detected in schedule files"
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "commit_needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in schedule files"
+            echo "changed=true" >> $GITHUB_OUTPUT
+
+            # Show what changed
+            echo "📝 File changes:"
+            git diff --name-only tools/page.html tools/schedule.json | sed 's/^/  - /'
+
+            # Check if we should commit
+            if [ "${{ github.event.inputs.force_commit }}" = "true" ]; then
+              echo "Force commit requested"
+              echo "commit_needed=true" >> $GITHUB_OUTPUT
+            else
+              echo "commit_needed=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Configure Git
+        if: steps.changes.outputs.commit_needed == 'true'
+        run: |
+          echo "Configuring Git for automated commits..."
+          git config --local user.email "action@github.com"
+          git config --local user.name "KinoSlon schedule updater"
+          git config --local core.autocrlf false
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.commit_needed == 'true'
+        run: |
+          echo "Committing schedule updates..."
+
+          # Add the specific files we want to commit
+          git add tools/page.html tools/schedule.json
+
+          # Create commit with detailed message
+          current_time=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          movies_count=$(jq -r ".movies | length" tools/schedule.json 2>/dev/null || echo "unknown")
+
+          commit_message="chore: update cinema schedule - $current_time
+
+📅 Scheduled update of cinema schedule data
+🎬 Movies processed: $movies_count
+📊 Updated at: $current_time
+
+Files updated:
+- tools/page.html (source webpage)
+- tools/schedule.json (parsed schedule data)
+
+This is an automated update from the cinema schedule workflow."
+
+          git commit -m "$commit_message"
+
+          # Push with retry logic
+          max_retries=3
+          retry_count=0
+
+          while [ $retry_count -lt $max_retries ]; do
+            if git push; then
+              echo "✅ Successfully pushed changes to repository"
+              break
+            fi
+
+            retry_count=$((retry_count + 1))
+            if [ $retry_count -lt $max_retries ]; then
+              echo "⏳ Push failed, retrying... (attempt $retry_count/$max_retries)"
+              sleep 5
+            else
+              echo "❌ Failed to push after $max_retries attempts"
+              exit 1
+            fi
+          done
+
+      - name: Workflow summary
+        if: always()
+        run: |
+          echo "## 🎭 Cinema Schedule Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "tools/schedule.json" ]; then
+            updated_at=$(jq -r ".updated_at" tools/schedule.json 2>/dev/null || echo "unknown")
+            movies_count=$(jq -r ".movies | length" tools/schedule.json 2>/dev/null || echo "unknown")
+
+            echo "- **Update Time**: $updated_at" >> $GITHUB_STEP_SUMMARY
+            echo "- **Movies Found**: $movies_count" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "- **Changes Detected**: ${{ steps.changes.outputs.changed }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit Created**: ${{ steps.changes.outputs.commit_needed }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.changes.outputs.commit_needed }}" = "true" ]; then
+            echo "✅ Schedule updated and committed successfully" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.changes.outputs.changed }}" = "false" ]; then
+            echo "ℹ️ No changes detected - schedule is up to date" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Changes detected but not committed" >> $GITHUB_STEP_SUMMARY
+          fi

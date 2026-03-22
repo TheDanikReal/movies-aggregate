@@ -1,0 +1,140 @@
+---
+interface Props {
+  updatedAt: string;
+}
+
+const { updatedAt } = Astro.props;
+
+// Generate unique ID for this component instance
+const badgeId = `last-updated-${crypto.randomUUID().slice(0, 8)}`;
+---
+
+<div class="last-updated-badge" id={badgeId} data-updated-at={updatedAt}>
+  <span class="badge-icon">🕒</span>
+  <span class="badge-text">Обновлено: <span class="relative-time">загрузка...</span></span>
+</div>
+
+<style>
+  .last-updated-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+    cursor: default;
+  }
+
+  .last-updated-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text);
+    transform: translateY(-1px);
+  }
+
+  .badge-icon {
+    font-size: 1rem;
+  }
+
+  .badge-text {
+    font-weight: 500;
+  }
+
+  .relative-time {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  function formatRelativeTime(date: Date): string {
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffSeconds = Math.floor(diffMs / 1000);
+    const diffMinutes = Math.floor(diffSeconds / 60);
+    const diffHours = Math.floor(diffMinutes / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    if (diffSeconds < 60) {
+      return 'только что';
+    } else if (diffMinutes < 60) {
+      return `${diffMinutes} ${getMinuteWord(diffMinutes)} назад`;
+    } else if (diffHours < 24) {
+      return `${diffHours} ${getHourWord(diffHours)} назад`;
+    } else if (diffDays < 7) {
+      return `${diffDays} ${getDayWord(diffDays)} назад`;
+    } else {
+      const weeks = Math.floor(diffDays / 7);
+      return `${weeks} ${getWeekWord(weeks)} назад`;
+    }
+  }
+
+  function getMinuteWord(count: number): string {
+    if (count % 10 === 1 && count % 100 !== 11) return 'минуту';
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'минуты';
+    return 'минут';
+  }
+
+  function getHourWord(count: number): string {
+    if (count % 10 === 1 && count % 100 !== 11) return 'час';
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'часа';
+    return 'часов';
+  }
+
+  function getDayWord(count: number): string {
+    if (count % 10 === 1 && count % 100 !== 11) return 'день';
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'дня';
+    return 'дней';
+  }
+
+  function getWeekWord(count: number): string {
+    if (count % 10 === 1 && count % 100 !== 11) return 'неделю';
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'недели';
+    return 'недель';
+  }
+
+  function formatExactTime(date: Date): string {
+    return date.toLocaleString('ru-RU', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZoneName: 'short'
+    });
+  }
+
+  function updateRelativeTime() {
+    document.querySelectorAll('.last-updated-badge[data-updated-at]').forEach((badge) => {
+      const updatedAtStr = badge.getAttribute('data-updated-at');
+      if (!updatedAtStr) return;
+
+      try {
+        const updatedAt = new Date(updatedAtStr);
+        const relativeTimeElement = badge.querySelector('.relative-time');
+
+        if (relativeTimeElement) {
+          relativeTimeElement.textContent = formatRelativeTime(updatedAt);
+          badge.setAttribute('title', formatExactTime(updatedAt));
+        }
+      } catch (error) {
+        console.warn('Failed to parse updated_at timestamp:', updatedAtStr);
+        const relativeTimeElement = badge.querySelector('.relative-time');
+        if (relativeTimeElement) {
+          relativeTimeElement.textContent = 'недавно';
+        }
+      }
+    });
+  }
+
+  // Update immediately when page loads
+  document.addEventListener('DOMContentLoaded', updateRelativeTime);
+
+  // Update every minute to keep relative time current
+  setInterval(updateRelativeTime, 60000);
+</script>

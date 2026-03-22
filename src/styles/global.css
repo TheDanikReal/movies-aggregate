@@ -1,0 +1,60 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-background: #0f0f0f;
+  --color-card-bg: #1a1a1a;
+  --color-text: #e5e5e5;
+  --color-text-dim: #a3a3a3;
+  --color-accent: #dc2626;
+  --color-badge-bg: #fbbf24;
+  --color-badge-text: #000;
+  --color-border: #333;
+
+  /* Typography */
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}
+
+/* Base Styles */
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: var(--font-system);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Button Reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
