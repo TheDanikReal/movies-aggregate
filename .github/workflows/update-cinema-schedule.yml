@@ -11,7 +11,7 @@ on:
       force_commit:
         description: 'Force commit even if no changes detected'
         required: false
-        default: 'false'
+        default: false
         type: boolean
 
 env:
@@ -55,21 +55,12 @@ jobs:
         run: |
           echo "Downloading cinema schedule from source..."
 
-          # Create tools directory if it doesn't exist
-          mkdir -p tools
-
-          # Download with retry logic and error handling
-          max_retries=3
-          retry_count=0
-
-          while [ $retry_count -lt $max_retries ]; do
-            wget \
-              --timeout=30 \
-              --tries=1 \
-              --user-agent="Mozilla/5.0 (compatible; KinoSlon/1.0)" \
-              --output-document="tools/page.html" \
-              "http://kinoteatr.megamag.by/index.php?cPath=353299"
-          done
+          wget \
+           --timeout=30 \
+           --tries=1 \
+           --user-agent="Mozilla/5.0 (compatible; KinoSlon/1.0)" \
+           --output-document="tools/page.html" \
+           "http://kinoteatr.megamag.by/index.php?cPath=353299"
 
       - name: Parse schedule data
         env:
