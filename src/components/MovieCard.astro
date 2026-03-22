@@ -47,7 +47,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 
 <article class="movie-card">
   <div class="poster">
-    <Image src={movie.poster_link} alt={movie.name} loading="lazy" inferSize={true} />
+    <Image src={movie.poster_link} alt={movie.name} loading="lazy" inferSize={true} class:list={[{ notForKids: movie.age == "18+"}]} />
   </div>
 
   <div class="content">
@@ -200,6 +200,10 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
     border-radius: 4px;
     font-size: 0.875rem;
     color: var(--color-text);
+  }
+
+  .notForKids {
+    filter: blur(10px) grayscale(100%);
   }
 </style>
 
