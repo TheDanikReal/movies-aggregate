@@ -67,17 +67,8 @@ jobs:
               --timeout=30 \
               --tries=1 \
               --user-agent="Mozilla/5.0 (compatible; KinoSlon/1.0)" \
-              --output-document="tools/page.html.tmp" \
+              --output-document="tools/page.html" \
               "http://kinoteatr.megamag.by/index.php?cPath=353299"
-
-            retry_count=$((retry_count + 1))
-            if [ $retry_count -lt $max_retries ]; then
-              echo "⏳ Download failed, retrying in 10 seconds... (attempt $retry_count/$max_retries)"
-              sleep 10
-            else
-              echo "❌ Failed to download after $max_retries attempts"
-              exit 1
-            fi
           done
 
       - name: Parse schedule data
