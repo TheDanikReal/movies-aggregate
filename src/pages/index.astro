@@ -10,7 +10,7 @@ const testMovies = scheduleData.movies
 
 <Layout title="Кинотеатр Слоним - РДК, расписание кино | КиноСлон">
   <main class="container">
-    <h1>Аггрегатор кинотеатров в Слониме, обновляется по средам в 20:00 (неофициальный сайт, для официального сайта слонимского РДК <a href="http://kinoteatr.megamag.by/index.php?cPath=353299">нажмите сюда</a>)</h1>
+    <h1>КиноСлон - расписание слонимского РДК</h1>
 
     <div class="header-section">
       <LastUpdatedBadge updatedAt={scheduleData.updated_at} />
@@ -22,6 +22,15 @@ const testMovies = scheduleData.movies
       ))}
     </div>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Неофициальный аггрегатор кинотеатров в Слониме, обновляется по средам в 20:00.
+        Для официального сайта слонимского РДК <a href="http://kinoteatr.megamag.by/index.php?cPath=353299">нажмите сюда</a>.
+      </p>
+    </div>
+  </footer>
 </Layout>
 
 <style>
@@ -35,6 +44,13 @@ const testMovies = scheduleData.movies
     margin-bottom: 1rem;
     color: var(--color-text);
     font-size: 2rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      text-align: left;
+    }
   }
 
   .header-section {
@@ -59,5 +75,29 @@ const testMovies = scheduleData.movies
     .movies-grid {
       gap: 3rem;
     }
+  }
+
+  .footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .footer p {
+    color: var(--color-text-dim);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .footer a:hover {
+    color: #ef4444;
   }
 </style>
