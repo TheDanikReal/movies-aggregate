@@ -63,13 +63,12 @@ jobs:
           retry_count=0
 
           while [ $retry_count -lt $max_retries ]; do
-            if wget \
+            wget \
               --timeout=30 \
               --tries=1 \
               --user-agent="Mozilla/5.0 (compatible; KinoSlon/1.0)" \
               --output-document="tools/page.html.tmp" \
-              "http://kinoteatr.megamag.by/index.php?cPath=353299"; then
-            fi
+              "http://kinoteatr.megamag.by/index.php?cPath=353299"
 
             retry_count=$((retry_count + 1))
             if [ $retry_count -lt $max_retries ]; then
