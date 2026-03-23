@@ -95,7 +95,11 @@ const parseTitleAndAge = (
 };
 
 const parseDateFromLabel = (text: string): string | null => {
-  const match = normalizeText(text).match(/^(\d{1,2})\s+([А-Яа-я]+)/);
+  // Try both English and Russian month patterns
+  const englishMatch = normalizeText(text).match(/^(\d{1,2})\s+([A-Za-z]+)/);
+  const russianMatch = normalizeText(text).match(/^(\d{1,2})\s+([А-Яа-я]+)/);
+
+  const match = englishMatch || russianMatch;
   if (!match) return null;
 
   const [, dayRaw, monthRaw] = match;
@@ -198,7 +202,11 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
 
 const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number }> => {
   try {
-    const searchResults = await tmdb.search.movies({ query: movieName });
+    const searchResults = await tmdb.search.movies({
+      query: movieName,
+      // probably later, currently their posters are too simple
+      // language: "ru-RU"
+    });
 
     if (searchResults.results && searchResults.results.length > 0) {
       const movie = searchResults.results[0];

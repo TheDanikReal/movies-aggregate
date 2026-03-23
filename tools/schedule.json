@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T11:55:39.804Z",
+  "updated_at": "2026-03-23T18:32:00.567Z",
   "movies": [
     {
       "name": "Домовенок Кузя 2",
@@ -37,7 +37,7 @@
       },
       "description": "Когда в тихом городке, где Сидни Прескотт построила новую жизнь, появляется убийца Призрачное лицо, её самые тёмные страхи воплощаются в реальность: её дочь становится следующей целью. Стремясь защитить свою семью, Сидни должна столкнуться с ужасами прошлого, чтобы раз и навсегда положить конец кровопролитию.",
       "age": "18+",
-      "poster_link": "https://image.tmdb.org/t/p/original/jjyuk0edLiW8vOSnlfwWCCLpbh5.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/original/9ePOw1qBEXAiYaRswA1Dzr0DOwT.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/original/hz7TdCrpLLt2Dz7S3PS2HG9rpAO.jpg",
       "studio": [
         {
@@ -128,7 +128,7 @@
       "description": "Учёные разработали технологию, позволяющую переносить человеческое сознание в максимально реалистичных роботизированных животных, что дает людям возможность общаться с животными. Мейбл, любительница животных, получает доступ к технологии. Она переносится в тело робота-бобра и отправляется исследовать животный мир.",
       "age": "6+",
       "poster_link": "https://image.tmdb.org/t/p/original/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/2RrLuIfIzGWWIH8IAEo6o0IYHmx.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/original/u53UYu5XG2hNgWGvs3xGhAVzypl.jpg",
       "studio": [
         {
           "id": 3,
@@ -137,7 +137,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.592
+      "rating": 7.6
     }
   ]
 }
