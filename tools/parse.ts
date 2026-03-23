@@ -51,6 +51,19 @@ const MONTH_NAME_TO_MM: Record<string, string> = {
   october: "10",
   november: "11",
   december: "12",
+  // Russian month names
+  январь: "01", января: "01",
+  февраль: "02", февраля: "02",
+  март: "03", марта: "03",
+  апрель: "04", апреля: "04",
+  май: "05", мая: "05",
+  июнь: "06", июня: "06",
+  июль: "07", июля: "07",
+  август: "08", августа: "08",
+  сентябрь: "09", сентября: "09",
+  октябрь: "10", октября: "10",
+  ноябрь: "11", ноября: "11",
+  декабрь: "12", декабря: "12",
 };
 
 const normalizeText = (value: string): string =>
@@ -81,8 +94,8 @@ const parseTitleAndAge = (
   };
 };
 
-const parseDateFromEnglishLabel = (text: string): string | null => {
-  const match = normalizeText(text).match(/^(\d{1,2})\s+([A-Za-z]+)/);
+const parseDateFromLabel = (text: string): string | null => {
+  const match = normalizeText(text).match(/^(\d{1,2})\s+([А-Яа-я]+)/);
   if (!match) return null;
 
   const [, dayRaw, monthRaw] = match;
@@ -166,7 +179,7 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
       // Look for date/time rows in nested tables
       $current.find('td.main[width="195"]').each((_, dateCell) => {
         const $dateCell = $(dateCell);
-        const dateKey = parseDateFromEnglishLabel($dateCell.text());
+        const dateKey = parseDateFromLabel($dateCell.text());
         if (!dateKey) return;
 
         // Get the parent row to find all times in this row
