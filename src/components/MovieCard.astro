@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import fallback from './../../tools/moviefallback.webp'
+import { Picture } from 'astro:assets';
 
 interface Movie {
   name: string;
@@ -55,7 +56,19 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
   <div class="content">
     <div class="header">
       <h2 class="title">{movie.name}</h2>
-      <span class="age-badge" data-age={movie.age}>{movie.age}</span>
+      <div class="header-row">
+        <span class="age-badge" data-age={movie.age}>{movie.age}</span>
+        {movie.poster_link && movie.poster_link !== "" && (
+          <a
+            href={`https://www.youtube.com/results?search_query=${encodeURIComponent(movie.name + " трейлер")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="trailer-btn"
+          >
+            🎬 Трейлер
+          </a>
+        )}
+      </div>
     </div>
 
     <div class="description collapsed" id={descriptionId}>
@@ -138,6 +151,13 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
     }
   }
 
+  .header-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
   .title {
     text-transform: uppercase;
     font-weight: bold;
@@ -185,6 +205,29 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
   .age-badge[data-age="18+"] {
     background: #dc2626;
     color: #ffffff;
+  }
+
+  .trailer-btn {
+    display: inline-block;
+    background-color: #302a20;
+    color: #ffffff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .trailer-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+    text-decoration: none;
+  }
+
+  .trailer-btn:active {
+    transform: translateY(0);
   }
 
   .description {
