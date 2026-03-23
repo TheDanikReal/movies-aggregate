@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as cheerio from "cheerio";
 import "dotenv/config"
-import { TMDB } from 'tmdb-ts';
+import { TMDB, type ProductionCompany } from 'tmdb-ts';
 
 type MovieSchedule = {
   name: string;
@@ -12,6 +12,8 @@ type MovieSchedule = {
   age: string;
   poster_link: string;
   backdrop_link: string;
+  studio: ProductionCompany[];
+  rating: number;
 };
 
 type ScheduleOutput = {
@@ -181,24 +183,27 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
   });
 };
 
-const fetchMovieImages = async (movieName: string): Promise<{ poster: string; backdrop: string }> => {
+const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number }> => {
   try {
     const searchResults = await tmdb.search.movies({ query: movieName });
 
     if (searchResults.results && searchResults.results.length > 0) {
       const movie = searchResults.results[0];
       const baseUrl = 'https://image.tmdb.org/t/p/original';
+      const details = await tmdb.movies.details(movie.id)
 
       return {
         poster: movie.poster_path ? `${baseUrl}${movie.poster_path}` : '',
         backdrop: movie.backdrop_path ? `${baseUrl}${movie.backdrop_path}` : '',
+        studio: details.production_companies || [],
+        rating: details.vote_average,
       };
     }
   } catch (error) {
     console.error(`Failed to fetch images for "${movieName}":`, error);
   }
 
-  return { poster: '', backdrop: '' };
+  return { poster: '', backdrop: '', studio: [], rating: 0 };
 };
 
 const main = async (): Promise<void> => {
@@ -216,8 +221,8 @@ const main = async (): Promise<void> => {
         .map(([date, values]) => [date, [...values].sort()]),
     );
 
-    console.log(`Fetching images for "${movie.name}"...`);
-    const { poster, backdrop } = await fetchMovieImages(movie.name);
+    console.log(`Fetching metadata for "${movie.name}"...`);
+    const { poster, backdrop, studio, rating } = await fetchMovieMetadata(movie.name);
 
     movies.push({
       name: movie.name,
@@ -226,6 +231,8 @@ const main = async (): Promise<void> => {
       age: movie.age,
       poster_link: poster,
       backdrop_link: backdrop,
+      studio,
+      rating
     });
   }
 

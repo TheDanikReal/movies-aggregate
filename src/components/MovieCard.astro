@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import fallback from './../../tools/moviefallback.webp'
 
 interface Movie {
   name: string;
@@ -12,9 +13,10 @@ interface Movie {
 
 interface Props {
   movie: Movie;
+  loading?: 'lazy' | 'eager';
 }
 
-const { movie } = Astro.props;
+const { movie, loading = 'lazy' } = Astro.props;
 
 // Russian month names in genitive case
 const monthNames = [
@@ -47,13 +49,13 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 
 <article class="movie-card">
   <div class="poster">
-    <Image src={movie.poster_link} alt={movie.name} loading="lazy" inferSize={true} class:list={[{ notForKids: movie.age == "18+"}]} />
+    <Image src={movie.poster_link || fallback } alt={movie.name} loading={loading} inferSize={true} class:list={[{ notForKids: movie.age == "18+" }]} />
   </div>
 
   <div class="content">
     <div class="header">
       <h2 class="title">{movie.name}</h2>
-      <span class="age-badge">{movie.age}</span>
+      <span class="age-badge" data-age={movie.age}>{movie.age}</span>
     </div>
 
     <div class="description collapsed" id={descriptionId}>
@@ -91,13 +93,15 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
   .poster {
     flex-shrink: 0;
     width: 40%;
-    aspect-ratio: 2 / 3;
+    height: 180px;
     overflow: hidden;
   }
 
   @media (min-width: 768px) {
     .poster {
       width: 200px;
+      height: auto;
+      aspect-ratio: 2 / 3;
     }
   }
 
@@ -150,13 +154,37 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 
   .age-badge {
     display: inline-block;
-    background: var(--color-badge-bg);
-    color: var(--color-badge-text);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-weight: 600;
     font-size: 0.875rem;
     width: fit-content;
+  }
+
+  /* Age rating colors */
+  .age-badge[data-age="0+"] {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .age-badge[data-age="6+"] {
+    background: #10b981;
+    color: #ffffff;
+  }
+
+  .age-badge[data-age="12+"] {
+    background: #fbbf24;
+    color: #000000;
+  }
+
+  .age-badge[data-age="16+"] {
+    background: #f97316;
+    color: #ffffff;
+  }
+
+  .age-badge[data-age="18+"] {
+    background: #dc2626;
+    color: #ffffff;
   }
 
   .description {

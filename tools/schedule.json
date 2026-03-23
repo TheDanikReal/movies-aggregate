@@ -1,77 +1,115 @@
 {
-  "updated_at": "2026-03-22T11:48:00.190Z",
+  "updated_at": "2026-03-23T08:16:22.193Z",
   "movies": [
     {
       "name": "Домовенок Кузя 2",
-      "times": {
-        "22.03": [
-          "16:00"
-        ],
-        "24.03": [
-          "17:00"
-        ],
-        "25.03": [
-          "16:00"
-        ]
-      },
+      "times": {},
       "description": "Кузя продолжает жить с Наташей и её семьёй. Баба Яга окончательно перебралась в мир людей и старается быть полезной, став неожиданной помощницей для окружающих. Всё кажется спокойным, но в их дом приходит загадочная Тихоня, с которой начинается новая волна волшебных и опасных событий. Всем предстоит снова объединиться, чтобы защитить мир от Кощея и сохранить мир сказок таким же волшебным и светлым.",
       "age": "6+",
       "poster_link": "https://image.tmdb.org/t/p/original/sD6VwC0wj1B39EVFX1sovLN5lUh.jpg",
-      "backdrop_link": ""
+      "backdrop_link": "",
+      "studio": [
+        {
+          "id": 152330,
+          "logo_path": null,
+          "name": "K.B.A.",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0
     },
     {
       "name": "Крик 7",
-      "times": {
-        "22.03": [
-          "20:00"
-        ],
-        "24.03": [
-          "21:00"
-        ],
-        "25.03": [
-          "20:00"
-        ]
-      },
+      "times": {},
       "description": "Когда в тихом городке, где Сидни Прескотт построила новую жизнь, появляется убийца Призрачное лицо, её самые тёмные страхи воплощаются в реальность: её дочь становится следующей целью. Стремясь защитить свою семью, Сидни должна столкнуться с ужасами прошлого, чтобы раз и навсегда положить конец кровопролитию.",
       "age": "18+",
       "poster_link": "https://image.tmdb.org/t/p/original/jjyuk0edLiW8vOSnlfwWCCLpbh5.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/hz7TdCrpLLt2Dz7S3PS2HG9rpAO.jpg"
+      "backdrop_link": "https://image.tmdb.org/t/p/original/hz7TdCrpLLt2Dz7S3PS2HG9rpAO.jpg",
+      "studio": [
+        {
+          "id": 4,
+          "logo_path": "/jay6WcMgagAklUt7i9Euwj1pzTF.png",
+          "name": "Paramount Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 143790,
+          "logo_path": "/wo1smiXdiwwxai2dwJlRiGwE7rS.png",
+          "name": "Spyglass Media Group",
+          "origin_country": "US"
+        },
+        {
+          "id": 130448,
+          "logo_path": "/yHWTTGKbOGZKUd1cp6l3uLyDeiv.png",
+          "name": "Project X Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 5.859
     },
     {
       "name": "Марсупилами. Пушистый круиз",
-      "times": {
-        "22.03": [
-          "18:00"
-        ],
-        "24.03": [
-          "19:00"
-        ],
-        "25.03": [
-          "18:00"
-        ]
-      },
+      "times": {},
       "description": "Чтобы сохранить работу в зоопарке, Давид соглашается перевезти некий груз на круизном лайнере. Пользуясь предоставленной возможностью, он приглашает в тур бывшую жену и сына, с которыми хочет наладить отношения. Но когда коллега Давида случайно открывает посылку, на воле оказывается очаровательный детеныш марсупилами — рыжий пушистый зверек, за которым охотятся все браконьеры мира. Ведь марсупилами не только любитель опасных проделок, но и ключ к вечной молодости. Поездка тут же превращается в полный хаос.",
       "age": "16+",
       "poster_link": "https://image.tmdb.org/t/p/original/rJNHFa07Id2ylQgw0ttzGwpeczE.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/sd0QuOnKX0aM89nz886aQaixwCx.jpg"
+      "backdrop_link": "https://image.tmdb.org/t/p/original/sd0QuOnKX0aM89nz886aQaixwCx.jpg",
+      "studio": [
+        {
+          "id": 7981,
+          "logo_path": "/6Yv1gIAuGkHS5Vis4UjnqHhCPWV.png",
+          "name": "Pathé",
+          "origin_country": "FR"
+        },
+        {
+          "id": 95416,
+          "logo_path": "/gVFPBmeddZHqOXZCcFHSae8DQ3I.png",
+          "name": "Dupuis",
+          "origin_country": "BE"
+        },
+        {
+          "id": 146987,
+          "logo_path": null,
+          "name": "BAF Prod",
+          "origin_country": "FR"
+        },
+        {
+          "id": 356,
+          "logo_path": "/9tW5wZEGotn1Ei5pErA88m47XiD.png",
+          "name": "TF1 Films Production",
+          "origin_country": "FR"
+        },
+        {
+          "id": 11773,
+          "logo_path": "/8fCjsqh43LbPV6pm3SfR5Jx64GU.png",
+          "name": "Artémis Productions",
+          "origin_country": "BE"
+        },
+        {
+          "id": 209127,
+          "logo_path": "/6kby8aYYQX7RqPGs0DPIGMtG2Sg.png",
+          "name": "Logical Content Ventures",
+          "origin_country": "FR"
+        }
+      ],
+      "rating": 6.5
     },
     {
       "name": "Прыгуны",
-      "times": {
-        "22.03": [
-          "14:00"
-        ],
-        "24.03": [
-          "15:00"
-        ],
-        "25.03": [
-          "14:00"
-        ]
-      },
+      "times": {},
       "description": "Учёные разработали технологию, позволяющую переносить человеческое сознание в максимально реалистичных роботизированных животных, что дает людям возможность общаться с животными. Мейбл, любительница животных, получает доступ к технологии. Она переносится в тело робота-бобра и отправляется исследовать животный мир.",
       "age": "6+",
       "poster_link": "https://image.tmdb.org/t/p/original/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/2RrLuIfIzGWWIH8IAEo6o0IYHmx.jpg"
+      "backdrop_link": "https://image.tmdb.org/t/p/original/2RrLuIfIzGWWIH8IAEo6o0IYHmx.jpg",
+      "studio": [
+        {
+          "id": 3,
+          "logo_path": "/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
+          "name": "Pixar",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 7.6
     }
   ]
 }

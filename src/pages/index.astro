@@ -4,8 +4,9 @@ import MovieCard from '../components/MovieCard.astro';
 import LastUpdatedBadge from '../components/LastUpdatedBadge.astro';
 import scheduleData from '../../tools/schedule.json';
 
-// Get first few movies for testing
-const testMovies = scheduleData.movies
+const sourceMovies = scheduleData.movies
+
+const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
 ---
 
 <Layout title="Кинотеатр Слоним - РДК, расписание кино | КиноСлон">
@@ -17,8 +18,8 @@ const testMovies = scheduleData.movies
     </div>
 
     <div class="movies-grid">
-      {testMovies.map((movie) => (
-        <MovieCard movie={movie} />
+      {movies.map((movie, index) => (
+        <MovieCard movie={movie} loading={index < 2 ? 'eager' : 'lazy'} />
       ))}
     </div>
   </main>
