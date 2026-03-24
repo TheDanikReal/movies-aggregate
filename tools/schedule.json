@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-24T12:30:17.084Z",
+  "updated_at": "2026-03-24T14:31:04.658Z",
   "movies": [
     {
       "name": "Домовенок Кузя 2",
@@ -13,7 +13,7 @@
       },
       "description": "Кузя продолжает жить с Наташей и её семьёй. Баба Яга окончательно перебралась в мир людей и старается быть полезной, став неожиданной помощницей для окружающих. Всё кажется спокойным, но в их дом приходит загадочная Тихоня, с которой начинается новая волна волшебных и опасных событий. Всем предстоит снова объединиться, чтобы защитить мир от Кощея и сохранить мир сказок таким же волшебным и светлым.",
       "age": "6+",
-      "poster_link": "https://image.tmdb.org/t/p/original/sD6VwC0wj1B39EVFX1sovLN5lUh.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/sD6VwC0wj1B39EVFX1sovLN5lUh.jpg",
       "backdrop_link": "",
       "studio": [
         {
@@ -37,8 +37,8 @@
       },
       "description": "Когда в тихом городке, где Сидни Прескотт построила новую жизнь, появляется убийца Призрачное лицо, её самые тёмные страхи воплощаются в реальность: её дочь становится следующей целью. Стремясь защитить свою семью, Сидни должна столкнуться с ужасами прошлого, чтобы раз и навсегда положить конец кровопролитию.",
       "age": "18+",
-      "poster_link": "https://image.tmdb.org/t/p/original/9ePOw1qBEXAiYaRswA1Dzr0DOwT.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/hz7TdCrpLLt2Dz7S3PS2HG9rpAO.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/9ePOw1qBEXAiYaRswA1Dzr0DOwT.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/hz7TdCrpLLt2Dz7S3PS2HG9rpAO.jpg",
       "studio": [
         {
           "id": 4,
@@ -73,8 +73,8 @@
       },
       "description": "Чтобы сохранить работу в зоопарке, Давид соглашается перевезти некий груз на круизном лайнере. Пользуясь предоставленной возможностью, он приглашает в тур бывшую жену и сына, с которыми хочет наладить отношения. Но когда коллега Давида случайно открывает посылку, на воле оказывается очаровательный детеныш марсупилами — рыжий пушистый зверек, за которым охотятся все браконьеры мира. Ведь марсупилами не только любитель опасных проделок, но и ключ к вечной молодости. Поездка тут же превращается в полный хаос.",
       "age": "16+",
-      "poster_link": "https://image.tmdb.org/t/p/original/rJNHFa07Id2ylQgw0ttzGwpeczE.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/sd0QuOnKX0aM89nz886aQaixwCx.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/rJNHFa07Id2ylQgw0ttzGwpeczE.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/sd0QuOnKX0aM89nz886aQaixwCx.jpg",
       "studio": [
         {
           "id": 7981,
@@ -118,17 +118,14 @@
     {
       "name": "Прыгуны",
       "times": {
-        "24.03": [
-          "15:00"
-        ],
         "25.03": [
           "14:00"
         ]
       },
       "description": "Учёные разработали технологию, позволяющую переносить человеческое сознание в максимально реалистичных роботизированных животных, что дает людям возможность общаться с животными. Мейбл, любительница животных, получает доступ к технологии. Она переносится в тело робота-бобра и отправляется исследовать животный мир.",
       "age": "6+",
-      "poster_link": "https://image.tmdb.org/t/p/original/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/original/u53UYu5XG2hNgWGvs3xGhAVzypl.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/qzH2JKKLlLzWPDMh8n6aB6Vy6gD.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/u53UYu5XG2hNgWGvs3xGhAVzypl.jpg",
       "studio": [
         {
           "id": 3,
