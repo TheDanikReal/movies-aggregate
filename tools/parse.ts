@@ -204,8 +204,7 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
   try {
     const searchResults = await tmdb.search.movies({
       query: movieName,
-      // probably later, currently their posters are too simple
-      // language: "ru-RU"
+      language: "ru-RU"
     });
 
     if (searchResults.results && searchResults.results.length > 0) {
