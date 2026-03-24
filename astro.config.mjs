@@ -7,6 +7,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://kinoslon.netlify.app',
 
+  build: {
+    inlineStylesheets: "always"
+  },
+
   image: {
       domains: ["image.tmdb.org"]
   },
