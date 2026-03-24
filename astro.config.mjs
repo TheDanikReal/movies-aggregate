@@ -15,5 +15,9 @@ export default defineConfig({
       domains: ["image.tmdb.org"]
   },
 
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      lastmod: new Date()
+    })
+  ]
 });
