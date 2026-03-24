@@ -209,7 +209,7 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
 
     if (searchResults.results && searchResults.results.length > 0) {
       const movie = searchResults.results[0];
-      const baseUrl = 'https://image.tmdb.org/t/p/original';
+      const baseUrl = 'https://image.tmdb.org/t/p/w500';
       const details = await tmdb.movies.details(movie.id)
 
       return {
