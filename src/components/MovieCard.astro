@@ -50,7 +50,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 
 <article class="movie-card">
   <div class="poster">
-    <Image src={movie.poster_link || fallback } alt={movie.name} loading={loading} inferSize={true} class:list={[{ notForKids: movie.age == "18+" }]} />
+    <Image src={movie.poster_link || fallback } fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} inferSize={true} class:list={[{ notForKids: movie.age == "18+" }]} />
   </div>
 
   <div class="content">
@@ -249,7 +249,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
   }
 
   .read-more-btn:hover {
-    color: #ef4444;
+    opacity: 0.8;
   }
 
   .schedule-container {
