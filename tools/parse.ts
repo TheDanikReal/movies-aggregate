@@ -5,9 +5,14 @@ import * as cheerio from "cheerio";
 import "dotenv/config"
 import { TMDB, type ProductionCompany } from 'tmdb-ts';
 
+type Showtime = {
+  time: string;
+  timestamp: string;
+};
+
 type MovieSchedule = {
   name: string;
-  times: Record<string, string[]>;
+  times: Record<string, Showtime[]>;
   description: string;
   age: string;
   poster_link: string;
@@ -25,7 +30,7 @@ type MovieAccumulator = {
   name: string;
   age: string;
   description: string;
-  times: Map<string, Set<string>>;
+  times: Map<string, Map<string, Showtime>>;
 };
 
 const tmdbToken = process.env["TMDB_TOKEN"]
@@ -109,6 +114,30 @@ const parseDateFromLabel = (text: string): string | null => {
   return `${dayRaw.padStart(2, "0")}.${month}`;
 };
 
+const generateTimestamp = (dateKey: string, time: string): string => {
+  const [day, month] = dateKey.split('.').map(Number);
+
+  // Determine year (handle Dec/Jan boundary)
+  const now = new Date();
+  const currentMonth = now.getMonth() + 1;
+  let year = now.getFullYear();
+
+  // January dates in December = next year
+  if (month === 1 && currentMonth === 12) year += 1;
+  // December dates in January = last year
+  else if (month === 12 && currentMonth === 1) year -= 1;
+
+  // Parse time
+  const [hour, minute] = time.split(':').map(Number);
+
+  // Create date in UTC+3 (cinema timezone), convert to UTC
+  const localDate = new Date(year, month - 1, day, hour, minute, 0, 0);
+  const utcOffset = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
+  const utcTimestamp = new Date(localDate.getTime() - utcOffset);
+
+  return utcTimestamp.toISOString();
+};
+
 const ensureMovie = (
   map: Map<string, MovieAccumulator>,
   movieName: string,
@@ -129,14 +158,18 @@ const ensureMovie = (
 
 const addTimes = (movie: MovieAccumulator, dateKey: string, times: string[]): void => {
   if (!movie.times.has(dateKey)) {
-    movie.times.set(dateKey, new Set<string>());
+    movie.times.set(dateKey, new Map<string, Showtime>());
   }
 
   const bucket = movie.times.get(dateKey);
   if (!bucket) return;
 
   for (const time of times) {
-    bucket.add(time);
+    // Use time as key to avoid duplicates
+    bucket.set(time, {
+      time,
+      timestamp: generateTimestamp(dateKey, time)
+    });
   }
 };
 
@@ -235,10 +268,13 @@ const main = async (): Promise<void> => {
   const movies: MovieSchedule[] = [];
 
   for (const movie of [...moviesMap.values()].sort((left, right) => left.name.localeCompare(right.name))) {
-    const times: Record<string, string[]> = Object.fromEntries(
+    const times: Record<string, Showtime[]> = Object.fromEntries(
       [...movie.times.entries()]
         .sort(([left], [right]) => left.localeCompare(right))
-        .map(([date, values]) => [date, [...values].sort()]),
+        .map(([date, showtimesMap]) => {
+          const showtimesArray = [...showtimesMap.values()];
+          return [date, showtimesArray];
+        }),
     );
 
     console.log(`Fetching metadata for "${movie.name}"...`);

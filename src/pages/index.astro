@@ -32,6 +32,38 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
       </p>
     </div>
   </footer>
+  <script is:inline>
+    const now = new Date()
+    // show times if less than 30 minutes passed
+    const hideTime = new Date(now.getTime() - 30 * 60000)
+    const todayKey = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}`;
+
+    document.querySelectorAll(".movie-card").forEach(card => {
+      let hasUpcoming = false
+      card.querySelectorAll('.schedule[data-date]').forEach(scheduleDiv => {
+        const dateKey = scheduleDiv.getAttribute('data-date');
+        const isToday = dateKey === todayKey;
+        const scheduleLabel = scheduleDiv.querySelector('.schedule-label');
+
+        // Update "today" label
+        if (isToday && scheduleLabel) {
+          scheduleLabel.textContent = 'Сегодня:';
+        }})
+      card.querySelectorAll(".time-slot").forEach(slot => {
+        const sessionTime = new Date(slot.dataset.timestamp)
+        if (sessionTime < hideTime) {
+          slot.style.opacity = "0.3"
+          slot.style.textDecoration = "line-through"
+        } else {
+          hasUpcoming = true
+        }
+      })
+      if (!hasUpcoming) {
+        card.style.order = "999"
+        card.style.opacity = "0.5"
+      }
+    })
+  </script>
 </Layout>
 
 <style>

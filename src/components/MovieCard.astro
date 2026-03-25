@@ -1,11 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import fallback from './../../tools/moviefallback.webp'
-import { Picture } from 'astro:assets';
+
+interface Showtime {
+  time: string;
+  timestamp: string;
+}
 
 interface Movie {
   name: string;
-  times: Record<string, string[]>;
+  times: Record<string, Showtime[]>;
   description: string;
   age: string;
   poster_link: string;
@@ -31,18 +35,18 @@ const formatDateLabel = (dateKey: string): string => {
   return `${day} ${monthNames[month - 1]}`;
 };
 
-// Sort dates and format schedule entries
+// Server-side: Just prepare all schedule entries, no filtering
 const scheduleEntries = Object.entries(movie.times)
-  .sort((a, b) => {
-    const [dayA, monthA] = a[0].split('.').map(Number);
-    const [dayB, monthB] = b[0].split('.').map(Number);
-    return monthA !== monthB ? monthA - monthB : dayA - dayB;
-  })
-  .map(([dateKey, times]) => ({
-    dateKey, // Keep the raw date key for client-side checking
+  .map(([dateKey, showtimes]) => ({
+    dateKey,
     label: formatDateLabel(dateKey),
-    times
-  }));
+    times: showtimes
+  }))
+  .sort((a, b) => {
+    const [dayA, monthA] = a.dateKey.split('.').map(Number);
+    const [dayB, monthB] = b.dateKey.split('.').map(Number);
+    return monthA !== monthB ? monthA - monthB : dayA - dayB;
+  });
 
 // Generate unique ID for description element
 const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
@@ -78,18 +82,21 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
       Читать далее
     </button>
 
-    {scheduleEntries.length > 0 && (
-      <div class="schedule-container">
-        {scheduleEntries.map((entry) => (
-          <div class="schedule">
-            <span class="schedule-label" data-date={entry.dateKey}>{entry.label}:</span>
-            {entry.times.map((time) => (
-              <span class="time-slot">{time}</span>
-            ))}
-          </div>
-        ))}
-      </div>
-    )}
+    <div class="schedule-container">
+      {scheduleEntries.map((entry) => (
+        <div class="schedule" data-date={entry.dateKey}>
+          <span class="schedule-label">{entry.label}:</span>
+          {entry.times.map((showtime) => (
+            <span
+              class="time-slot"
+              data-timestamp={showtime.timestamp}
+            >
+              {showtime.time}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
   </div>
 </article>
 
@@ -298,16 +305,5 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
         target.textContent = isCollapsed ? 'Читать далее' : 'Скрыть';
       }
     });
-  });
-
-  // Update date labels to show "Сегодня" for today's date
-  const today = new Date();
-  const todayKey = `${String(today.getDate()).padStart(2, '0')}.${String(today.getMonth() + 1).padStart(2, '0')}`;
-
-  document.querySelectorAll('.schedule-label[data-date]').forEach((label) => {
-    const dateKey = label.getAttribute('data-date');
-    if (dateKey === todayKey) {
-      label.textContent = 'Сегодня:';
-    }
   });
 </script>
