@@ -17,7 +17,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      lastmod: new Date()
+      lastmod: new Date("2026-03-25T12:36:43.939Z")
     })
   ]
 });
