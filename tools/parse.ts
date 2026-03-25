@@ -15,10 +15,12 @@ type MovieSchedule = {
   times: Record<string, Showtime[]>;
   description: string;
   age: string;
+  format: string;
   poster_link: string;
   backdrop_link: string;
   studio: ProductionCompany[];
   rating: number;
+  length: number;
 };
 
 type ScheduleOutput = {
@@ -29,6 +31,7 @@ type ScheduleOutput = {
 type MovieAccumulator = {
   name: string;
   age: string;
+  format: string;
   description: string;
   times: Map<string, Map<string, Showtime>>;
 };
@@ -75,20 +78,25 @@ const normalizeText = (value: string): string =>
   value.replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
 
 
-const parseTitleAndAge = (
+const parseMainData = (
   rawTitle: string,
 ): {
   parsedName: string;
   parsedAge: string;
+  parsedFormat: string;
 } => {
   const withoutTrailingId = normalizeText(rawTitle).replace(/\s+\d{5,}$/, "");
-  const ageMatch = withoutTrailingId.match(/\(?\b\d{1,2}\+\)?/);
+  const formatMatch = withoutTrailingId.match(/\b([23])\s*[dд]\b/i);
+  const parsedFormat = formatMatch ? `${formatMatch[1]}D` : "";
+  const withoutFormat = normalizeText(withoutTrailingId.replace(/\b[23]\s*[dд]\b/gi, ""));
+
+  const ageMatch = withoutFormat.match(/\(?\b\d{1,2}\+\)?/);
 
   if (!ageMatch || ageMatch.index === undefined) {
-    return { parsedName: withoutTrailingId, parsedAge: "" };
+    return { parsedName: withoutFormat, parsedAge: "", parsedFormat };
   }
 
-  const parsedName = normalizeText(withoutTrailingId.slice(0, ageMatch.index)).replace(
+  const parsedName = normalizeText(withoutFormat.slice(0, ageMatch.index)).replace(
     /[.,;:\-]+$/,
     "",
   );
@@ -96,6 +104,7 @@ const parseTitleAndAge = (
   return {
     parsedName,
     parsedAge: ageMatch[0].replace(/[()]/g, ""),
+    parsedFormat,
   };
 };
 
@@ -148,6 +157,7 @@ const ensureMovie = (
   const created: MovieAccumulator = {
     name: movieName,
     age: "",
+    format: "",
     description: "",
     times: new Map(),
   };
@@ -181,12 +191,15 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
     const title = normalizeText($anchor.text());
     if (!title) return;
 
-    const { parsedName, parsedAge } = parseTitleAndAge(title);
+    const { parsedName, parsedAge, parsedFormat } = parseMainData(title);
     if (!parsedName) return;
 
     const movie = ensureMovie(moviesMap, parsedName);
     if (parsedAge && !movie.age) {
       movie.age = parsedAge;
+    }
+    if (parsedFormat && !movie.format) {
+      movie.format = parsedFormat;
     }
 
     // Navigate up to find the top-level <tr> that contains this event
@@ -233,7 +246,7 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
   });
 };
 
-const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number }> => {
+const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number, length: number }> => {
   try {
     const searchResults = await tmdb.search.movies({
       query: movieName,
@@ -250,13 +263,14 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
         backdrop: movie.backdrop_path ? `${baseUrl}${movie.backdrop_path}` : '',
         studio: details.production_companies || [],
         rating: details.vote_average,
+        length: details.runtime
       };
     }
   } catch (error) {
     console.error(`Failed to fetch images for "${movieName}":`, error);
   }
 
-  return { poster: '', backdrop: '', studio: [], rating: 0 };
+  return { poster: '', backdrop: '', studio: [], rating: 0, length: 0 };
 };
 
 const main = async (): Promise<void> => {
@@ -278,17 +292,19 @@ const main = async (): Promise<void> => {
     );
 
     console.log(`Fetching metadata for "${movie.name}"...`);
-    const { poster, backdrop, studio, rating } = await fetchMovieMetadata(movie.name);
+    const { poster, backdrop, studio, rating, length } = await fetchMovieMetadata(movie.name);
 
     movies.push({
       name: movie.name,
       times,
       description: movie.description,
       age: movie.age,
+      format: movie.format,
       poster_link: poster,
       backdrop_link: backdrop,
       studio,
-      rating
+      rating,
+      length
     });
   }
 

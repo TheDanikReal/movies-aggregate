@@ -12,6 +12,8 @@ interface Movie {
   times: Record<string, Showtime[]>;
   description: string;
   age: string;
+  length?: number;
+  format?: string;
   poster_link: string;
   backdrop_link?: string;
 }
@@ -35,6 +37,22 @@ const formatDateLabel = (dateKey: string): string => {
   return `${day} ${monthNames[month - 1]}`;
 };
 
+const formatDurationBadge = (lengthInMinutes?: number): string | null => {
+  if (!lengthInMinutes || lengthInMinutes <= 0) return null;
+
+  const hours = Math.floor(lengthInMinutes / 60);
+  const minutes = lengthInMinutes % 60;
+  return `Длительность ${hours}:${String(minutes).padStart(2, '0')}`;
+};
+
+const formatMovieFormat = (rawFormat?: string): string | null => {
+  if (!rawFormat) return null;
+
+  const normalized = rawFormat.trim().toUpperCase();
+  if (normalized !== '2D' && normalized !== '3D') return null;
+  return normalized;
+};
+
 // Server-side: Just prepare all schedule entries, no filtering
 const scheduleEntries = Object.entries(movie.times)
   .map(([dateKey, showtimes]) => ({
@@ -47,6 +65,9 @@ const scheduleEntries = Object.entries(movie.times)
     const [dayB, monthB] = b.dateKey.split('.').map(Number);
     return monthA !== monthB ? monthA - monthB : dayA - dayB;
   });
+
+const durationBadge = formatDurationBadge(movie.length);
+const movieFormat = formatMovieFormat(movie.format);
 
 // Generate unique ID for description element
 const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
@@ -62,6 +83,8 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
       <h2 class="title">{movie.name}</h2>
       <div class="header-row">
         <span class="age-badge" data-age={movie.age}>{movie.age}</span>
+        {durationBadge && <span class="length-badge">{durationBadge}</span>}
+        {movieFormat && <span class="format-badge" data-format={movieFormat}>{movieFormat}</span>}
         {movie.poster_link && movie.poster_link !== "" && (
           <a
             href={`https://www.youtube.com/results?search_query=${encodeURIComponent(movie.name + " трейлер")}`}
@@ -211,6 +234,37 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 
   .age-badge[data-age="18+"] {
     background: #dc2626;
+    color: #ffffff;
+  }
+
+  .length-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--color-text);
+  }
+
+  .format-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    width: fit-content;
+    letter-spacing: 0.02em;
+  }
+
+  .format-badge[data-format="2D"] {
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .format-badge[data-format="3D"] {
+    background: #7c3aed;
     color: #ffffff;
   }
 
