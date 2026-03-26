@@ -1,9 +1,9 @@
 name: Update Cinema Schedule
 
 on:
-  # Run every Wednesday at 17:00 UTC (20:00 UTC+3)
+  # Run every Wednesday at 14:00 UTC (27:00 UTC+3)
   schedule:
-    - cron: '0 17 * * 3'
+    - cron: '0 14 * * 3'
 
   # Allow manual triggering
   workflow_dispatch:
