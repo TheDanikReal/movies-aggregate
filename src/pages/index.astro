@@ -34,13 +34,13 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
       <FeedbackForm />
     </div>
   </footer>
-  <script>
+  <script is:inline>
     const now = new Date()
     // show times if less than 30 minutes passed
     const hideTime = new Date(now.getTime() - 30 * 60000)
     const todayKey = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}`;
 
-    document.querySelectorAll<HTMLElement>(".movie-card").forEach(card => {
+    document.querySelectorAll(".movie-card").forEach(card => {
       let hasUpcoming = false
       card.querySelectorAll('.schedule[data-date]').forEach(scheduleDiv => {
         const dateKey = scheduleDiv.getAttribute('data-date');
@@ -51,10 +51,8 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
         if (isToday && scheduleLabel) {
           scheduleLabel.textContent = 'Сегодня:';
         }})
-      card.querySelectorAll<HTMLElement>(".time-slot").forEach(slot => {
-        const { timestamp } = slot.dataset
-        if (!timestamp) return
-        const sessionTime = new Date(timestamp)
+      card.querySelectorAll(".time-slot").forEach(slot => {
+        const sessionTime = new Date(slot.dataset.timestamp)
         if (sessionTime < hideTime) {
           slot.style.opacity = "0.3"
           slot.style.textDecoration = "line-through"
