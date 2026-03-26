@@ -9,7 +9,7 @@ interface Showtime {
 
 interface Movie {
   name: string;
-  times: Record<string, Showtime[]>;
+  times: Record<string, Showtime[] | undefined>;
   description: string;
   age: string;
   length?: number;
@@ -75,7 +75,11 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 
 <article class="movie-card">
   <div class="poster">
-    <Image src={movie.poster_link || fallback } fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} inferSize={true} class:list={[{ notForKids: movie.age == "18+" }]} />
+    {movie.poster_link ? (
+      <Image src={movie.poster_link} fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} inferSize={true} class:list={[{ notForKids: movie.age == "18+" }]} />
+    ) : (
+      <Image src={fallback} fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} class:list={[{ notForKids: movie.age == "18+" }]} />
+    )}
   </div>
 
   <div class="content">
@@ -109,7 +113,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
       {scheduleEntries.map((entry) => (
         <div class="schedule" data-date={entry.dateKey}>
           <span class="schedule-label">{entry.label}:</span>
-          {entry.times.map((showtime) => (
+          {entry.times?.map((showtime) => (
             <span
               class="time-slot"
               data-timestamp={showtime.timestamp}
