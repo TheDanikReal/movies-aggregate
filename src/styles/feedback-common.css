@@ -1,0 +1,38 @@
+.feedback-details {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.feedback-toggle {
+  list-style: none;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.feedback-details[open] .feedback-toggle {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.feedback-form {
+  display: grid;
+  gap: 0.875rem;
+  padding: 1rem;
+}
+
+.feedback-form button {
+  justify-self: start;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--color-accent);
+  color: #111;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+}
+
+.feedback-form button:hover {
+  filter: brightness(0.95);
+}
