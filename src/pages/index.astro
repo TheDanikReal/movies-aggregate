@@ -35,21 +35,32 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
     </div>
   </footer>
   <script>
+    function getDateStr(date: Date) {
+      return `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}`
+    }
     const now = new Date()
+    const tomorrow = new Date(now.getTime() + 86400000) // 24 hours in milliseconds
     // show times if less than 30 minutes passed
     const hideTime = new Date(now.getTime() - 30 * 60000)
-    const todayKey = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const todayKey = getDateStr(now);
+    const tomorrowKey = getDateStr(tomorrow)
 
     document.querySelectorAll<HTMLElement>(".movie-card").forEach(card => {
       let hasUpcoming = false
       card.querySelectorAll<HTMLDivElement>('.schedule[data-date]').forEach(scheduleDiv => {
         const dateKey = scheduleDiv.getAttribute('data-date');
-        const isToday = dateKey === todayKey;
         const scheduleLabel = scheduleDiv.querySelector('.schedule-label');
 
         // Update "today" label
-        if (isToday && scheduleLabel) {
-          scheduleLabel.textContent = 'Сегодня:';
+        if (scheduleLabel) {
+          const isToday = dateKey === todayKey;
+          const isTomorrow = dateKey === tomorrowKey
+          if (isToday) {
+            scheduleLabel.textContent = 'Сегодня:'
+          }
+          if (isTomorrow) {
+            scheduleLabel.textContent = 'Завтра:'
+          }
         }})
         card.querySelectorAll<HTMLSpanElement>(".time-slot").forEach(slot => {
         const timestamp = slot.dataset.timestamp
@@ -80,7 +91,7 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
   h1 {
     margin-bottom: 1rem;
     color: var(--color-text);
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
