@@ -1,0 +1,159 @@
+---
+// ThemeSwitch component - toggles between light and dark theme
+// use this in <head /> of layout to change theme synchronously and prevent flashes
+/*
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      })();
+    </script>
+*/
+---
+
+<button
+  id="theme-switch"
+  class="theme-switch"
+  aria-label="Переключить тему"
+  title="Переключить между светлой и тёмной темой"
+>
+  <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="5"/>
+    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+  </svg>
+
+  <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
+
+<style>
+  .theme-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-card-bg);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .theme-switch:hover {
+    border-color: var(--color-accent);
+    transform: scale(1.05);
+  }
+
+  .theme-switch:active {
+    transform: scale(0.95);
+  }
+
+  .theme-icon {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Default (dark theme) - show sun icon */
+  .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .moon-icon {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+
+  /* Light theme - show moon icon */
+  [data-theme="light"] .sun-icon {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+
+  [data-theme="light"] .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  /* Browser preference for light theme (when no manual theme set) */
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .sun-icon {
+      opacity: 0;
+      transform: rotate(180deg);
+    }
+
+    :root:not([data-theme="dark"]) .moon-icon {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+
+  /* Focus styles */
+  .theme-switch:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  // Theme switching functionality
+  // Theme is already applied by blocking script in <head>, this just handles toggling
+  class ThemeSwitch {
+    private button: HTMLElement | null;
+
+    constructor() {
+      this.button = document.getElementById('theme-switch');
+      this.init();
+    }
+
+    private init(): void {
+      // Add click handler
+      this.button?.addEventListener('click', () => this.toggleTheme());
+
+      // Listen for system theme changes (only if no saved preference)
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (!localStorage.getItem('theme')) {
+          this.updateThemeAttribute();
+        }
+      });
+    }
+
+    private updateThemeAttribute(): void {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const currentTheme = prefersDark ? 'dark' : 'light';
+
+      // Only set attribute if we need to override the default
+      if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    }
+
+    private toggleTheme(): void {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const isDarkNow = currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      const newTheme = isDarkNow ? 'light' : 'dark';
+
+      // Apply new theme
+      document.documentElement.setAttribute('data-theme', newTheme);
+
+      // Save to localStorage
+      localStorage.setItem('theme', newTheme);
+    }
+  }
+
+  // Initialize theme switch when DOM is loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new ThemeSwitch());
+  } else {
+    new ThemeSwitch();
+  }
+</script>
