@@ -1,0 +1,129 @@
+---
+interface Props {
+  text: string;
+  choices: string[];
+}
+
+const { text, choices } = Astro.props;
+---
+
+<section class="feedback" aria-label="Форма быстрого отзыва">
+  <details class="feedback-details" open>
+    <summary class="feedback-toggle">Быстрый отзыв</summary>
+
+    <form class="feedback-form" name="feedback-fast" method="POST" netlify>
+      <input type="hidden" name="form-name" value="feedback-fast" />
+      <input type="hidden" name="question" value={text} />
+
+      <p class="feedback-question">{text}</p>
+
+      <fieldset class="feedback-choices">
+        <legend class="sr-only">Выберите вариант ответа</legend>
+        {choices.map((choice, index) => {
+          const id = `feedback-choice-${index}`;
+          return (
+            <label class="choice-option" for={id}>
+              <input id={id} type="radio" name="choice" value={choice} required={index === 0} />
+              <span>{choice}</span>
+            </label>
+          );
+        })}
+      </fieldset>
+
+      <button type="submit">Отправить</button>
+    </form>
+  </details>
+</section>
+
+<style>
+  .feedback {
+    margin-top: 1rem;
+  }
+
+  .feedback-details {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  .feedback-toggle {
+    list-style: none;
+    padding: 0.9rem 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  .feedback-toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .feedback-details[open] .feedback-toggle {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .feedback-form {
+    display: grid;
+    gap: 0.875rem;
+    padding: 1rem;
+  }
+
+  .feedback-question {
+    color: var(--color-text);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .feedback-choices {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .choice-option {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--color-text-dim);
+  }
+
+  .choice-option input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--color-accent);
+  }
+
+  .choice-option span {
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .feedback-form button {
+    justify-self: start;
+    border: 0;
+    border-radius: 0.5rem;
+    background: var(--color-accent);
+    color: #111;
+    font-weight: 700;
+    padding: 0.55rem 1rem;
+  }
+
+  .feedback-form button:hover {
+    filter: brightness(0.95);
+  }
+</style>

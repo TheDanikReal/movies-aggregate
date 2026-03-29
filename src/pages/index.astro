@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import MovieCard from '../components/MovieCard.astro';
 import LastUpdatedBadge from '../components/LastUpdatedBadge.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
+import QuickFeedbackForm from '../components/QuickFeedbackForm.astro';
 import scheduleData from '../../tools/schedule.json';
 
 const sourceMovies = scheduleData.movies
@@ -31,6 +32,15 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
         Неофициальный аггрегатор кинотеатров в Слониме, обновляется по средам в 16:00.
         Для официального сайта слонимского РДК <a href="http://kinoteatr.megamag.by/index.php?cPath=353299">нажмите сюда</a>.
       </p>
+      <QuickFeedbackForm
+        text="Мы недавно изменили цвета бэйджей возрастов, вы можете оценить их"
+        choices={[
+          'Так лучше',
+          'Предыдущие были лучше',
+          'Не знаю',
+          'И так и так нормально',
+        ]}
+      />
       <FeedbackForm />
     </div>
   </footer>
