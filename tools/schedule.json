@@ -1,101 +1,9 @@
 {
-  "updated_at": "2026-04-08T15:17:31.356Z",
+  "updated_at": "2026-04-15T14:28:45.598Z",
   "movies": [
-    {
-      "name": "Золушка. Тайна трёх желаний",
-      "times": {
-        "09.04": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-04-09T11:00:00.000Z"
-          }
-        ],
-        "10.04": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-04-10T11:00:00.000Z"
-          }
-        ],
-        "11.04": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-04-11T11:00:00.000Z"
-          }
-        ],
-        "12.04": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-04-12T11:00:00.000Z"
-          }
-        ],
-        "14.04": [
-          {
-            "time": "13:00",
-            "timestamp": "2026-04-14T10:00:00.000Z"
-          }
-        ],
-        "15.04": [
-          {
-            "time": "13:00",
-            "timestamp": "2026-04-15T10:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Жизнь Золушки у мачехи непроста, но она не унывает, ведь у неё есть верный друг по имени Северин. Будучи простым дровосеком, он мечтает прославиться, но однажды находит волшебное дерево, которое превращает его в бурундука. Чтобы снять заклятие, Золушке надо проявить смелость и доброту, а ещё исполнить свою мечту — попасть на королевский бал, чему мешает мачеха.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/8EKvUswdnJETs8ABk05BdfqyXtK.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/8N2R7nD9rZvqdauKFwPC5eNE8zh.jpg",
-      "studio": [
-        {
-          "id": 292574,
-          "logo_path": null,
-          "name": "Арт Анимейшен студио",
-          "origin_country": ""
-        },
-        {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 0,
-      "length": 82
-    },
     {
       "name": "Королёк моей любви",
       "times": {
-        "09.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-09T15:00:00.000Z"
-          }
-        ],
-        "10.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-10T15:00:00.000Z"
-          }
-        ],
-        "11.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-11T15:00:00.000Z"
-          }
-        ],
-        "12.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-12T15:00:00.000Z"
-          }
-        ],
-        "14.04": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-04-14T16:00:00.000Z"
-          }
-        ],
         "15.04": [
           {
             "time": "19:00",
@@ -132,76 +40,8 @@
       "length": 111
     },
     {
-      "name": "Острые козырьки: Бессмертный человек",
-      "times": {
-        "08.04": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-04-08T17:30:00.000Z"
-          }
-        ]
-      },
-      "description": "1940-е годы, разгар Второй мировой войны. Спустя много лет Томми Шелби, главарь одной из самых опасных уличных банд, возвращается в разбомбленный Бирмингем, где он оставил своего сына. Сын пошёл по его стопам, и теперь он оказался замешан в тайном сговоре. Шелби сталкивается с самым тяжёлым испытанием в своей жизни, когда на кону оказываются судьба сына и будущее всей страны.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/2Dv246IRJ9D9uKKkXGGkpZq7LPJ.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/1fkuBPid72KGS6WmtkEXMftZtkE.jpg",
-      "studio": [
-        {
-          "id": 288,
-          "logo_path": "/aW0IpM9d4Zjj978EqgDVSxXXhTj.png",
-          "name": "BBC Film",
-          "origin_country": "GB"
-        },
-        {
-          "id": 241143,
-          "logo_path": null,
-          "name": "Garrison Drama",
-          "origin_country": "GB"
-        },
-        {
-          "id": 125282,
-          "logo_path": "/9D4A6Lc6m2RBlDkeGF6jpJljAgm.png",
-          "name": "Nebulastar",
-          "origin_country": "GB"
-        }
-      ],
-      "rating": 7.258,
-      "length": 112
-    },
-    {
       "name": "Супер Марио: Галактическое кино",
       "times": {
-        "09.04": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-04-09T13:00:00.000Z"
-          }
-        ],
-        "10.04": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-04-10T13:00:00.000Z"
-          }
-        ],
-        "11.04": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-04-11T13:00:00.000Z"
-          }
-        ],
-        "12.04": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-04-12T13:00:00.000Z"
-          }
-        ],
-        "14.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-14T14:00:00.000Z"
-          }
-        ],
         "15.04": [
           {
             "time": "17:00",
@@ -213,7 +53,7 @@
       "age": "6+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/3NaiRtILh0UV8e64IzTALnqT7hr.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/9Z2uDYXqJrlmePznQQJhL6d92Rq.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg",
       "studio": [
         {
           "id": 6704,
@@ -234,48 +74,12 @@
           "origin_country": "JP"
         }
       ],
-      "rating": 6.931,
+      "rating": 6.8,
       "length": 98
     },
     {
       "name": "Твоё сердце будет разбито",
       "times": {
-        "08.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-08T15:00:00.000Z"
-          }
-        ],
-        "09.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-09T17:00:00.000Z"
-          }
-        ],
-        "10.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-10T17:00:00.000Z"
-          }
-        ],
-        "11.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-11T17:00:00.000Z"
-          }
-        ],
-        "12.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-12T17:00:00.000Z"
-          }
-        ],
-        "14.04": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-04-14T18:00:00.000Z"
-          }
-        ],
         "15.04": [
           {
             "time": "21:00",
@@ -308,12 +112,6 @@
           "origin_country": "RU"
         },
         {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
-          "origin_country": "RU"
-        },
-        {
           "id": 42877,
           "logo_path": "/15THT1W3NROsbDXPbrcmWFVkrSv.png",
           "name": "Yellow, Black & White",
@@ -326,7 +124,7 @@
           "origin_country": "RU"
         }
       ],
-      "rating": 6.52,
+      "rating": 7.1,
       "length": 134
     }
   ]
