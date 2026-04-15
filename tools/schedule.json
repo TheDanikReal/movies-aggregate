@@ -1,6 +1,68 @@
 {
-  "updated_at": "2026-04-15T14:28:45.598Z",
+  "updated_at": "2026-04-15T15:02:19.518Z",
   "movies": [
+    {
+      "name": "Золушка. Тайна трёх желаний",
+      "times": {
+        "16.04": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-04-16T14:00:00.000Z"
+          }
+        ],
+        "17.04": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-04-17T14:00:00.000Z"
+          }
+        ],
+        "18.04": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-04-18T12:00:00.000Z"
+          }
+        ],
+        "19.04": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-04-19T12:00:00.000Z"
+          }
+        ],
+        "21.04": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-04-21T12:00:00.000Z"
+          }
+        ],
+        "22.04": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-04-22T12:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Жизнь Золушки у мачехи непроста, но она не унывает, ведь у неё есть верный друг по имени Северин. Будучи простым дровосеком, он мечтает прославиться, но однажды находит волшебное дерево, которое превращает его в бурундука. Чтобы снять заклятие, Золушке надо проявить смелость и доброту, а ещё исполнить свою мечту — попасть на королевский бал, чему мешает мачеха.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/8EKvUswdnJETs8ABk05BdfqyXtK.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/8N2R7nD9rZvqdauKFwPC5eNE8zh.jpg",
+      "studio": [
+        {
+          "id": 292574,
+          "logo_path": null,
+          "name": "Арт Анимейшен студио",
+          "origin_country": ""
+        },
+        {
+          "id": 76049,
+          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
+          "name": "Cinema Foundation of Russia",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 82
+    },
     {
       "name": "Королёк моей любви",
       "times": {
@@ -40,12 +102,134 @@
       "length": 111
     },
     {
+      "name": "Нормал",
+      "times": {
+        "16.04": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-04-16T17:30:00.000Z"
+          }
+        ],
+        "17.04": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-04-17T17:30:00.000Z"
+          }
+        ],
+        "18.04": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-04-18T17:00:00.000Z"
+          }
+        ],
+        "19.04": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-04-19T17:00:00.000Z"
+          }
+        ],
+        "21.04": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-04-21T17:00:00.000Z"
+          }
+        ],
+        "22.04": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-04-22T17:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Улисс приезжает в небольшой городок Нормал, чтобы временно занять должность шерифа. Город кажется безопасным, почти сонным и дружелюбным. Но после ограбления банка Улисс обнаруживает преступный заговор, в который вовлечён весь город. Теперь ему предстоит решить, готов ли он пойти до конца и разрушить кажущуюся идиллию.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/1GXYen1mBGlNeIVes6sJHvgLeLC.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/1nHaO4rTv1E6xVJYIMGP9nmLxE9.jpg",
+      "studio": [
+        {
+          "id": 125584,
+          "logo_path": "/56Lrmj9izLx7SEa0uPp0fVvssea.png",
+          "name": "Aperture Media Partners",
+          "origin_country": "US"
+        },
+        {
+          "id": 210819,
+          "logo_path": "/lXW15vGgeQIIGia0oFycQgALb9Y.png",
+          "name": "QWGmire",
+          "origin_country": "US"
+        },
+        {
+          "id": 86647,
+          "logo_path": "/jefZmEJlxUAkuuwkH9CHQchgmJX.png",
+          "name": "OPE Partners",
+          "origin_country": "US"
+        },
+        {
+          "id": 223268,
+          "logo_path": null,
+          "name": "Le Foole",
+          "origin_country": "US"
+        },
+        {
+          "id": 207939,
+          "logo_path": null,
+          "name": "Tradecraft",
+          "origin_country": "US"
+        },
+        {
+          "id": 289959,
+          "logo_path": null,
+          "name": "Normal Films",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 6.3,
+      "length": 90
+    },
+    {
       "name": "Супер Марио: Галактическое кино",
       "times": {
         "15.04": [
           {
             "time": "17:00",
             "timestamp": "2026-04-15T14:00:00.000Z"
+          }
+        ],
+        "16.04": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-04-16T15:30:00.000Z"
+          }
+        ],
+        "17.04": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-04-17T15:30:00.000Z"
+          }
+        ],
+        "18.04": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-04-18T15:00:00.000Z"
+          }
+        ],
+        "19.04": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-04-19T15:00:00.000Z"
+          }
+        ],
+        "21.04": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-04-21T15:00:00.000Z"
+          }
+        ],
+        "22.04": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-04-22T15:00:00.000Z"
           }
         ]
       },
@@ -126,6 +310,43 @@
       ],
       "rating": 7.1,
       "length": 134
+    },
+    {
+      "name": "Чернобыль. Живая земля",
+      "times": {
+        "18.04": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-04-18T14:00:00.000Z"
+          }
+        ],
+        "19.04": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-04-19T14:00:00.000Z"
+          }
+        ],
+        "21.04": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-04-21T14:00:00.000Z"
+          }
+        ],
+        "22.04": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-04-22T14:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Чернобыль. Живая земля",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "",
+      "backdrop_link": "",
+      "studio": [],
+      "rating": 0,
+      "length": 0
     }
   ]
 }
