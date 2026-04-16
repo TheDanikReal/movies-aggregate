@@ -1,15 +1,9 @@
 {
-  "updated_at": "2026-04-15T15:02:19.518Z",
+  "updated_at": "2026-04-16T17:43:12.443Z",
   "movies": [
     {
       "name": "Золушка. Тайна трёх желаний",
       "times": {
-        "16.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-16T14:00:00.000Z"
-          }
-        ],
         "17.04": [
           {
             "time": "17:00",
@@ -62,44 +56,6 @@
       ],
       "rating": 0,
       "length": 82
-    },
-    {
-      "name": "Королёк моей любви",
-      "times": {
-        "15.04": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-04-15T16:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Благородный и всеми любимый полицейский Рамаш, благодаря которому в городе Хурмада царит мир и порядок, вступает в борьбу с хитрыми алчным бандитом Шамаром. Воспитанный приемными родителями Шамар устраивает в городе серию преступлений, и Рамаш встает на защиту Хурмады. В ходе активного противостояния выясняется, что Рамаш и Шамар — разлученные в детстве братья. Расследование братьев выводит их на след виновника великого пожара, который унес жизни родителей Рамаша и Шамара. Им оказывается главный меценат и покровитель Хурмады — Сандурлай, с которым им предстоит сразиться.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/dPRk8EzAZyfM5cTRlZKjRmRHrsj.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/nmoovGCzFkCOjQywFsgv3Tii9lI.jpg",
-      "studio": [
-        {
-          "id": 204591,
-          "logo_path": null,
-          "name": "My Way Studio",
-          "origin_country": "RU"
-        },
-        {
-          "id": 82340,
-          "logo_path": "/dj89PnCx2Pt7vAE3Fp7n54vvmOt.png",
-          "name": "TNT",
-          "origin_country": "RU"
-        },
-        {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 8,
-      "length": 111
     },
     {
       "name": "Нормал",
@@ -184,24 +140,12 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.3,
+      "rating": 6.857,
       "length": 90
     },
     {
       "name": "Супер Марио: Галактическое кино",
       "times": {
-        "15.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-15T14:00:00.000Z"
-          }
-        ],
-        "16.04": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-04-16T15:30:00.000Z"
-          }
-        ],
         "17.04": [
           {
             "time": "18:30",
@@ -237,7 +181,7 @@
       "age": "6+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/3NaiRtILh0UV8e64IzTALnqT7hr.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/9Z2uDYXqJrlmePznQQJhL6d92Rq.jpg",
       "studio": [
         {
           "id": 6704,
@@ -260,56 +204,6 @@
       ],
       "rating": 6.8,
       "length": 98
-    },
-    {
-      "name": "Твоё сердце будет разбито",
-      "times": {
-        "15.04": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-04-15T18:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Старшеклассница Полина спасается от травли в новой школе и идёт на сделку с главным хулиганом Барсом: он должен притворяться её парнем и защищать, а она делать всё, что он скажет. В ходе этой игры у пары появляются настоящие чувства, но у её семьи и одноклассников есть причины разлучить влюблённых.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/iGpMm603GUKH2SiXB2S5m4sZ17t.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/1x9e0qWonw634NhIsRdvnneeqvN.jpg",
-      "studio": [
-        {
-          "id": 71928,
-          "logo_path": "/7M6z2jX570P3HzNQULCTjlZcXkB.png",
-          "name": "All Media A Start Company",
-          "origin_country": "RU"
-        },
-        {
-          "id": 114676,
-          "logo_path": "/aVsos0RDN9Ib7H8nW5Vv5kHKykz.png",
-          "name": "START Studio",
-          "origin_country": "RU"
-        },
-        {
-          "id": 13850,
-          "logo_path": "/6KsdcnTIpQ47NHad4EtxOCkB94K.png",
-          "name": "Sverdlovsk Film Studio",
-          "origin_country": "RU"
-        },
-        {
-          "id": 42877,
-          "logo_path": "/15THT1W3NROsbDXPbrcmWFVkrSv.png",
-          "name": "Yellow, Black & White",
-          "origin_country": "RU"
-        },
-        {
-          "id": 119813,
-          "logo_path": "/iyGJzcnWXZoNxYLzZu4jKzxIoFw.png",
-          "name": "Premier Studios",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 7.1,
-      "length": 134
     },
     {
       "name": "Чернобыль. Живая земля",
