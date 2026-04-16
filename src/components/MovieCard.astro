@@ -76,7 +76,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
 <article class="movie-card">
   <div class="poster">
     {movie.poster_link ? (
-      <Image src={movie.poster_link} fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} inferSize={true} class:list={[{ notForKids: movie.age == "18+" }]} />
+      <Image src={movie.poster_link} fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} inferSize={true} class:list={[{/* notForKids: movie.age == "18+" */}]} />
     ) : (
       <Image src={fallback} fetchpriority={loading == "eager" ? "high" : "auto"} alt={movie.name} loading={loading} class:list={[{/* notForKids: movie.age == "18+" */}]} />
     )}
