@@ -1,95 +1,9 @@
 {
-  "updated_at": "2026-04-16T18:27:00.354Z",
+  "updated_at": "2026-04-22T14:45:19.815Z",
   "movies": [
-    {
-      "name": "Золушка. Тайна трёх желаний",
-      "times": {
-        "17.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-17T14:00:00.000Z"
-          }
-        ],
-        "18.04": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-04-18T12:00:00.000Z"
-          }
-        ],
-        "19.04": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-04-19T12:00:00.000Z"
-          }
-        ],
-        "21.04": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-04-21T12:00:00.000Z"
-          }
-        ],
-        "22.04": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-04-22T12:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Жизнь Золушки у мачехи непроста, но она не унывает, ведь у неё есть верный друг по имени Северин. Будучи простым дровосеком, он мечтает прославиться, но однажды находит волшебное дерево, которое превращает его в бурундука. Чтобы снять заклятие, Золушке надо проявить смелость и доброту, а ещё исполнить свою мечту — попасть на королевский бал, чему мешает мачеха.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/8EKvUswdnJETs8ABk05BdfqyXtK.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/8N2R7nD9rZvqdauKFwPC5eNE8zh.jpg",
-      "studio": [
-        {
-          "id": 292574,
-          "logo_path": null,
-          "name": "Арт Анимейшен студио",
-          "origin_country": ""
-        },
-        {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 0,
-      "length": 82
-    },
     {
       "name": "Нормал",
       "times": {
-        "16.04": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-04-16T17:30:00.000Z"
-          }
-        ],
-        "17.04": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-04-17T17:30:00.000Z"
-          }
-        ],
-        "18.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-18T17:00:00.000Z"
-          }
-        ],
-        "19.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-19T17:00:00.000Z"
-          }
-        ],
-        "21.04": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-04-21T17:00:00.000Z"
-          }
-        ],
         "22.04": [
           {
             "time": "20:00",
@@ -101,7 +15,7 @@
       "age": "18+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/1GXYen1mBGlNeIVes6sJHvgLeLC.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/1nHaO4rTv1E6xVJYIMGP9nmLxE9.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/99W7BptqslScAyupDqg9NADLhh1.jpg",
       "studio": [
         {
           "id": 125584,
@@ -140,36 +54,12 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.857,
+      "rating": 7.3,
       "length": 90
     },
     {
       "name": "Супер Марио: Галактическое кино",
       "times": {
-        "17.04": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-04-17T15:30:00.000Z"
-          }
-        ],
-        "18.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-18T15:00:00.000Z"
-          }
-        ],
-        "19.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-19T15:00:00.000Z"
-          }
-        ],
-        "21.04": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-04-21T15:00:00.000Z"
-          }
-        ],
         "22.04": [
           {
             "time": "18:00",
@@ -180,8 +70,8 @@
       "description": "После победы над Боузером и спасения Бруклина Марио сталкивается со злобным альянсом Варио и Боузера-младшего. Теперь вместе со своими друзьями и Йоши он должен помешать их планам по завоеванию мирового господства.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/3NaiRtILh0UV8e64IzTALnqT7hr.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/9Z2uDYXqJrlmePznQQJhL6d92Rq.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/qKKstbeafWIjmZqTwAqt3brDNs1.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg",
       "studio": [
         {
           "id": 6704,
@@ -202,30 +92,12 @@
           "origin_country": "JP"
         }
       ],
-      "rating": 6.8,
+      "rating": 6.745,
       "length": 98
     },
     {
       "name": "Чернобыль. Живая земля",
       "times": {
-        "18.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-18T14:00:00.000Z"
-          }
-        ],
-        "19.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-19T14:00:00.000Z"
-          }
-        ],
-        "21.04": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-04-21T14:00:00.000Z"
-          }
-        ],
         "22.04": [
           {
             "time": "17:00",
