@@ -13,6 +13,7 @@ interface Movie {
   description: string;
   age: string;
   length?: number;
+  price?: string;
   format?: string;
   poster_link: string;
   backdrop_link?: string;
@@ -68,6 +69,7 @@ const scheduleEntries = Object.entries(movie.times)
 
 const durationBadge = formatDurationBadge(movie.length);
 const movieFormat = formatMovieFormat(movie.format);
+const price = movie.price;
 
 // Generate unique ID for description element
 const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
@@ -87,7 +89,8 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
       <h2 class="title">{movie.name}</h2>
       <div class="header-row">
         <span class="age-badge" data-age={movie.age}>{movie.age}</span>
-        {durationBadge && <span class="length-badge">{durationBadge}</span>}
+        {durationBadge && <span class="generic-badge">{durationBadge}</span>}
+        {price && <span class="generic-badge">{price}</span>}
         {movieFormat && <span class="format-badge" data-format={movieFormat}>{movieFormat}</span>}
         {movie.poster_link && movie.poster_link !== "" && (
           <a
@@ -241,7 +244,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
     color: #ffffff;
   }
 
-  .length-badge {
+  .generic-badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
     border-radius: 12px;

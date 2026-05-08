@@ -1,21 +1,9 @@
 {
-  "updated_at": "2026-05-06T15:25:42.454Z",
+  "updated_at": "2026-05-08T09:58:10.429Z",
   "movies": [
     {
       "name": "Бой со зверем",
       "times": {
-        "06.05": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-05-06T16:00:00.000Z"
-          }
-        ],
-        "07.05": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-05-07T17:00:00.000Z"
-          }
-        ],
         "08.05": [
           {
             "time": "20:00",
@@ -91,17 +79,12 @@
         }
       ],
       "rating": 6,
-      "length": 114
+      "length": 114,
+      "price": "8р. 00к."
     },
     {
       "name": "Вверх по волшебному дереву",
       "times": {
-        "07.05": [
-          {
-            "time": "14:10",
-            "timestamp": "2026-05-07T11:10:00.000Z"
-          }
-        ],
         "08.05": [
           {
             "time": "14:30",
@@ -171,17 +154,12 @@
         }
       ],
       "rating": 6.5,
-      "length": 110
+      "length": 110,
+      "price": "7р. 00к."
     },
     {
       "name": "Грузовички",
       "times": {
-        "07.05": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-05-07T09:00:00.000Z"
-          }
-        ],
         "08.05": [
           {
             "time": "12:30",
@@ -227,17 +205,12 @@
         }
       ],
       "rating": 0,
-      "length": 0
+      "length": 0,
+      "price": "7р. 00к."
     },
     {
       "name": "Дьявол носит Prada 2",
       "times": {
-        "07.05": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-05-07T15:00:00.000Z"
-          }
-        ],
         "08.05": [
           {
             "time": "18:00",
@@ -288,98 +261,13 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.735,
-      "length": 119
-    },
-    {
-      "name": "Мститель",
-      "times": {
-        "06.05": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-05-06T18:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Спецагент Никки пробуждается на заброшенном заводе. Её дочь похищена, под ребром торчит нож, а выход преграждают лучшие головорезы огромного криминального синдиката. Её путь мести начинается здесь, и она не остановится, пока девочка не будет спасена.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/cRoXzC5GlHRoTThkFOkyQ5ciTTs.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/uQmr1eJvNwa7mCd3rXEXquA6Z3c.jpg",
-      "studio": [
-        {
-          "id": 262304,
-          "logo_path": null,
-          "name": "Aanaxion Studio",
-          "origin_country": ""
-        },
-        {
-          "id": 178359,
-          "logo_path": "/8Vir3jz2OMrcLFdcpRAg6LQixJp.png",
-          "name": "828 Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 121204,
-          "logo_path": "/vbtvY4IxgUZk713rkmoTO4MHIac.png",
-          "name": "BondIt Media Capital",
-          "origin_country": "US"
-        },
-        {
-          "id": 231386,
-          "logo_path": "/4WS75ndvhPMm7Rj2RFZnFYwBS2o.png",
-          "name": "Magenta Light Studios",
-          "origin_country": "US"
-        },
-        {
-          "id": 296687,
-          "logo_path": null,
-          "name": "Blossom Studio",
-          "origin_country": ""
-        },
-        {
-          "id": 296688,
-          "logo_path": null,
-          "name": "Allbarun Company",
-          "origin_country": ""
-        },
-        {
-          "id": 65649,
-          "logo_path": "/tXTuZTEcYYB1hIyAAwDyhZE0f7c.png",
-          "name": "SSS Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 274597,
-          "logo_path": "/1lQEAVqHhBzlRQJ1XwFKhX8YYpz.png",
-          "name": "American Picture House Corporation",
-          "origin_country": "US"
-        },
-        {
-          "id": 137373,
-          "logo_path": "/4OzujMDSLnAm7I0BCPL1D6RIoJ4.png",
-          "name": "CaliWood Pictures",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.388,
-      "length": 90
+      "rating": 6.761,
+      "length": 119,
+      "price": "8р. 00к."
     },
     {
       "name": "Одно на двоих",
       "times": {
-        "06.05": [
-          {
-            "time": "17:30",
-            "timestamp": "2026-05-06T14:30:00.000Z"
-          }
-        ],
-        "07.05": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-05-07T13:00:00.000Z"
-          }
-        ],
         "08.05": [
           {
             "time": "16:30",
