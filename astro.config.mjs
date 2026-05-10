@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import { writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +20,16 @@ export default defineConfig({
   integrations: [
     sitemap({
       lastmod: new Date("2026-04-16T18:27:00.354Z")
-    })
+    }),
+    {
+      name: "add indexnow file",
+      hooks: {
+        "astro:build:done": async ({ dir }) => {
+          if (process.env.INDEXNOW) {
+            await writeFile(join(dir.pathname, process.env.INDEXNOW + ".txt"), process.env.INDEXNOW)
+          }
+        }
+      }
+    }
   ]
 });
