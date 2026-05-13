@@ -14,7 +14,10 @@ export default defineConfig({
   },
 
   image: {
-      domains: ["image.tmdb.org"]
+      domains: [
+        "image.tmdb.org",
+        "kinoteatr.megamag.by"
+      ]
   },
 
   integrations: [
