@@ -1,62 +1,6 @@
 {
-  "updated_at": "2026-05-13T15:42:02.047Z",
+  "updated_at": "2026-05-13T17:41:49.953Z",
   "movies": [
-    {
-      "name": "Бой со зверем",
-      "times": {
-        "13.05": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-05-13T17:30:00.000Z"
-          }
-        ]
-      },
-      "description": "После долгих лет вдали от октагона бывший чемпион MMA Пэттон Джеймс вынужден вернуться в большой спорт, чтобы отомстить за брата Мэлона. Воссоединившись с тренером Сэмми, который когда-то сделал его легендой, он решается на последний бой — жестокую схватку с действующим чемпионом Ксавьером Грау, готовым на глазах у всего мира уничтожить Стоуна. Доведённый до предела, Пэттон понимает: на кону стоит не только его жизнь, но и его наследие.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/jazhffqHI1Uob6mzERAH5isKe2W.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/hlZGaey4lR9hc4rGxZRAmIEsZOc.jpg",
-      "studio": [
-        {
-          "id": 174474,
-          "logo_path": null,
-          "name": "Broken Open Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 126370,
-          "logo_path": null,
-          "name": "Deeper Water Films",
-          "origin_country": "AU"
-        },
-        {
-          "id": 159449,
-          "logo_path": null,
-          "name": "Black Pearl Productions",
-          "origin_country": ""
-        },
-        {
-          "id": 77479,
-          "logo_path": null,
-          "name": "Storm Alley Entertainment",
-          "origin_country": "AU"
-        },
-        {
-          "id": 1632,
-          "logo_path": "/cisLn1YAUuptXVBa0xjq7ST9cH0.png",
-          "name": "Lionsgate",
-          "origin_country": "US"
-        },
-        {
-          "id": 3604,
-          "logo_path": "/jC6Hk3ZyNRlVPJsA0xGlAhgd2RP.png",
-          "name": "Grindstone Entertainment Group",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.763,
-      "length": 114
-    },
     {
       "name": "Вверх по волшебному дереву",
       "times": {
@@ -135,17 +79,12 @@
         }
       ],
       "rating": 6.5,
-      "length": 110
+      "length": 110,
+      "price": "7р. 00к."
     },
     {
       "name": "Дьявол носит Prada 2",
       "times": {
-        "13.05": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-05-13T15:30:00.000Z"
-          }
-        ],
         "14.05": [
           {
             "time": "16:00",
@@ -196,7 +135,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.8,
+      "rating": 6.754,
       "length": 119
     },
     {
@@ -277,7 +216,8 @@
         }
       ],
       "rating": 7.083,
-      "length": 116
+      "length": 116,
+      "price": "8р. 00к."
     },
     {
       "name": "Одно на двоих",
@@ -304,11 +244,12 @@
       "description": "Сюжет основан на реальной трагедии, произошедшей 19 мая 2021 года под Барановичами. Во время учебно-тренировочного полета на самолете Як-130 произошла техническая неисправность. Летчики до последнего пытались увести падающую машину от жилых домов. Несмотря на многократные команды диспетчера катапультироваться, экипаж принял решение остаться в кабине, чтобы направить самолет на единственный свободный клочок земли между зданиями. Пилоты погибли, не допустив жертв среди мирного населения.",
       "age": "12+",
       "format": "2D",
-      "poster_link": "",
+      "poster_link": "http://kinoteatr.megamag.by/images/categories_sec/odno_na_dvoih_6.jpg",
       "backdrop_link": "",
       "studio": [],
       "rating": 0,
-      "length": 0
+      "length": 0,
+      "price": "7р. 00к."
     },
     {
       "name": "Опасные отношения",
@@ -376,7 +317,8 @@
         }
       ],
       "rating": 6.4,
-      "length": 105
+      "length": 105,
+      "price": "8р. 00к."
     }
   ]
 }
