@@ -1,33 +1,9 @@
 {
-  "updated_at": "2026-05-08T09:58:10.429Z",
+  "updated_at": "2026-05-13T14:25:39.888Z",
   "movies": [
     {
       "name": "Бой со зверем",
       "times": {
-        "08.05": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-05-08T17:00:00.000Z"
-          }
-        ],
-        "09.05": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-05-09T15:00:00.000Z"
-          }
-        ],
-        "10.05": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-05-10T17:00:00.000Z"
-          }
-        ],
-        "12.05": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-05-12T15:00:00.000Z"
-          }
-        ],
         "13.05": [
           {
             "time": "20:30",
@@ -38,7 +14,7 @@
       "description": "После долгих лет вдали от октагона бывший чемпион MMA Пэттон Джеймс вынужден вернуться в большой спорт, чтобы отомстить за брата Мэлона. Воссоединившись с тренером Сэмми, который когда-то сделал его легендой, он решается на последний бой — жестокую схватку с действующим чемпионом Ксавьером Грау, готовым на глазах у всего мира уничтожить Стоуна. Доведённый до предела, Пэттон понимает: на кону стоит не только его жизнь, но и его наследие.",
       "age": "18+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/uTISZWUVUUU6npz6U7RtWXn1zbe.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/jazhffqHI1Uob6mzERAH5isKe2W.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/hlZGaey4lR9hc4rGxZRAmIEsZOc.jpg",
       "studio": [
         {
@@ -78,41 +54,46 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6,
-      "length": 114,
-      "price": "8р. 00к."
+      "rating": 6.763,
+      "length": 114
     },
     {
       "name": "Вверх по волшебному дереву",
       "times": {
-        "08.05": [
+        "14.05": [
           {
-            "time": "14:30",
-            "timestamp": "2026-05-08T11:30:00.000Z"
+            "time": "12:00",
+            "timestamp": "2026-05-14T09:00:00.000Z"
           }
         ],
-        "09.05": [
+        "15.05": [
           {
-            "time": "14:30",
-            "timestamp": "2026-05-09T11:30:00.000Z"
+            "time": "11:00",
+            "timestamp": "2026-05-15T08:00:00.000Z"
           }
         ],
-        "10.05": [
+        "16.05": [
           {
-            "time": "14:30",
-            "timestamp": "2026-05-10T11:30:00.000Z"
+            "time": "12:00",
+            "timestamp": "2026-05-16T09:00:00.000Z"
           }
         ],
-        "12.05": [
+        "17.05": [
           {
-            "time": "14:30",
-            "timestamp": "2026-05-12T11:30:00.000Z"
+            "time": "12:00",
+            "timestamp": "2026-05-17T09:00:00.000Z"
           }
         ],
-        "13.05": [
+        "19.05": [
           {
-            "time": "15:00",
-            "timestamp": "2026-05-13T12:00:00.000Z"
+            "time": "11:00",
+            "timestamp": "2026-05-19T08:00:00.000Z"
+          }
+        ],
+        "20.05": [
+          {
+            "time": "12:00",
+            "timestamp": "2026-05-20T09:00:00.000Z"
           }
         ]
       },
@@ -154,91 +135,45 @@
         }
       ],
       "rating": 6.5,
-      "length": 110,
-      "price": "7р. 00к."
-    },
-    {
-      "name": "Грузовички",
-      "times": {
-        "08.05": [
-          {
-            "time": "12:30",
-            "timestamp": "2026-05-08T09:30:00.000Z"
-          }
-        ],
-        "09.05": [
-          {
-            "time": "12:30",
-            "timestamp": "2026-05-09T09:30:00.000Z"
-          }
-        ],
-        "10.05": [
-          {
-            "time": "12:30",
-            "timestamp": "2026-05-10T09:30:00.000Z"
-          }
-        ],
-        "12.05": [
-          {
-            "time": "12:30",
-            "timestamp": "2026-05-12T09:30:00.000Z"
-          }
-        ]
-      },
-      "description": "Грузовичок-подросток Саня, всю жизнь проработавший в карьере с родителями, случайно знакомится с городскими жителями: еще одним грузовичком и поливальной машиной. Новые знакомства открывают перед Саней огромный удивительный мир за пределами карьера, на который неожиданно надвигается серьезная угроза — проснувшийся вулкан в горах. Теперь Сане и его друзьям предстоит придумать, как победить стихию и убедить всех грузовичков объединиться, пока не стало слишком поздно.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/gZEsqVJVyTAJN4prA5PrW1xQJxJ.jpg",
-      "backdrop_link": "",
-      "studio": [
-        {
-          "id": 205601,
-          "logo_path": null,
-          "name": "Forpost Production",
-          "origin_country": "RU"
-        },
-        {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 0,
-      "length": 0,
-      "price": "7р. 00к."
+      "length": 110
     },
     {
       "name": "Дьявол носит Prada 2",
       "times": {
-        "08.05": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-05-08T15:00:00.000Z"
-          }
-        ],
-        "09.05": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-05-09T17:00:00.000Z"
-          }
-        ],
-        "10.05": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-05-10T15:00:00.000Z"
-          }
-        ],
-        "12.05": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-05-12T17:00:00.000Z"
-          }
-        ],
         "13.05": [
           {
             "time": "18:30",
             "timestamp": "2026-05-13T15:30:00.000Z"
+          }
+        ],
+        "14.05": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-05-14T13:00:00.000Z"
+          }
+        ],
+        "15.05": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-05-15T14:00:00.000Z"
+          }
+        ],
+        "16.05": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-05-16T13:00:00.000Z"
+          }
+        ],
+        "17.05": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-05-17T13:00:00.000Z"
+          }
+        ],
+        "19.05": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-05-19T10:00:00.000Z"
           }
         ]
       },
@@ -261,41 +196,114 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.761,
-      "length": 119,
-      "price": "8р. 00к."
+      "rating": 6.8,
+      "length": 119
+    },
+    {
+      "name": "Мортал Комбат 2",
+      "times": {
+        "14.05": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-05-14T15:00:00.000Z"
+          }
+        ],
+        "15.05": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-05-15T16:00:00.000Z"
+          }
+        ],
+        "16.05": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-05-16T17:00:00.000Z"
+          }
+        ],
+        "17.05": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-05-17T15:00:00.000Z"
+          }
+        ],
+        "19.05": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-05-19T17:00:00.000Z"
+          }
+        ],
+        "20.05": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-05-20T17:30:00.000Z"
+          }
+        ]
+      },
+      "description": "Чемпионы Земного царства вместе с Джонни Кейджем вступают в схватку друг с другом, чтобы предотвратить тёмное правление Шао Кана.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/4WgJ5Dk0JhPdCdJkwHNVyJyQYdH.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/4EAAwpylq313qrDqpCxulUrXBNF.jpg",
+      "studio": [
+        {
+          "id": 12,
+          "logo_path": "/2ycs64eqV5rqKYHyQK0GVoKGvfX.png",
+          "name": "New Line Cinema",
+          "origin_country": "US"
+        },
+        {
+          "id": 76907,
+          "logo_path": "/ygMQtjsKX7BZkCQhQZY82lgnCUO.png",
+          "name": "Atomic Monster",
+          "origin_country": "US"
+        },
+        {
+          "id": 8000,
+          "logo_path": "/f8NwLg72BByt3eav7lX1lcJfe60.png",
+          "name": "Broken Road Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 252367,
+          "logo_path": null,
+          "name": "Fireside Films",
+          "origin_country": "US"
+        },
+        {
+          "id": 216687,
+          "logo_path": "/kKVYqekveOvLK1IgqdJojLjQvtu.png",
+          "name": "Domain Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 7.083,
+      "length": 116
     },
     {
       "name": "Одно на двоих",
       "times": {
-        "08.05": [
-          {
-            "time": "16:30",
-            "timestamp": "2026-05-08T13:30:00.000Z"
-          }
-        ],
-        "09.05": [
-          {
-            "time": "16:30",
-            "timestamp": "2026-05-09T13:30:00.000Z"
-          }
-        ],
-        "10.05": [
-          {
-            "time": "16:30",
-            "timestamp": "2026-05-10T13:30:00.000Z"
-          }
-        ],
-        "12.05": [
-          {
-            "time": "16:30",
-            "timestamp": "2026-05-12T13:30:00.000Z"
-          }
-        ],
         "13.05": [
           {
             "time": "17:00",
             "timestamp": "2026-05-13T14:00:00.000Z"
+          }
+        ],
+        "14.05": [
+          {
+            "time": "14:30",
+            "timestamp": "2026-05-14T11:30:00.000Z"
+          }
+        ],
+        "16.05": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-05-16T11:00:00.000Z"
+          }
+        ],
+        "17.05": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-05-17T11:00:00.000Z"
           }
         ]
       },
@@ -307,6 +315,74 @@
       "studio": [],
       "rating": 0,
       "length": 0
+    },
+    {
+      "name": "Опасные отношения",
+      "times": {
+        "14.05": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-05-14T17:00:00.000Z"
+          }
+        ],
+        "15.05": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-05-15T18:00:00.000Z"
+          }
+        ],
+        "16.05": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-05-16T15:00:00.000Z"
+          }
+        ],
+        "17.05": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-05-17T17:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Семейная пара приезжает на уикенд в коттедж у живописного озера, чтобы наладить натянутые отношения. Но планы портят непрошеные и очень опасные гости, которые проникают в их дом. Чтобы выжить, ребятам придется не просто найти общий язык, но и впервые по-настоящему узнать друг друга.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/sKeUDlzJTPjOqzQ8KzLDGzfDnUn.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/j4jmAkT8Ui4bq5z7eRoGVEc5r8Y.jpg",
+      "studio": [
+        {
+          "id": 121470,
+          "logo_path": "/zvJFu1C6gB80A98n6IGXBvMtgVl.png",
+          "name": "87North Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 12142,
+          "logo_path": "/rPnEeMwxjI6rYMGqkWqIWwIJXxi.png",
+          "name": "XYZ Films",
+          "origin_country": "US"
+        },
+        {
+          "id": 98438,
+          "logo_path": "/cjkuW0QeX3hcUUBkZFFCiYmZvcr.png",
+          "name": "74 Entertainment",
+          "origin_country": "NO"
+        },
+        {
+          "id": 142269,
+          "logo_path": "/ggrWFqk5mPMks0vE3aCy3l9e0dv.png",
+          "name": "IPR.VC",
+          "origin_country": "FI"
+        },
+        {
+          "id": 289751,
+          "logo_path": null,
+          "name": "The Trip Productions",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 6.4,
+      "length": 105
     }
   ]
 }
