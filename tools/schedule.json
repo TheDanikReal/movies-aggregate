@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-20T16:01:22.306Z",
+  "updated_at": "2026-05-20T16:23:25.511Z",
   "movies": [
     {
       "name": "Богатыри",
@@ -140,7 +140,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.939,
+      "rating": 6.931,
       "length": 116
     },
     {
