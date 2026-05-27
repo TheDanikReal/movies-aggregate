@@ -21,7 +21,7 @@ type MovieSchedule = {
   studio: ProductionCompany[];
   rating: number;
   length: number;
-  price: string;
+  price?: string;
 };
 
 type ScheduleOutput = {
@@ -35,7 +35,7 @@ type MovieAccumulator = {
   format: string;
   description: string;
   times: Map<string, Map<string, Showtime>>;
-  firstSeanceUrl: string;
+  seanceUrls: Set<string>;
 };
 
 const tmdbToken = process.env["TMDB_TOKEN"]
@@ -162,7 +162,7 @@ const ensureMovie = (
     format: "",
     description: "",
     times: new Map(),
-    firstSeanceUrl: "",
+    seanceUrls: new Set(),
   };
 
   map.set(movieName, created);
@@ -229,15 +229,12 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
         break;
       }
 
-      if (!movie.firstSeanceUrl) {
-        const seanceHref = $current
-          .find('a[href*="seance.php"]')
-          .first()
-          .attr('href');
+      $current.find('a[href*="seance.php"]').each((_, link) => {
+        const seanceHref = $(link).attr('href');
         if (seanceHref) {
-          movie.firstSeanceUrl = seanceHref;
+          movie.seanceUrls.add(seanceHref);
         }
-      }
+      });
 
       // Look for date/time rows in nested tables
       $current.find('td.main[width="195"]').each((_, dateCell) => {
@@ -312,6 +309,32 @@ const fetchSeancePrice = async (seanceUrl: string): Promise<string> => {
   }
 };
 
+const fetchConsistentSeancePrice = async (
+  movieName: string,
+  seanceUrls: Set<string>,
+): Promise<string> => {
+  const urls = [...seanceUrls];
+  if (urls.length === 0) return "";
+
+  console.log(`Fetching prices for "${movieName}"...`);
+  const prices = await Promise.all(
+    urls.map(async (url) => fetchSeancePrice(url)),
+  );
+
+  if (prices.some((price) => !price)) {
+    console.warn(`Missing price for "${movieName}", skipping price field.`);
+    return "";
+  }
+
+  const uniquePrices = new Set(prices);
+  if (uniquePrices.size !== 1) {
+    console.warn(`Multiple prices for "${movieName}", skipping price field.`);
+    return "";
+  }
+
+  return prices[0] ?? "";
+};
+
 const main = async (): Promise<void> => {
   const html = await readFile(INPUT_PATH, "utf-8");
   const moviesMap = new Map<string, MovieAccumulator>();
@@ -330,11 +353,7 @@ const main = async (): Promise<void> => {
         }),
     );
 
-    let price = "";
-    if (movie.firstSeanceUrl) {
-      console.log(`Fetching price for "${movie.name}"...`);
-      price = await fetchSeancePrice(movie.firstSeanceUrl);
-    }
+    const price = await fetchConsistentSeancePrice(movie.name, movie.seanceUrls);
 
     console.log(`Fetching metadata for "${movie.name}"...`);
     const { poster, backdrop, studio, rating, length } = await fetchMovieMetadata(movie.name);
@@ -350,7 +369,7 @@ const main = async (): Promise<void> => {
       studio,
       rating,
       length,
-      price
+      ...(price ? { price } : {}),
     });
   }
 

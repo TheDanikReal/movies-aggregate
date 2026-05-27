@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-27T16:34:44.558Z",
+  "updated_at": "2026-05-27T19:26:33.907Z",
   "movies": [
     {
       "name": "Богатыри",
@@ -111,7 +111,8 @@
         }
       ],
       "rating": 0,
-      "length": 0
+      "length": 0,
+      "price": "7р. 00к."
     },
     {
       "name": "Мандалорец и Грогу",
@@ -172,58 +173,9 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.775,
-      "length": 132
-    },
-    {
-      "name": "Мортал Комбат 2",
-      "times": {
-        "27.05": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-05-27T18:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Чемпионы Земного царства вместе с Джонни Кейджем вступают в схватку друг с другом, чтобы предотвратить тёмное правление Шао Кана.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/4WgJ5Dk0JhPdCdJkwHNVyJyQYdH.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/4EAAwpylq313qrDqpCxulUrXBNF.jpg",
-      "studio": [
-        {
-          "id": 12,
-          "logo_path": "/2ycs64eqV5rqKYHyQK0GVoKGvfX.png",
-          "name": "New Line Cinema",
-          "origin_country": "US"
-        },
-        {
-          "id": 76907,
-          "logo_path": "/ygMQtjsKX7BZkCQhQZY82lgnCUO.png",
-          "name": "Atomic Monster",
-          "origin_country": "US"
-        },
-        {
-          "id": 8000,
-          "logo_path": "/f8NwLg72BByt3eav7lX1lcJfe60.png",
-          "name": "Broken Road Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 252367,
-          "logo_path": null,
-          "name": "Fireside Films",
-          "origin_country": "US"
-        },
-        {
-          "id": 216687,
-          "logo_path": "/kKVYqekveOvLK1IgqdJojLjQvtu.png",
-          "name": "Domain Entertainment",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.801,
-      "length": 116
+      "rating": 6.8,
+      "length": 132,
+      "price": "10р. 00к."
     }
   ]
 }
