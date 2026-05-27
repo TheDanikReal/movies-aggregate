@@ -21,6 +21,7 @@ type MovieSchedule = {
   studio: ProductionCompany[];
   rating: number;
   length: number;
+  price: string;
 };
 
 type ScheduleOutput = {
@@ -34,6 +35,7 @@ type MovieAccumulator = {
   format: string;
   description: string;
   times: Map<string, Map<string, Showtime>>;
+  firstSeanceUrl: string;
 };
 
 const tmdbToken = process.env["TMDB_TOKEN"]
@@ -160,6 +162,7 @@ const ensureMovie = (
     format: "",
     description: "",
     times: new Map(),
+    firstSeanceUrl: "",
   };
 
   map.set(movieName, created);
@@ -226,6 +229,16 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
         break;
       }
 
+      if (!movie.firstSeanceUrl) {
+        const seanceHref = $current
+          .find('a[href*="seance.php"]')
+          .first()
+          .attr('href');
+        if (seanceHref) {
+          movie.firstSeanceUrl = seanceHref;
+        }
+      }
+
       // Look for date/time rows in nested tables
       $current.find('td.main[width="195"]').each((_, dateCell) => {
         const $dateCell = $(dateCell);
@@ -273,6 +286,32 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
   return { poster: '', backdrop: '', studio: [], rating: 0, length: 0 };
 };
 
+const fetchSeancePrice = async (seanceUrl: string): Promise<string> => {
+  try {
+    const response = await fetch(seanceUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; KinoslonBot/1.0)"
+      }
+    });
+
+    if (!response.ok) {
+      console.warn(`Failed to fetch seance page "${seanceUrl}": ${response.status} ${response.statusText}`);
+      return "";
+    }
+
+    const html = await response.text();
+    const $ = cheerio.load(html);
+    const priceDisplay = $('div.hall-info__story-descr[data-price-display]')
+      .first()
+      .attr('data-price-display');
+
+    return priceDisplay ? normalizeText(priceDisplay) : "";
+  } catch (error) {
+    console.error(`Failed to fetch seance price from "${seanceUrl}":`, error);
+    return "";
+  }
+};
+
 const main = async (): Promise<void> => {
   const html = await readFile(INPUT_PATH, "utf-8");
   const moviesMap = new Map<string, MovieAccumulator>();
@@ -291,6 +330,12 @@ const main = async (): Promise<void> => {
         }),
     );
 
+    let price = "";
+    if (movie.firstSeanceUrl) {
+      console.log(`Fetching price for "${movie.name}"...`);
+      price = await fetchSeancePrice(movie.firstSeanceUrl);
+    }
+
     console.log(`Fetching metadata for "${movie.name}"...`);
     const { poster, backdrop, studio, rating, length } = await fetchMovieMetadata(movie.name);
 
@@ -304,7 +349,8 @@ const main = async (): Promise<void> => {
       backdrop_link: backdrop,
       studio,
       rating,
-      length
+      length,
+      price
     });
   }
 
