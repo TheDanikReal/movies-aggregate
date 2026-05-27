@@ -1,43 +1,37 @@
 {
-  "updated_at": "2026-05-20T16:23:25.511Z",
+  "updated_at": "2026-05-27T14:26:51.450Z",
   "movies": [
     {
       "name": "Богатыри",
       "times": {
-        "21.05": [
+        "02.06": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-06-02T17:30:00.000Z"
+          }
+        ],
+        "03.06": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-06-03T17:30:00.000Z"
+          }
+        ],
+        "28.05": [
           {
             "time": "12:00",
-            "timestamp": "2026-05-21T09:00:00.000Z"
+            "timestamp": "2026-05-28T09:00:00.000Z"
           }
         ],
-        "22.05": [
+        "29.05": [
           {
             "time": "12:00",
-            "timestamp": "2026-05-22T09:00:00.000Z"
+            "timestamp": "2026-05-29T09:00:00.000Z"
           }
         ],
-        "23.05": [
+        "30.05": [
           {
-            "time": "12:00",
-            "timestamp": "2026-05-23T09:00:00.000Z"
-          }
-        ],
-        "24.05": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-05-24T13:00:00.000Z"
-          }
-        ],
-        "26.05": [
-          {
-            "time": "14:30",
-            "timestamp": "2026-05-26T11:30:00.000Z"
-          }
-        ],
-        "27.05": [
-          {
-            "time": "14:30",
-            "timestamp": "2026-05-27T11:30:00.000Z"
+            "time": "13:00",
+            "timestamp": "2026-05-30T10:00:00.000Z"
           }
         ]
       },
@@ -58,44 +52,132 @@
       "length": 0
     },
     {
-      "name": "Мортал Комбат 2",
+      "name": "Кощей. Тайна живой воды",
       "times": {
-        "20.05": [
+        "02.06": [
           {
-            "time": "20:30",
-            "timestamp": "2026-05-20T17:30:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-06-02T13:00:00.000Z"
           }
         ],
-        "21.05": [
+        "03.06": [
           {
-            "time": "18:30",
-            "timestamp": "2026-05-21T15:30:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-06-03T13:00:00.000Z"
           }
         ],
-        "22.05": [
+        "28.05": [
           {
-            "time": "21:00",
-            "timestamp": "2026-05-22T18:00:00.000Z"
+            "time": "14:30",
+            "timestamp": "2026-05-28T11:30:00.000Z"
           }
         ],
-        "23.05": [
+        "29.05": [
           {
-            "time": "21:00",
-            "timestamp": "2026-05-23T18:00:00.000Z"
+            "time": "14:30",
+            "timestamp": "2026-05-29T11:30:00.000Z"
           }
         ],
-        "24.05": [
+        "30.05": [
+          {
+            "time": "11:30",
+            "timestamp": "2026-05-30T08:30:00.000Z"
+          }
+        ]
+      },
+      "description": "Целых триста лет Кощеевых поисков избранницы наконец увенчались успехом, и приготовления к свадьбе с Варварой идут полным ходом. Однако так просто его заветная мечта не исполнится, и вот уже Кощей вместе с Добрым молодцем Елисеем и Колобком отправляется в опасное путешествие, чтобы спасти любимую.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/51Glu0XK3Mj3h3CRa3D8JzUywCL.jpg",
+      "backdrop_link": "",
+      "studio": [
+        {
+          "id": 21384,
+          "logo_path": null,
+          "name": "KinoAtis",
+          "origin_country": "RU"
+        },
+        {
+          "id": 318,
+          "logo_path": "/q0UG4oZERwIywJdDPF4lRlvdYGW.png",
+          "name": "CTB Film Company",
+          "origin_country": "RU"
+        },
+        {
+          "id": 76049,
+          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
+          "name": "Cinema Foundation of Russia",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 0
+    },
+    {
+      "name": "Мандалорец и Грогу",
+      "times": {
+        "02.06": [
           {
             "time": "18:00",
-            "timestamp": "2026-05-24T15:00:00.000Z"
+            "timestamp": "2026-06-02T15:00:00.000Z"
           }
         ],
-        "26.05": [
+        "03.06": [
           {
-            "time": "20:00",
-            "timestamp": "2026-05-26T17:00:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-06-03T15:00:00.000Z"
           }
         ],
+        "28.05": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-05-28T18:00:00.000Z"
+          }
+        ],
+        "29.05": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-05-29T18:00:00.000Z"
+          }
+        ],
+        "30.05": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-05-30T18:00:00.000Z"
+          }
+        ],
+        "31.05": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-05-31T18:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Империя пала, но её военачальники всё ещё держат под своим контролем части галактики. Зарождающаяся Новая Республика пытается защитить идеалы, за которые сражались повстанцы, и нанимает для задания мандалорца Дина Джарина, известного охотника за головами, и его юного ученика Грогу.",
+      "age": "16+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/yWPrjlrV9R0eXwBrCvbM95oiepd.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/7OedxK0BvSKJ0ZWCPRYADViTBx6.jpg",
+      "studio": [
+        {
+          "id": 1,
+          "logo_path": "/tlVSws0RvvtPBwViUyOFAO0vcQS.png",
+          "name": "Lucasfilm Ltd.",
+          "origin_country": "US"
+        },
+        {
+          "id": 7297,
+          "logo_path": "/l29JYQVZbTcjZXoz4CUYFpKRmM3.png",
+          "name": "Fairview Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 6.8,
+      "length": 132
+    },
+    {
+      "name": "Мортал Комбат 2",
+      "times": {
         "27.05": [
           {
             "time": "21:00",
@@ -140,82 +222,8 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.931,
+      "rating": 6.807,
       "length": 116
-    },
-    {
-      "name": "Опасные отношения",
-      "times": {
-        "21.05": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-05-21T17:30:00.000Z"
-          }
-        ],
-        "22.05": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-05-22T11:00:00.000Z"
-          }
-        ],
-        "24.05": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-05-24T17:00:00.000Z"
-          }
-        ],
-        "26.05": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-05-26T13:00:00.000Z"
-          }
-        ],
-        "27.05": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-05-27T13:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Семейная пара приезжает на уикенд в коттедж у живописного озера, чтобы наладить натянутые отношения. Но планы портят непрошеные и очень опасные гости, которые проникают в их дом. Чтобы выжить, ребятам придется не просто найти общий язык, но и впервые по-настоящему узнать друг друга.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/sKeUDlzJTPjOqzQ8KzLDGzfDnUn.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/j4jmAkT8Ui4bq5z7eRoGVEc5r8Y.jpg",
-      "studio": [
-        {
-          "id": 121470,
-          "logo_path": "/zvJFu1C6gB80A98n6IGXBvMtgVl.png",
-          "name": "87North Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 12142,
-          "logo_path": "/rPnEeMwxjI6rYMGqkWqIWwIJXxi.png",
-          "name": "XYZ Films",
-          "origin_country": "US"
-        },
-        {
-          "id": 98438,
-          "logo_path": "/cjkuW0QeX3hcUUBkZFFCiYmZvcr.png",
-          "name": "74 Entertainment",
-          "origin_country": "NO"
-        },
-        {
-          "id": 142269,
-          "logo_path": "/ggrWFqk5mPMks0vE3aCy3l9e0dv.png",
-          "name": "IPR.VC",
-          "origin_country": "FI"
-        },
-        {
-          "id": 289751,
-          "logo_path": null,
-          "name": "The Trip Productions",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.4,
-      "length": 105
     }
   ]
 }
