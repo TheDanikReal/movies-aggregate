@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-27T19:26:33.907Z",
+  "updated_at": "2026-05-29T12:11:13.657Z",
   "movies": [
     {
       "name": "Богатыри",
@@ -14,18 +14,6 @@
           {
             "time": "20:30",
             "timestamp": "2026-06-03T17:30:00.000Z"
-          }
-        ],
-        "28.05": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-05-28T09:00:00.000Z"
-          }
-        ],
-        "29.05": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-05-29T09:00:00.000Z"
           }
         ],
         "30.05": [
@@ -64,12 +52,6 @@
           {
             "time": "16:00",
             "timestamp": "2026-06-03T13:00:00.000Z"
-          }
-        ],
-        "28.05": [
-          {
-            "time": "14:30",
-            "timestamp": "2026-05-28T11:30:00.000Z"
           }
         ],
         "29.05": [
@@ -129,12 +111,6 @@
             "timestamp": "2026-06-03T15:00:00.000Z"
           }
         ],
-        "28.05": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-05-28T18:00:00.000Z"
-          }
-        ],
         "29.05": [
           {
             "time": "21:00",
@@ -158,7 +134,7 @@
       "age": "16+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/yWPrjlrV9R0eXwBrCvbM95oiepd.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/7OedxK0BvSKJ0ZWCPRYADViTBx6.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/4VrLojD6Gl1HQkcDHAoHQjSDPh9.jpg",
       "studio": [
         {
           "id": 1,

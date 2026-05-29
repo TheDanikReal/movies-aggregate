@@ -21,7 +21,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      lastmod: new Date("2026-05-13T17:41:49.953Z")
+      lastmod: new Date("2026-05-29T15:11:49.953Z")
     }),
     {
       name: "add indexnow file",
