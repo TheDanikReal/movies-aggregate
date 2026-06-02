@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Спасибо за отправку отзыва!" noIndex={true}>
+  <main class="thank-you">
+    <div class="card">
+      <h1>Спасибо за отзыв!</h1>
+      <a class="home-button" href="/">Вернуться на главную</a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .thank-you {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .card {
+    width: min(28rem, 100%);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .card h1 {
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .home-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #111;
+    text-decoration: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.6rem;
+    font-weight: 700;
+  }
+</style>

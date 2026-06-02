@@ -11,7 +11,13 @@ const { text, choices } = Astro.props;
   <details class="feedback-details" open>
     <summary class="feedback-toggle">Быстрый отзыв</summary>
 
-    <form class="feedback-form" name="feedback-fast" method="POST" netlify>
+    <form
+      class="feedback-form"
+      name="feedback-fast"
+      action="/thanks"
+      method="POST"
+      netlify
+    >
       <input type="hidden" name="form-name" value="feedback-fast" />
       <input type="hidden" name="question" value={text} />
 
@@ -19,15 +25,23 @@ const { text, choices } = Astro.props;
 
       <fieldset class="feedback-choices">
         <legend class="sr-only">Выберите вариант ответа</legend>
-        {choices.map((choice, index) => {
-          const id = `feedback-choice-${index}`;
-          return (
-            <label class="choice-option" for={id}>
-              <input id={id} type="radio" name="choice" value={choice} required={index === 0} />
-              <span>{choice}</span>
-            </label>
-          );
-        })}
+        {
+          choices.map((choice, index) => {
+            const id = `feedback-choice-${index}`;
+            return (
+              <label class="choice-option" for={id}>
+                <input
+                  id={id}
+                  type="radio"
+                  name="choice"
+                  value={choice}
+                  required={index === 0}
+                />
+                <span>{choice}</span>
+              </label>
+            );
+          })
+        }
       </fieldset>
 
       <button type="submit">Отправить</button>

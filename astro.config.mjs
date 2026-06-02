@@ -21,7 +21,10 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      lastmod: new Date("2026-05-29T15:11:49.953Z")
+      lastmod: new Date("2026-05-29T15:11:49.953Z"),
+      filter: (page) => {
+        return page !== "https://kinoslon.netlify.app/thanks/"
+      }
     }),
     {
       name: "add indexnow file",

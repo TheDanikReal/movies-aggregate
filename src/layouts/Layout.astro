@@ -4,9 +4,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  noIndex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noIndex = false } = Astro.props;
 const defaultDescription = "КиноСлон - расписание кинотеатра в Слониме с удобным просмотром на телефоне, РДК Слоним, кино в Слониме. Актуальная афиша фильмов Слонимского центра культуры.";
 const pageDescription = description || defaultDescription;
 ---
@@ -22,7 +23,8 @@ const pageDescription = description || defaultDescription;
     <meta name="description" content={pageDescription} />
     <meta name="keywords" content="кинотеатр слоним, рдк слоним, кино в слониме, слонимский центр культуры, расписание кино слоним, афиша слоним, фильмы слоним, кинопоказы слоним, кинотеатр, РДК, Слоним, Беларусь, cinema slonim" />
     <meta name="author" content="КиноСлон" />
-    <meta name="robots" content="index, follow" />
+    {!noIndex && <meta name="robots" content="index, follow" />}
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="BY-GR" />
