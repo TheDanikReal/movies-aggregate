@@ -1,6 +1,5 @@
 # build output
 dist/
-tools/page.html
 # generated types
 .astro/
 
