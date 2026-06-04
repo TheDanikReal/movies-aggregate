@@ -54,7 +54,7 @@
           "origin_country": "RU"
         }
       ],
-      "rating": 0,
+      "rating": 5,
       "length": 70
     },
     {
@@ -116,7 +116,7 @@
           "origin_country": "RU"
         }
       ],
-      "rating": 0,
+      "rating": 6,
       "length": 0
     },
     {
@@ -178,7 +178,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.854,
+      "rating": 3,
       "length": 132,
       "price": "10р. 00к."
     },
@@ -228,7 +228,7 @@
       "poster_link": "https://image.tmdb.org/t/p/w500/lw2kGvFBd9kJDjgWQhFSiSDPZHN.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/6zwIxlXbRE4P8vQ2yK2lAIYC8NI.jpg",
       "studio": [],
-      "rating": 5.7,
+      "rating": 2,
       "length": 80
     }
   ]
