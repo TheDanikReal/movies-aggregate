@@ -89,6 +89,10 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
       }
     })
   </script>
+  <script>
+    fetch("https://kinoslon-analytics.thedanik.workers.dev/?theme=" +
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light")).catch(() => {})
+  </script>
 </Layout>
 
 <style>

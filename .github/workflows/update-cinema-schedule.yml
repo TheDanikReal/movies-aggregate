@@ -137,7 +137,7 @@ jobs:
           echo "Committing schedule updates..."
 
           # Add the specific files we want to commit
-          git add tools/page.html tools/schedule.json
+          git add tools/schedule.json
 
           # Create commit with detailed message
           current_time=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
