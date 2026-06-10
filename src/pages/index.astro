@@ -33,12 +33,10 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
         Для официального сайта слонимского РДК <a href="http://kinoteatr.megamag.by/index.php?cPath=353299">нажмите сюда</a>.
       </p>
       <QuickFeedbackForm
-        text="Мы сделали цвет текста ярче"
+        text="Добавлять светлую тему (с сохранением темной)?"
         choices={[
-          'Так лучше',
-          'Предыдущий был лучше',
-          'Не знаю',
-          'И так и так нормально',
+          'Да',
+          'Нет'
         ]}
       />
       <FeedbackForm />
