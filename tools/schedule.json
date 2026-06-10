@@ -1,63 +1,122 @@
 {
-  "updated_at": "2026-06-09T10:19:56.435Z",
+  "updated_at": "2026-06-10T16:33:15.969Z",
   "movies": [
     {
-      "name": "Кощей. Тайна живой воды",
+      "name": "Дени и Мэни в кино!",
       "times": {
-        "09.06": [
+        "11.06": [
           {
-            "time": "15:00",
-            "timestamp": "2026-06-09T12:00:00.000Z"
-          },
-          {
-            "time": "18:00",
-            "timestamp": "2026-06-09T15:00:00.000Z"
+            "time": "19:00",
+            "timestamp": "2026-06-11T16:00:00.000Z"
           }
         ],
-        "10.06": [
+        "12.06": [
           {
-            "time": "13:30",
-            "timestamp": "2026-06-10T10:30:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-06-12T15:00:00.000Z"
+          }
+        ],
+        "13.06": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-06-13T15:00:00.000Z"
+          }
+        ],
+        "14.06": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-06-14T17:30:00.000Z"
+          }
+        ],
+        "16.06": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-06-16T15:00:00.000Z"
+          }
+        ],
+        "17.06": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-06-17T16:00:00.000Z"
           }
         ]
       },
-      "description": "Целых триста лет Кощеевых поисков избранницы наконец увенчались успехом, и приготовления к свадьбе с Варварой идут полным ходом. Однако так просто его заветная мечта не исполнится, и вот уже Кощей вместе с Добрым молодцем Елисеем и Колобком отправляется в опасное путешествие, чтобы спасти любимую.",
-      "age": "6+",
+      "description": "Когда лабрадор Дени получает крупный рекламный контракт и переезжает к своему агенту Андрею, они с другом-котом Мэни, привыкшие всегда быть вместе, впервые оказываются в разлуке. Погружаясь в ослепительный мир шоу-бизнеса, Дени постепенно понимает, что никакой успех не способен заменить семью, а искренность ценнее любых контрактов. В это же время Андрей переживает кризис в отношениях с невестой, и именно Дени помогает ему заново поверить в любовь.",
+      "age": "12+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/51Glu0XK3Mj3h3CRa3D8JzUywCL.jpg",
-      "backdrop_link": "",
+      "poster_link": "https://image.tmdb.org/t/p/w500/3eFRFMzSud9OTMArRc36V7FkWqL.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/76jooe7khheYOyQoiiS9uLC3T25.jpg",
       "studio": [
         {
-          "id": 21384,
-          "logo_path": null,
-          "name": "KinoAtis",
-          "origin_country": "RU"
-        },
-        {
-          "id": 318,
-          "logo_path": "/q0UG4oZERwIywJdDPF4lRlvdYGW.png",
-          "name": "CTB Film Company",
-          "origin_country": "RU"
-        },
-        {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
+          "id": 78373,
+          "logo_path": "/wKk58g1lu3KrTm0Szr9BkdutlRy.png",
+          "name": "RED Carpet Studio",
           "origin_country": "RU"
         }
       ],
       "rating": 0,
-      "length": 0
+      "length": 70,
+      "price": "8р. 00к."
+    },
+    {
+      "name": "Зверолюция",
+      "times": {
+        "11.06": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-06-11T14:00:00.000Z"
+          }
+        ],
+        "12.06": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-06-12T13:00:00.000Z"
+          }
+        ],
+        "13.06": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-06-13T13:00:00.000Z"
+          }
+        ],
+        "14.06": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-06-14T11:00:00.000Z"
+          }
+        ],
+        "16.06": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-06-16T13:00:00.000Z"
+          }
+        ],
+        "17.06": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-06-17T14:00:00.000Z"
+          }
+        ]
+      },
+      "description": "После того, как Зои и её питомцы пробуют странные инопланетные ягоды, их ДНК трансформируются. Животные обретают человеческую речь и разум, а сама Зои — острые когти, звериную силу и дикий нрав. Теперь ей предстоит возглавить совершенно неуправляемую пушистую команду, чтобы остановить аномальную эволюцию и спасти мир.",
+      "age": "12+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/ielGGCuBi0aSB5S4ZpHV1pQyrMz.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/zihczzQLrtNufyLoofytqQi6yep.jpg",
+      "studio": [
+        {
+          "id": 110676,
+          "logo_path": null,
+          "name": "The Thinklab",
+          "origin_country": "ES"
+        }
+      ],
+      "rating": 5.8,
+      "length": 94
     },
     {
       "name": "Мандалорец и Грогу",
       "times": {
-        "09.06": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-06-09T17:00:00.000Z"
-          }
-        ],
         "10.06": [
           {
             "time": "21:00",
@@ -91,16 +150,40 @@
     {
       "name": "Тролли возвращаются!",
       "times": {
-        "09.06": [
+        "11.06": [
           {
-            "time": "16:30",
-            "timestamp": "2026-06-09T13:30:00.000Z"
+            "time": "15:30",
+            "timestamp": "2026-06-11T12:30:00.000Z"
           }
         ],
-        "10.06": [
+        "12.06": [
           {
-            "time": "12:00",
-            "timestamp": "2026-06-10T09:00:00.000Z"
+            "time": "14:30",
+            "timestamp": "2026-06-12T11:30:00.000Z"
+          }
+        ],
+        "13.06": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-06-13T11:00:00.000Z"
+          }
+        ],
+        "14.06": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-06-14T13:00:00.000Z"
+          }
+        ],
+        "16.06": [
+          {
+            "time": "14:30",
+            "timestamp": "2026-06-16T11:30:00.000Z"
+          }
+        ],
+        "17.06": [
+          {
+            "time": "15:30",
+            "timestamp": "2026-06-17T12:30:00.000Z"
           }
         ]
       },
@@ -113,6 +196,93 @@
       "rating": 5.7,
       "length": 80,
       "price": "7р. 00к."
+    },
+    {
+      "name": "Холоп 3",
+      "times": {
+        "11.06": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-06-11T17:30:00.000Z"
+          }
+        ],
+        "12.06": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-06-12T17:00:00.000Z"
+          }
+        ],
+        "13.06": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-06-13T17:00:00.000Z"
+          }
+        ],
+        "14.06": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-06-14T15:00:00.000Z"
+          }
+        ],
+        "16.06": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-06-16T17:00:00.000Z"
+          }
+        ],
+        "17.06": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-06-17T17:30:00.000Z"
+          }
+        ]
+      },
+      "description": "Супруги Лена и Борис Вяземские готовы продать семейную компанию, развестись и скорее забыть друг друга. Только вот у их детей совсем другие планы: Милана и Елисей обращаются к Грише и его команде, чтобы спасти семью. Теперь мажоры будут перевоспитываться в эпоху Петра I: морские приключения и опасности заставят их переосмыслить свое собственное прошлое и осознать, что нет ничего важнее семьи.",
+      "age": "16+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/etcR0lFrEBEmcgi9n80uUee2ejf.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/jx5Zf9UNmlqXPYTb3bfuLGN00h8.jpg",
+      "studio": [
+        {
+          "id": 42877,
+          "logo_path": "/15THT1W3NROsbDXPbrcmWFVkrSv.png",
+          "name": "Yellow, Black & White",
+          "origin_country": "RU"
+        },
+        {
+          "id": 127641,
+          "logo_path": null,
+          "name": "MEM Cinema Production",
+          "origin_country": "RU"
+        },
+        {
+          "id": 69587,
+          "logo_path": "/u0Jy8wJ05m3MZCNiba1EXgf0zoK.png",
+          "name": "Russia 1",
+          "origin_country": "RU"
+        },
+        {
+          "id": 3419,
+          "logo_path": "/byrxE2pJD9JLyBCIzyK0pYVanyG.png",
+          "name": "Central Partnership",
+          "origin_country": "RU"
+        },
+        {
+          "id": 114676,
+          "logo_path": "/aVsos0RDN9Ib7H8nW5Vv5kHKykz.png",
+          "name": "START Studio",
+          "origin_country": "RU"
+        },
+        {
+          "id": 76049,
+          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
+          "name": "Cinema Foundation of Russia",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 0,
+      "price": "8р. 00к."
     }
   ]
 }
