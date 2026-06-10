@@ -115,38 +115,6 @@
       "length": 94
     },
     {
-      "name": "Мандалорец и Грогу",
-      "times": {
-        "10.06": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-06-10T18:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Империя пала, но её военачальники всё ещё держат под своим контролем части галактики. Зарождающаяся Новая Республика пытается защитить идеалы, за которые сражались повстанцы, и нанимает для задания мандалорца Дина Джарина, известного охотника за головами, и его юного ученика Грогу.",
-      "age": "12+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/yWPrjlrV9R0eXwBrCvbM95oiepd.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/6zg7A9ICOthNR2TSXlT51KvXrsA.jpg",
-      "studio": [
-        {
-          "id": 1,
-          "logo_path": "/tlVSws0RvvtPBwViUyOFAO0vcQS.png",
-          "name": "Lucasfilm Ltd.",
-          "origin_country": "US"
-        },
-        {
-          "id": 7297,
-          "logo_path": "/l29JYQVZbTcjZXoz4CUYFpKRmM3.png",
-          "name": "Fairview Entertainment",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.798,
-      "length": 132
-    },
-    {
       "name": "Тролли возвращаются!",
       "times": {
         "11.06": [
