@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import MovieCard from '../components/MovieCard.astro';
 import LastUpdatedBadge from '../components/LastUpdatedBadge.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
-import QuickFeedbackForm from '../components/QuickFeedbackForm.astro';
 import scheduleData from '../../tools/schedule.json';
 
 const sourceMovies = scheduleData.movies
@@ -32,13 +31,6 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
         Неофициальный аггрегатор кинотеатров в Слониме.
         Для официального сайта слонимского РДК <a href="http://kinoteatr.megamag.by/index.php?cPath=353299">нажмите сюда</a>.
       </p>
-      <QuickFeedbackForm
-        text="Добавлять светлую тему (с сохранением темной)?"
-        choices={[
-          'Да',
-          'Нет'
-        ]}
-      />
       <FeedbackForm />
     </div>
   </footer>
@@ -86,10 +78,6 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
         card.style.opacity = "0.5"
       }
     })
-  </script>
-  <script>
-    fetch("https://kinoslon-analytics.thedanik.workers.dev/?theme=" +
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light")).catch(() => {})
   </script>
 </Layout>
 
