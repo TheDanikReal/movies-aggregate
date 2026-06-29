@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T15:31:59.119Z",
+  "updated_at": "2026-06-29T12:32:51.147Z",
   "movies": [
     {
       "name": "Властелины вселенной",
@@ -8,30 +8,6 @@
           {
             "time": "21:00",
             "timestamp": "2026-07-01T18:00:00.000Z"
-          }
-        ],
-        "25.06": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-06-25T12:30:00.000Z"
-          }
-        ],
-        "26.06": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-06-26T12:30:00.000Z"
-          }
-        ],
-        "27.06": [
-          {
-            "time": "13:30",
-            "timestamp": "2026-06-27T10:30:00.000Z"
-          }
-        ],
-        "28.06": [
-          {
-            "time": "13:30",
-            "timestamp": "2026-06-28T10:30:00.000Z"
           }
         ],
         "30.06": [
@@ -66,7 +42,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.263,
+      "rating": 7.1,
       "length": 141
     },
     {
@@ -78,30 +54,6 @@
             "timestamp": "2026-07-01T15:35:00.000Z"
           }
         ],
-        "25.06": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-06-25T17:00:00.000Z"
-          }
-        ],
-        "26.06": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-06-26T17:00:00.000Z"
-          }
-        ],
-        "27.06": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-06-27T17:00:00.000Z"
-          }
-        ],
-        "28.06": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-06-28T17:00:00.000Z"
-          }
-        ],
         "30.06": [
           {
             "time": "20:00",
@@ -110,7 +62,7 @@
         ]
       },
       "description": "Человечество узнаёт о прибытии на Землю инопланетян, чьё существование долгое время тщательно скрывалось.",
-      "age": "12+",
+      "age": "16+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/wTGKPO2eFnX3CHmZke2ugqlCqQ8.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
@@ -128,7 +80,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.7,
+      "rating": 6.688,
       "length": 145,
       "price": "8р. 00к."
     },
@@ -139,30 +91,6 @@
           {
             "time": "17:00",
             "timestamp": "2026-07-01T14:00:00.000Z"
-          }
-        ],
-        "25.06": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-06-25T15:00:00.000Z"
-          }
-        ],
-        "26.06": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-06-26T15:00:00.000Z"
-          }
-        ],
-        "27.06": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-06-27T15:00:00.000Z"
-          }
-        ],
-        "28.06": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-06-28T15:00:00.000Z"
           }
         ],
         "30.06": [
@@ -185,7 +113,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.2,
+      "rating": 6.743,
       "length": 93,
       "price": "8р. 00к."
     },
@@ -198,38 +126,6 @@
             "timestamp": "2026-07-01T09:00:00.000Z"
           }
         ],
-        "25.06": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-06-25T09:00:00.000Z"
-          }
-        ],
-        "26.06": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-06-26T09:00:00.000Z"
-          }
-        ],
-        "27.06": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-06-27T09:00:00.000Z"
-          },
-          {
-            "time": "16:00",
-            "timestamp": "2026-06-27T13:00:00.000Z"
-          }
-        ],
-        "28.06": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-06-28T09:00:00.000Z"
-          },
-          {
-            "time": "16:00",
-            "timestamp": "2026-06-28T13:00:00.000Z"
-          }
-        ],
         "30.06": [
           {
             "time": "14:00",
@@ -240,7 +136,7 @@
       "description": "Покой трём богатырям только снится, да и некогда спать, покуда дел невпроворот. Для начала нужно вернуть Князю волшебную ель, исполняющую желания, снять с Коня Юлия любовные чары Бабы Яги и поставить на место одного зазнавшегося пенька, который метит в главные фавориты Князя. И вот так день и ночь, без отдыха и сна несут они на своих плечах целый город со всеми его жителями. Причём, в самом прямом смысле. Главное, чтобы не уронили.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "",
+      "poster_link": "https://image.tmdb.org/t/p/w500/soiZfQzBxo7QjgyDEhY7QR3Zdo0.jpg",
       "backdrop_link": "",
       "studio": [
         {
@@ -259,63 +155,6 @@
       "rating": 0,
       "length": 0,
       "price": "7р. 00к."
-    },
-    {
-      "name": "Холоп 3",
-      "times": {
-        "24.06": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-06-24T17:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Супруги Лена и Борис Вяземские готовы продать семейную компанию, развестись и скорее забыть друг друга. Только вот у их детей совсем другие планы: Милана и Елисей обращаются к Грише и его команде, чтобы спасти семью. Теперь мажоры будут перевоспитываться в эпоху Петра I: морские приключения и опасности заставят их переосмыслить свое собственное прошлое и осознать, что нет ничего важнее семьи.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/etcR0lFrEBEmcgi9n80uUee2ejf.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/jx5Zf9UNmlqXPYTb3bfuLGN00h8.jpg",
-      "studio": [
-        {
-          "id": 42877,
-          "logo_path": "/15THT1W3NROsbDXPbrcmWFVkrSv.png",
-          "name": "Yellow, Black & White",
-          "origin_country": "RU"
-        },
-        {
-          "id": 127641,
-          "logo_path": null,
-          "name": "MEM Cinema Production",
-          "origin_country": "RU"
-        },
-        {
-          "id": 69587,
-          "logo_path": "/u0Jy8wJ05m3MZCNiba1EXgf0zoK.png",
-          "name": "Russia 1",
-          "origin_country": "RU"
-        },
-        {
-          "id": 3419,
-          "logo_path": "/byrxE2pJD9JLyBCIzyK0pYVanyG.png",
-          "name": "Central Partnership",
-          "origin_country": "RU"
-        },
-        {
-          "id": 114676,
-          "logo_path": "/aVsos0RDN9Ib7H8nW5Vv5kHKykz.png",
-          "name": "START Studio",
-          "origin_country": "RU"
-        },
-        {
-          "id": 76049,
-          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
-          "name": "Cinema Foundation of Russia",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 7,
-      "length": 0,
-      "price": "8р. 00к."
     }
   ]
 }
