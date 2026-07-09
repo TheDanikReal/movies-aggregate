@@ -1,0 +1,12 @@
+name = "schedule-watcher"
+main = "schedule-watcher.ts"
+compatibility_date = "2026-07-08"
+
+# Poll every 10 minutes. Adjust to taste.
+# [triggers]
+# crons = ["0 18 * * SUN,MON,TUE,THU,FRI,SAT", "0 15-20 * * WED"]
+
+[vars]
+SCHEDULE_PAGE_URL = "http://kinoteatr.megamag.by/index.php?cPath=353299"
+# Optional: override the baseline schedule.json location.
+# BASELINE_SCHEDULE_URL = "https://github.com/TheDanikReal/movies-aggregate/raw/refs/heads/main/tools/schedule.json"

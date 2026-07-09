@@ -20,6 +20,7 @@
     "tmdb-ts": "^2.3.0"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "wrangler": "^4.107.1"
   }
 }
