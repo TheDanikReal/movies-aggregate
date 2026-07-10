@@ -1,27 +1,9 @@
 {
-  "updated_at": "2026-07-08T15:17:07.389Z",
+  "updated_at": "2026-07-10T07:49:50.902Z",
   "movies": [
     {
       "name": "День разоблачения",
       "times": {
-        "08.07": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-07-08T15:00:00.000Z"
-          }
-        ],
-        "09.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-09T13:00:00.000Z"
-          }
-        ],
-        "10.07": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-07-10T12:00:00.000Z"
-          }
-        ],
         "11.07": [
           {
             "time": "15:00",
@@ -73,12 +55,6 @@
     {
       "name": "История игрушек 5",
       "times": {
-        "09.07": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-07-09T11:00:00.000Z"
-          }
-        ],
         "10.07": [
           {
             "time": "13:00",
@@ -114,7 +90,7 @@
       "age": "6+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/84igQj0DU3TgPrtQ7bHXHCio1sV.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
       "studio": [
         {
           "id": 3,
@@ -123,19 +99,13 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.4,
+      "rating": 7.404,
       "length": 102,
       "price": "7р. 00к."
     },
     {
       "name": "Организованный показ",
       "times": {
-        "09.07": [
-          {
-            "time": "12:15",
-            "timestamp": "2026-07-09T09:15:00.000Z"
-          }
-        ],
         "10.07": [
           {
             "time": "10:45",
@@ -150,24 +120,11 @@
       "backdrop_link": "",
       "studio": [],
       "rating": 0,
-      "length": 0,
-      "price": "3р. 50к."
+      "length": 0
     },
     {
       "name": "Пасть",
       "times": {
-        "08.07": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-07-08T17:30:00.000Z"
-          }
-        ],
-        "09.07": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-07-09T17:30:00.000Z"
-          }
-        ],
         "11.07": [
           {
             "time": "20:00",
@@ -206,19 +163,13 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.027,
+      "rating": 7.045,
       "length": 93,
       "price": "8р. 00к."
     },
     {
       "name": "Предсеансовое мероприятие",
       "times": {
-        "09.07": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-07-09T09:00:00.000Z"
-          }
-        ],
         "10.07": [
           {
             "time": "10:30",
@@ -233,18 +184,11 @@
       "backdrop_link": "",
       "studio": [],
       "rating": 0,
-      "length": 0,
-      "price": "0р. 50к."
+      "length": 0
     },
     {
       "name": "Приглашение",
       "times": {
-        "09.07": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-07-09T15:30:00.000Z"
-          }
-        ],
         "11.07": [
           {
             "time": "18:30",
