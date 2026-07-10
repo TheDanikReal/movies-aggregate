@@ -12,15 +12,25 @@
  *  - plain string/regex parsing for everything else (same regex logic the
  *    original script already used internally).
  *
- * It only detects ADDED or MODIFIED showtimes vs. the baseline schedule.json.
- * Removed showtimes are ignored on purpose (per spec). When anything new is
- * found, `onScheduleChanged` is invoked — currently a no-op stub for you to
- * fill in (trigger a GitHub Action, send a notification, bust a cache, etc.).
+ * Change semantics:
+ *  - New or modified showtimes (a new movie, a new date, or a new time on an
+ *    existing date) are always reported.
+ *  - Removed showtimes are reported ONLY if the date they belong to is today
+ *    or in the future. A removed showtime on a date that has already passed
+ *    is ignored — that's just normal historical cleanup, not a real change.
+ *
+ * When anything qualifies, `onScheduleChanged` is invoked — currently a
+ * no-op stub for you to fill in (trigger a GitHub Action, send a
+ * notification, bust a cache, etc.).
  */
 
 export interface Env {
   /** URL of the live cinema schedule page (HTML) to poll. */
   SCHEDULE_PAGE_URL: string;
+  /** github repo of project, like TheDanikReal/movies-aggregate */
+  REPO: string;
+  /** github token for dispatching workflow */
+  GITHUB_TOKEN: string;
   /** Optional override for the baseline schedule.json URL. */
   BASELINE_SCHEDULE_URL?: string;
 }
@@ -73,6 +83,44 @@ const extractMovieName = (rawTitle: string): string => {
   if (!ageMatch || ageMatch.index === undefined) return withoutFormat;
 
   return normalizeText(withoutFormat.slice(0, ageMatch.index)).replace(/[.,;:\-]+$/, "");
+};
+
+/** Cinema's local UTC offset (UTC+3), matching the source site's own listed times. */
+const CINEMA_UTC_OFFSET_MS = 3 * 60 * 60 * 1000;
+
+/** Cinema-local (UTC+3) calendar date for a given instant, as plain numbers. */
+const getCinemaLocalDateParts = (instant: Date): { year: number; month: number; day: number } => {
+  const shifted = new Date(instant.getTime() + CINEMA_UTC_OFFSET_MS);
+  return {
+    year: shifted.getUTCFullYear(),
+    month: shifted.getUTCMonth() + 1,
+    day: shifted.getUTCDate(),
+  };
+};
+
+/** A bare "DD.MM" key has no year — infer it relative to today, handling the Dec/Jan wrap. */
+const resolveYearForMonth = (month: number, todayMonth: number, todayYear: number): number => {
+  if (month === 1 && todayMonth === 12) return todayYear + 1;
+  if (month === 12 && todayMonth === 1) return todayYear - 1;
+  return todayYear;
+};
+
+/**
+ * True if `dateKey` ("DD.MM") refers to a calendar date strictly before today
+ * (cinema-local). Used to suppress removal reports for dates that have
+ * already played out — only today-or-later removals should ever be flagged.
+ */
+const isPastDateKey = (dateKey: string, now: Date = new Date()): boolean => {
+  const [dayRaw, monthRaw] = dateKey.split(".").map(Number);
+  if (!dayRaw || !monthRaw) return false; // malformed key: don't silently swallow it
+
+  const today = getCinemaLocalDateParts(now);
+  const year = resolveYearForMonth(monthRaw, today.month, today.year);
+
+  const dateValue = year * 10000 + monthRaw * 100 + dayRaw;
+  const todayValue = today.year * 10000 + today.month * 100 + today.day;
+
+  return dateValue < todayValue;
 };
 
 const parseDateFromLabel = (text: string): string | null => {
@@ -205,19 +253,24 @@ async function fetchBaselineSchedule(url: string): Promise<ScheduleMap> {
 }
 
 // ---------------------------------------------------------------------------
-// Diffing — only additions/modifications matter, removals are ignored
+// Diffing — additions always reported; removals only for today-or-later dates
 // ---------------------------------------------------------------------------
 
+// is this REALLY needed???? we're going to remove this endpoint fully and replace it with
+// cron job status and latest job timestamp so...
+// TODO: remove this
+
 export type ScheduleChange = {
-  type: "new-movie" | "new-date" | "new-time";
+  type: "new-movie" | "new-date" | "new-time" | "removed-movie" | "removed-date" | "removed-time";
   movie: string;
   date: string;
   time: string;
 };
 
-function diffSchedules(live: ScheduleMap, baseline: ScheduleMap): ScheduleChange[] {
+function diffSchedules(live: ScheduleMap, baseline: ScheduleMap, now: Date = new Date()): ScheduleChange[] {
   const changes: ScheduleChange[] = [];
 
+  // --- Additions / modifications: anything new in live vs. baseline. -------
   for (const [movieName, liveDates] of live) {
     const baselineDates = baseline.get(movieName);
 
@@ -244,8 +297,30 @@ function diffSchedules(live: ScheduleMap, baseline: ScheduleMap): ScheduleChange
     }
   }
 
-  // Note: times/dates/movies present only in the baseline (i.e. removed
-  // showings) are intentionally never reported — that's a no-op per spec.
+  // --- Removals: only report showtimes for dates that are today or later. -
+  // A removed showtime on a date that has already passed is normal and
+  // ignored; only still-upcoming removals are actionable/interesting.
+  for (const [movieName, baselineDates] of baseline) {
+    const liveDates = live.get(movieName);
+
+    for (const [date, baselineTimes] of baselineDates) {
+      if (isPastDateKey(date, now)) continue; // never report removal of a past date
+
+      const liveTimes = liveDates?.get(date);
+
+      if (!liveTimes) {
+        const type = liveDates ? "removed-date" : "removed-movie";
+        for (const time of baselineTimes) changes.push({ type, movie: movieName, date, time });
+        continue;
+      }
+
+      for (const time of baselineTimes) {
+        if (!liveTimes.has(time)) {
+          changes.push({ type: "removed-time", movie: movieName, date, time });
+        }
+      }
+    }
+  }
 
   return changes;
 }
@@ -255,13 +330,23 @@ function diffSchedules(live: ScheduleMap, baseline: ScheduleMap): ScheduleChange
 // ---------------------------------------------------------------------------
 
 /**
- * Called whenever new or modified showtimes are found. Currently empty —
- * fill this in with whatever should happen next (e.g. a repository_dispatch
- * to rerun the heavy enrichment script, a Discord/Telegram ping, a cache
- * purge, writing to KV, etc).
+ * this would be called if there are any changes in schedule, we are going to do
+ * workflow dispatch of github action btw
  */
-async function onScheduleChanged(changes: ScheduleChange[]): Promise<void> {
-  // TODO: do something
+async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<void> {
+  await fetch("https://api.github.com/repos/TheDanikReal/movies-aggregate/actions/workflows/249763023/dispatches",
+    {
+      headers: {
+          "Accept": "application/vnd.github+json",
+          "Authorization": "Bearer " + env.GITHUB_TOKEN,
+          "X-GitHub-Api-Version": "2026-03-10"
+      },
+      method: "POST",
+      body: JSON.stringify({
+          ref: "main"
+      })
+    }
+  )
 }
 
 async function checkForScheduleUpdates(
@@ -280,10 +365,10 @@ async function checkForScheduleUpdates(
   const annotated = await annotateHtml(html);
   const live = parseAnnotatedSchedule(annotated);
 
-  const changes = diffSchedules(live, baseline);
+  const changes = diffSchedules(live, baseline, new Date());
 
   if (changes.length > 0) {
-    await onScheduleChanged(changes);
+    await onScheduleChanged(changes, env);
   }
 
   return { changed: changes.length > 0, changes };
@@ -291,7 +376,10 @@ async function checkForScheduleUpdates(
 
 export default {
   // Manual/testing trigger: hit the worker's URL to see the diff as JSON.
-  async fetch(_request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    if ((new URL(request.url)).pathname != "/") return new Response(undefined, {
+      status: 404
+    })
     try {
       const result = await checkForScheduleUpdates(env);
       return new Response(JSON.stringify(result, null, 2), {

@@ -8,5 +8,8 @@ compatibility_date = "2026-07-08"
 
 [vars]
 SCHEDULE_PAGE_URL = "http://kinoteatr.megamag.by/index.php?cPath=353299"
+REPO = "TheDanikReal/movies-aggregate"
+# info on getting workflow id: https://docs.github.com/en/rest/actions/workflows?apiVersion=2026-03-10
+WORKFLOW_ID = 249763023
 # Optional: override the baseline schedule.json location.
 # BASELINE_SCHEDULE_URL = "https://github.com/TheDanikReal/movies-aggregate/raw/refs/heads/main/tools/schedule.json"
