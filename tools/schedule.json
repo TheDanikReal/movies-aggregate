@@ -1,143 +1,9 @@
 {
-  "updated_at": "2026-07-10T14:37:57.624Z",
+  "updated_at": "2026-07-15T14:45:25.907Z",
   "movies": [
-    {
-      "name": "День разоблачения",
-      "times": {
-        "11.07": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-07-11T12:00:00.000Z"
-          }
-        ],
-        "12.07": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-07-12T12:00:00.000Z"
-          }
-        ],
-        "14.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-14T13:00:00.000Z"
-          }
-        ],
-        "15.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-15T13:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Человечество узнаёт о прибытии на Землю инопланетян, чьё существование долгое время тщательно скрывалось.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/wTGKPO2eFnX3CHmZke2ugqlCqQ8.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
-      "studio": [
-        {
-          "id": 33,
-          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
-          "name": "Universal Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 56,
-          "logo_path": "/cEaxANEisCqeEoRvODv2dO1I0iI.png",
-          "name": "Amblin Entertainment",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.7,
-      "length": 146,
-      "price": "7р. 00к."
-    },
-    {
-      "name": "История игрушек 5",
-      "times": {
-        "11.07": [
-          {
-            "time": "13:00",
-            "timestamp": "2026-07-11T10:00:00.000Z"
-          }
-        ],
-        "12.07": [
-          {
-            "time": "13:00",
-            "timestamp": "2026-07-12T10:00:00.000Z"
-          }
-        ],
-        "14.07": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-07-14T11:00:00.000Z"
-          }
-        ],
-        "15.07": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-07-15T11:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Вуди, Джесси и Базз Лайтер сталкиваются с новой угрозой — планшетом ЛилиПадом, который стал любимой игрушкой восьмилетней Бонни и занимает всё больше её времени.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/84igQj0DU3TgPrtQ7bHXHCio1sV.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
-      "studio": [
-        {
-          "id": 3,
-          "logo_path": "/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
-          "name": "Pixar",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 7.406,
-      "length": 102,
-      "price": "7р. 00к."
-    },
-    {
-      "name": "Организованный показ",
-      "times": {
-        "15.07": [
-          {
-            "time": "10:45",
-            "timestamp": "2026-07-15T07:45:00.000Z"
-          }
-        ]
-      },
-      "description": "Организованный показ",
-      "age": "",
-      "format": "",
-      "poster_link": "",
-      "backdrop_link": "",
-      "studio": [],
-      "rating": 0,
-      "length": 0,
-      "price": "3р. 50к."
-    },
     {
       "name": "Пасть",
       "times": {
-        "11.07": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-07-11T17:00:00.000Z"
-          }
-        ],
-        "12.07": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-07-12T17:30:00.000Z"
-          }
-        ],
-        "14.07": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-07-14T17:30:00.000Z"
-          }
-        ],
         "15.07": [
           {
             "time": "20:30",
@@ -158,51 +24,13 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.045,
+      "rating": 7,
       "length": 93,
       "price": "8р. 00к."
     },
     {
-      "name": "Предсеансовое мероприятие",
-      "times": {
-        "15.07": [
-          {
-            "time": "10:30",
-            "timestamp": "2026-07-15T07:30:00.000Z"
-          }
-        ]
-      },
-      "description": "Предсеансовое мероприятие - Семейный видеопраздник в кинотеатре",
-      "age": "",
-      "format": "",
-      "poster_link": "",
-      "backdrop_link": "",
-      "studio": [],
-      "rating": 0,
-      "length": 0,
-      "price": "0р. 50к."
-    },
-    {
       "name": "Приглашение",
       "times": {
-        "11.07": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-07-11T15:30:00.000Z"
-          }
-        ],
-        "12.07": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-07-12T15:30:00.000Z"
-          }
-        ],
-        "14.07": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-07-14T15:30:00.000Z"
-          }
-        ],
         "15.07": [
           {
             "time": "18:00",
@@ -214,7 +42,7 @@
       "age": "18+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/7CrrtqCpZmJsosektfOsakY2fMz.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/kLA1GqiOEyVgXxgNqLoCr7bYcqu.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/lEwqBGNR65KZv6Ej5ufcmhZu2y2.jpg",
       "studio": [
         {
           "id": 13184,
@@ -233,9 +61,15 @@
           "logo_path": null,
           "name": "Permut Presentations",
           "origin_country": "US"
+        },
+        {
+          "id": 41077,
+          "logo_path": "/1ZXsGaFPgrgS6ZZGS37AqD5uU12.png",
+          "name": "A24",
+          "origin_country": "US"
         }
       ],
-      "rating": 7.9,
+      "rating": 7.585,
       "length": 107,
       "price": "8р. 00к."
     }
