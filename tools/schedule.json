@@ -1,27 +1,9 @@
 {
-  "updated_at": "2026-07-15T15:01:03.767Z",
+  "updated_at": "2026-07-18T19:09:43.164Z",
   "movies": [
     {
       "name": "Колючая и ушастый",
       "times": {
-        "16.07": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-07-16T12:30:00.000Z"
-          }
-        ],
-        "17.07": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-07-17T12:30:00.000Z"
-          }
-        ],
-        "18.07": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-07-18T11:00:00.000Z"
-          }
-        ],
         "19.07": [
           {
             "time": "14:00",
@@ -91,24 +73,6 @@
     {
       "name": "Миньоны и монстры",
       "times": {
-        "16.07": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-07-16T14:00:00.000Z"
-          }
-        ],
-        "17.07": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-07-17T14:00:00.000Z"
-          }
-        ],
-        "18.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-18T13:00:00.000Z"
-          }
-        ],
         "19.07": [
           {
             "time": "16:00",
@@ -147,31 +111,13 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.35,
+      "rating": 6.39,
       "length": 90,
       "price": "10р. 00к."
     },
     {
       "name": "На деревню дедушке 2",
       "times": {
-        "16.07": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-07-16T15:30:00.000Z"
-          }
-        ],
-        "17.07": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-07-17T15:30:00.000Z"
-          }
-        ],
-        "18.07": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-07-18T15:00:00.000Z"
-          }
-        ],
         "19.07": [
           {
             "time": "18:00",
@@ -221,119 +167,8 @@
       "price": "10р. 00к."
     },
     {
-      "name": "Организованный показ",
-      "times": {
-        "16.07": [
-          {
-            "time": "10:45",
-            "timestamp": "2026-07-16T07:45:00.000Z"
-          },
-          {
-            "time": "14:15",
-            "timestamp": "2026-07-16T11:15:00.000Z"
-          }
-        ],
-        "17.07": [
-          {
-            "time": "10:45",
-            "timestamp": "2026-07-17T07:45:00.000Z"
-          }
-        ]
-      },
-      "description": "Организованный показ",
-      "age": "",
-      "format": "",
-      "poster_link": "",
-      "backdrop_link": "",
-      "studio": [],
-      "rating": 0,
-      "length": 0,
-      "price": "3р. 50к."
-    },
-    {
-      "name": "Пасть",
-      "times": {
-        "15.07": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-07-15T17:30:00.000Z"
-          }
-        ]
-      },
-      "description": "Группа туристов отправляется в круиз по озёрам Луизианы. Желая увидеть диких животных в естественной среде, они отклоняются от маршрута и встречают агрессивного и очень быстрого гиппопотама весом в четыре тонны. Лодка сломана, помощи ждать неоткуда, а путешествие превращается в борьбу за выживание.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/shPotnPZdzmoN0ZrmT2j8EvHknD.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/ikyzq678qnHtRY8ZiQJzK4hiOyW.jpg",
-      "studio": [
-        {
-          "id": 114874,
-          "logo_path": "/lfk5FKLlTBaWqYHLeJs7J9atmNr.png",
-          "name": "Signature Entertainment",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 7,
-      "length": 93,
-      "price": "8р. 00к."
-    },
-    {
-      "name": "Предсеансовое мероприятие",
-      "times": {
-        "16.07": [
-          {
-            "time": "10:30",
-            "timestamp": "2026-07-16T07:30:00.000Z"
-          },
-          {
-            "time": "14:00",
-            "timestamp": "2026-07-16T11:00:00.000Z"
-          }
-        ],
-        "17.07": [
-          {
-            "time": "10:30",
-            "timestamp": "2026-07-17T07:30:00.000Z"
-          }
-        ]
-      },
-      "description": "Предсеансовое мероприятие - Семейный видеопраздник в кинотеатре",
-      "age": "",
-      "format": "",
-      "poster_link": "",
-      "backdrop_link": "",
-      "studio": [],
-      "rating": 0,
-      "length": 0,
-      "price": "0р. 50к."
-    },
-    {
       "name": "Приглашение",
       "times": {
-        "15.07": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-07-15T15:00:00.000Z"
-          }
-        ],
-        "16.07": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-07-16T17:00:00.000Z"
-          }
-        ],
-        "17.07": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-07-17T17:00:00.000Z"
-          }
-        ],
-        "18.07": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-07-18T17:00:00.000Z"
-          }
-        ],
         "19.07": [
           {
             "time": "20:00",
@@ -357,7 +192,7 @@
       "age": "18+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/7CrrtqCpZmJsosektfOsakY2fMz.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/lEwqBGNR65KZv6Ej5ufcmhZu2y2.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/kLA1GqiOEyVgXxgNqLoCr7bYcqu.jpg",
       "studio": [
         {
           "id": 13184,
@@ -376,15 +211,9 @@
           "logo_path": null,
           "name": "Permut Presentations",
           "origin_country": "US"
-        },
-        {
-          "id": 41077,
-          "logo_path": "/1ZXsGaFPgrgS6ZZGS37AqD5uU12.png",
-          "name": "A24",
-          "origin_country": "US"
         }
       ],
-      "rating": 7.585,
+      "rating": 7.7,
       "length": 107,
       "price": "8р. 00к."
     }
