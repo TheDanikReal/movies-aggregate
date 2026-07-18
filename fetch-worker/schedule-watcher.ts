@@ -15,21 +15,25 @@
  * Change semantics:
  *  - New or modified showtimes (a new movie, a new date, or a new time on an
  *    existing date) are always reported.
- *  - Removed showtimes are reported ONLY if the date they belong to is today
- *    or in the future. A removed showtime on a date that has already passed
- *    is ignored — that's just normal historical cleanup, not a real change.
+ *  - Removed showtimes are reported ONLY if they haven't happened yet — i.e.
+ *    their date+hour (cinema-local, UTC+3) is still in the future relative
+ *    to "now". The site itself auto-drops each showtime once its hour
+ *    passes, so a removed showtime that's already in the past is expected
+ *    housekeeping and is ignored; only a still-upcoming removal (later
+ *    today, or any future date) is reported.
  *
- * When anything qualifies, `onScheduleChanged` is invoked — currently a
- * no-op stub for you to fill in (trigger a GitHub Action, send a
- * notification, bust a cache, etc.).
+ * When anything qualifies, `onScheduleChanged` dispatches the GitHub Actions
+ * workflow that reruns the heavy TMDB-enriching script.
  */
 
 export interface Env {
   /** URL of the live cinema schedule page (HTML) to poll. */
   SCHEDULE_PAGE_URL: string;
-  /** github repo of project, like TheDanikReal/movies-aggregate */
+  /** GitHub repo of project, like TheDanikReal/movies-aggregate. */
   REPO: string;
-  /** github token for dispatching workflow */
+  /** GitHub workflow id to dispatch. */
+  WORKFLOW_ID: string | number;
+  /** GitHub token for dispatching workflow. */
   GITHUB_TOKEN: string;
   /** Optional override for the baseline schedule.json URL. */
   BASELINE_SCHEDULE_URL?: string;
@@ -106,21 +110,35 @@ const resolveYearForMonth = (month: number, todayMonth: number, todayYear: numbe
 };
 
 /**
- * True if `dateKey` ("DD.MM") refers to a calendar date strictly before today
- * (cinema-local). Used to suppress removal reports for dates that have
- * already played out — only today-or-later removals should ever be flagged.
+ * Resolves a "DD.MM" + "HH:MM" pair (as shown on the cinema's site, always
+ * cinema-local UTC+3) to the actual UTC instant it refers to, inferring the
+ * year relative to `now` (handles the Dec/Jan wrap).
  */
-const isPastDateKey = (dateKey: string, now: Date = new Date()): boolean => {
-  const [dayRaw, monthRaw] = dateKey.split(".").map(Number);
-  if (!dayRaw || !monthRaw) return false; // malformed key: don't silently swallow it
+const resolveShowtimeInstant = (dateKey: string, timeKey: string, now: Date): Date => {
+  const [day, month] = dateKey.split(".").map(Number);
+  const [hour, minute] = timeKey.split(":").map(Number);
 
   const today = getCinemaLocalDateParts(now);
-  const year = resolveYearForMonth(monthRaw, today.month, today.year);
+  const year = resolveYearForMonth(month, today.month, today.year);
 
-  const dateValue = year * 10000 + monthRaw * 100 + dayRaw;
-  const todayValue = today.year * 10000 + today.month * 100 + today.day;
+  // Treat (year, month, day, hour, minute) as cinema-local wall-clock time,
+  // then shift by the UTC+3 offset to get the real UTC instant.
+  const localAsIfUtc = Date.UTC(year, month - 1, day, hour, minute, 0, 0);
+  return new Date(localAsIfUtc - CINEMA_UTC_OFFSET_MS);
+};
 
-  return dateValue < todayValue;
+/**
+ * True if the given showtime ("DD.MM" + "HH:MM", cinema-local UTC+3) is
+ * already in the past relative to `now`. The site itself auto-removes a
+ * showtime once its hour passes, so a "removed" showtime that's already
+ * past is expected housekeeping, not a real schedule change.
+ */
+const isPastShowtime = (dateKey: string, timeKey: string, now: Date = new Date()): boolean => {
+  const [day, month] = dateKey.split(".").map(Number);
+  const [hour, minute] = timeKey.split(":").map(Number);
+  if (!day || !month || Number.isNaN(hour) || Number.isNaN(minute)) return false; // malformed: don't suppress
+
+  return resolveShowtimeInstant(dateKey, timeKey, now).getTime() < now.getTime();
 };
 
 const parseDateFromLabel = (text: string): string | null => {
@@ -153,6 +171,7 @@ const ROW_MARK = "\u0001TR\u0001";
  * never build a DOM, so this is O(1) memory relative to the page size.
  */
 async function annotateHtml(html: string): Promise<string> {
+
   const rewriter = new HTMLRewriter()
     .on('td.eventsHeading a[name^="event_"]', {
       element(el) {
@@ -253,7 +272,7 @@ async function fetchBaselineSchedule(url: string): Promise<ScheduleMap> {
 }
 
 // ---------------------------------------------------------------------------
-// Diffing — additions always reported; removals only for today-or-later dates
+// Diffing — additions always reported; removals only for not-yet-happened showtimes
 // ---------------------------------------------------------------------------
 
 // is this REALLY needed???? we're going to remove this endpoint fully and replace it with
@@ -297,27 +316,23 @@ function diffSchedules(live: ScheduleMap, baseline: ScheduleMap, now: Date = new
     }
   }
 
-  // --- Removals: only report showtimes for dates that are today or later. -
-  // A removed showtime on a date that has already passed is normal and
-  // ignored; only still-upcoming removals are actionable/interesting.
+  // --- Removals: only report showtimes that haven't happened yet. ----------
+  // The site itself auto-drops a showtime once its hour passes, so a missing
+  // showtime that's already in the past is expected housekeeping and is
+  // ignored; only still-upcoming removals (later today or a future date) are
+  // reported.
   for (const [movieName, baselineDates] of baseline) {
     const liveDates = live.get(movieName);
 
     for (const [date, baselineTimes] of baselineDates) {
-      if (isPastDateKey(date, now)) continue; // never report removal of a past date
-
       const liveTimes = liveDates?.get(date);
 
-      if (!liveTimes) {
-        const type = liveDates ? "removed-date" : "removed-movie";
-        for (const time of baselineTimes) changes.push({ type, movie: movieName, date, time });
-        continue;
-      }
-
       for (const time of baselineTimes) {
-        if (!liveTimes.has(time)) {
-          changes.push({ type: "removed-time", movie: movieName, date, time });
-        }
+        if (liveTimes?.has(time)) continue; // still present, not removed
+        if (isPastShowtime(date, time, now)) continue; // already played out, ignore
+
+        const type = !liveDates ? "removed-movie" : !liveTimes ? "removed-date" : "removed-time";
+        changes.push({ type, movie: movieName, date, time });
       }
     }
   }
@@ -329,24 +344,31 @@ function diffSchedules(live: ScheduleMap, baseline: ScheduleMap, now: Date = new
 // Orchestration
 // ---------------------------------------------------------------------------
 
-/**
- * this would be called if there are any changes in schedule, we are going to do
- * workflow dispatch of github action btw
- */
 async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<void> {
-  await fetch("https://api.github.com/repos/TheDanikReal/movies-aggregate/actions/workflows/249763023/dispatches",
-    {
-      headers: {
-          "Accept": "application/vnd.github+json",
-          "Authorization": "Bearer " + env.GITHUB_TOKEN,
-          "X-GitHub-Api-Version": "2026-03-10"
-      },
-      method: "POST",
-      body: JSON.stringify({
-          ref: "main"
-      })
-    }
-  )
+  if (!env.REPO) {
+    throw new Error("Missing REPO environment variable");
+  }
+
+  if (!env.WORKFLOW_ID) {
+    throw new Error("Missing WORKFLOW_ID environment variable");
+  }
+
+  if (!env.GITHUB_TOKEN) {
+    throw new Error("Missing GITHUB_TOKEN environment variable");
+  }
+
+  await fetch(`https://api.github.com/repos/${env.REPO}/actions/workflows/${String(env.WORKFLOW_ID)}/dispatches`, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      "X-GitHub-Api-Version": "2026-03-10",
+      "User-Agent": "movies-aggregate aggregator"
+    },
+    method: "POST",
+    body: JSON.stringify({
+      ref: "main",
+    }),
+  });
 }
 
 async function checkForScheduleUpdates(
@@ -377,9 +399,9 @@ async function checkForScheduleUpdates(
 export default {
   // Manual/testing trigger: hit the worker's URL to see the diff as JSON.
   async fetch(request: Request, env: Env): Promise<Response> {
-    if ((new URL(request.url)).pathname != "/") return new Response(undefined, {
-      status: 404
-    })
+    if (new URL(request.url).pathname !== "/") {
+      return new Response(undefined, { status: 404 });
+    }
     try {
       const result = await checkForScheduleUpdates(env);
       return new Response(JSON.stringify(result, null, 2), {
