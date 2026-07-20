@@ -11,7 +11,9 @@ const badgeId = `last-updated-${crypto.randomUUID().slice(0, 8)}`;
 
 <div class="last-updated-badge" id={badgeId} data-updated-at={updatedAt}>
   <span class="badge-icon">🕒</span>
-  <span class="badge-text">Обновлено: <span class="relative-time">загрузка...</span></span>
+  <span class="badge-text"
+    >Обновлено: <span class="relative-time">загрузка...</span></span
+  >
 </div>
 
 <style>
@@ -61,7 +63,7 @@ const badgeId = `last-updated-${crypto.randomUUID().slice(0, 8)}`;
     const diffDays = Math.floor(diffHours / 24);
 
     if (diffSeconds < 60) {
-      return 'только что';
+      return "только что";
     } else if (diffMinutes < 60) {
       return `${diffMinutes} ${getMinuteWord(diffMinutes)} назад`;
     } else if (diffHours < 24) {
@@ -75,66 +77,80 @@ const badgeId = `last-updated-${crypto.randomUUID().slice(0, 8)}`;
   }
 
   function getMinuteWord(count: number): string {
-    if (count % 10 === 1 && count % 100 !== 11) return 'минуту';
-    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'минуты';
-    return 'минут';
+    if (count % 10 === 1 && count % 100 !== 11) return "минуту";
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100))
+      return "минуты";
+    return "минут";
   }
 
   function getHourWord(count: number): string {
-    if (count % 10 === 1 && count % 100 !== 11) return 'час';
-    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'часа';
-    return 'часов';
+    if (count % 10 === 1 && count % 100 !== 11) return "час";
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100))
+      return "часа";
+    return "часов";
   }
 
   function getDayWord(count: number): string {
-    if (count % 10 === 1 && count % 100 !== 11) return 'день';
-    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'дня';
-    return 'дней';
+    if (count % 10 === 1 && count % 100 !== 11) return "день";
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100))
+      return "дня";
+    return "дней";
   }
 
   function getWeekWord(count: number): string {
-    if (count % 10 === 1 && count % 100 !== 11) return 'неделю';
-    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'недели';
-    return 'недель';
+    if (count % 10 === 1 && count % 100 !== 11) return "неделю";
+    if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100))
+      return "недели";
+    return "недель";
   }
 
   function formatExactTime(date: Date): string {
-    return date.toLocaleString('ru-RU', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short'
+    return date.toLocaleString("ru-RU", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZoneName: "short",
     });
   }
 
-  function updateRelativeTime() {
-    document.querySelectorAll('.last-updated-badge[data-updated-at]').forEach((badge) => {
-      const updatedAtStr = badge.getAttribute('data-updated-at');
-      if (!updatedAtStr) return;
-
+  async function updateRelativeTime() {
+    const badge = document.querySelector(
+      ".last-updated-badge[data-updated-at]",
+    );
+    if (!badge) return;
+    try {
+      let time: string
       try {
-        const updatedAt = new Date(updatedAtStr);
-        const relativeTimeElement = badge.querySelector('.relative-time');
-
-        if (relativeTimeElement) {
-          relativeTimeElement.textContent = formatRelativeTime(updatedAt);
-          badge.setAttribute('title', formatExactTime(updatedAt));
-        }
-      } catch (error) {
-        console.warn('Failed to parse updated_at timestamp:', updatedAtStr);
-        const relativeTimeElement = badge.querySelector('.relative-time');
-        if (relativeTimeElement) {
-          relativeTimeElement.textContent = 'недавно';
-        }
+        time = (
+        (await (
+          await fetch("https://schedule-watcher.thedanik.workers.dev/updated-at", {
+            priority: "low"
+          })
+        ).json()) as { time: string }
+      ).time;
+      } catch (_err) {
+        const date = badge.getAttribute("data-updated-at");
+        if (!date) return;
+        time = date;
       }
-    });
+      const updatedAt = new Date(time);
+      const relativeTimeElement = badge.querySelector(".relative-time");
+
+      if (relativeTimeElement) {
+        relativeTimeElement.textContent = formatRelativeTime(updatedAt);
+        badge.setAttribute("title", formatExactTime(updatedAt));
+      }
+    } catch (error) {
+      const relativeTimeElement = badge.querySelector(".relative-time");
+      if (relativeTimeElement) {
+        relativeTimeElement.textContent = "неизвестно";
+      }
+    }
+    // todo: should we fetch every minute or not? probably let user refresh
   }
 
   // Update immediately when page loads
-  document.addEventListener('DOMContentLoaded', updateRelativeTime);
-
-  // Update every minute to keep relative time current
-  setInterval(updateRelativeTime, 60000);
+  document.addEventListener("DOMContentLoaded", updateRelativeTime);
 </script>

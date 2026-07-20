@@ -1,0 +1,23 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "schedule-watcher",
+  "main": "schedule-watcher.ts",
+  "compatibility_date": "2026-07-08",
+  "triggers": {
+    "crons": ["0 15 * * SUN,MON,TUE,THU,FRI,SAT", "0 12-17 * * WED"],
+  },
+  "vars": {
+    "SCHEDULE_PAGE_URL": "http://kinoteatr.megamag.by/index.php?cPath=353299",
+    "REPO": "TheDanikReal/movies-aggregate",
+    // info on getting workflow id: https://docs.github.com/en/rest/actions/workflows?apiVersion=2026-03-10
+    "WORKFLOW_ID": 249763023,
+    // override the baseline schedule.json location if needed, eg. for debugging
+    // "BASELINE_SCHEDULE_URL": "http://localhost:8000/schedule.json"
+  },
+  "kv_namespaces": [
+    {
+        "binding": "kinoslon",
+        "id": "b5e4d9bd75134150ab25b2be081e894e",
+    },
+  ],
+}

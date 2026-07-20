@@ -37,6 +37,8 @@ export interface Env {
   GITHUB_TOKEN: string;
   /** Optional override for the baseline schedule.json URL. */
   BASELINE_SCHEDULE_URL?: string;
+  /** kv storage for storing last updated time */
+  kinoslon: KVNamespace;
 }
 
 const DEFAULT_BASELINE_URL =
@@ -357,7 +359,7 @@ async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<v
     throw new Error("Missing GITHUB_TOKEN environment variable");
   }
 
-  await fetch(`https://api.github.com/repos/${env.REPO}/actions/workflows/${String(env.WORKFLOW_ID)}/dispatches`, {
+  const result = await fetch(`https://api.github.com/repos/${env.REPO}/actions/workflows/${String(env.WORKFLOW_ID)}/dispatches`, {
     headers: {
       Accept: "application/vnd.github+json",
       Authorization: `Bearer ${env.GITHUB_TOKEN}`,
@@ -369,6 +371,9 @@ async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<v
       ref: "main",
     }),
   });
+  if (result.ok) {
+    await env.kinoslon.put("updated", new Date().toISOString())
+  }
 }
 
 async function checkForScheduleUpdates(
@@ -396,22 +401,69 @@ async function checkForScheduleUpdates(
   return { changed: changes.length > 0, changes };
 }
 
+// todo: rename this function probably
+async function handleUpdateRoute(env: Env) {
+  try {
+    const result = await checkForScheduleUpdates(env);
+    return new Response(JSON.stringify(result, null, 2), {
+      headers: { "content-type": "application/json; charset=utf-8" },
+    });
+  } catch (error) {
+    return new Response(
+      JSON.stringify({ error: error instanceof Error ? error.message : String(error) }),
+      { status: 500, headers: { "content-type": "application/json; charset=utf-8" } },
+    );
+  }
+}
+
+// todo: safety, but i think it's not very important for a simple last updated path
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+  "Access-Control-Max-Age": "86400",
+}
+
+function handleOptions(request: Request): Response {
+  let headers = request.headers
+  if (
+    headers.get("Origin") !== null &&
+    headers.get("Access-Control-Request-Method") !== null &&
+    headers.get("Access-Control-Request-Headers") !== null
+  ) {
+    let respHeaders = {
+      ...corsHeaders,
+      "Access-Control-Allow-Headers": request.headers.get("Access-Control-Request-Headers")!,
+    }
+    return new Response(null, {
+      headers: respHeaders,
+    })
+  }
+  else {
+    return new Response(null, {
+      headers: {
+        Allow: "GET, HEAD, POST, OPTIONS",
+      },
+    })
+  }
+}
+
 export default {
   // Manual/testing trigger: hit the worker's URL to see the diff as JSON.
   async fetch(request: Request, env: Env): Promise<Response> {
-    if (new URL(request.url).pathname !== "/") {
-      return new Response(undefined, { status: 404 });
+    if (request.method === "OPTIONS") {
+      return handleOptions(request)
     }
-    try {
-      const result = await checkForScheduleUpdates(env);
-      return new Response(JSON.stringify(result, null, 2), {
-        headers: { "content-type": "application/json; charset=utf-8" },
-      });
-    } catch (error) {
-      return new Response(
-        JSON.stringify({ error: error instanceof Error ? error.message : String(error) }),
-        { status: 500, headers: { "content-type": "application/json; charset=utf-8" } },
-      );
+    const path = new URL(request.url).pathname
+    if (path === "/updated-at") {
+      const time = await env.kinoslon.get("updated", "text")
+      return new Response(JSON.stringify({
+        time
+      }, null, 2), { headers: { ...corsHeaders, "content-type": "application/json; charset=utf-8" } })
+    } else if (path === "/update") {
+      // todo: secret so that we won't get spammed by someone
+      return handleUpdateRoute(env)
+    } else {
+      return new Response(undefined, { status: 404 });
     }
   },
 
