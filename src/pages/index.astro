@@ -18,6 +18,8 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
       <LastUpdatedBadge updatedAt={scheduleData.updated_at} />
     </div>
 
+    {sourceMovies.length == 0 && <h3>Расписания временно нет, пожалуйста зайдите позже</h3>}
+
     <div class="movies-grid">
       {movies.map((movie, index) => (
         <MovieCard movie={movie} loading={index < 2 ? 'eager' : 'lazy'} />
