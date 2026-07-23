@@ -1,4 +1,299 @@
 {
-  "updated_at": "2026-07-22T18:43:26.158Z",
-  "movies": []
+  "updated_at": "2026-07-23T07:56:38.599Z",
+  "movies": [
+    {
+      "name": "Колючая и ушастый",
+      "times": {
+        "23.07": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-07-23T13:00:00.000Z"
+          }
+        ],
+        "24.07": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-07-24T13:00:00.000Z"
+          }
+        ],
+        "25.07": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-07-25T13:00:00.000Z"
+          }
+        ],
+        "26.07": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-07-26T13:00:00.000Z"
+          }
+        ],
+        "27.07": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-07-27T13:00:00.000Z"
+          }
+        ],
+        "29.07": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-07-29T13:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Холли — юная и любознательная ежиха, которую после гибели родителей чрезмерно опекает брат, а их сосед Уолтер — глава семейства кроликов, отец более 50 маленьких детей. Уолтер и Холли устали от размеренной жизни и жаждут приключений. Однажды Уолтер теряет память, и Холли идет на небольшой обман, чтобы отправиться с ним в незабываемое путешествие, полное новых знакомств, неожиданных опасностей и приключений.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/2Nws6O9FUN0LbeR3PBqsmJKVQRy.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/cRHb4KrWDuSFVzKGDuCHpCoXTmw.jpg",
+      "studio": [
+        {
+          "id": 189075,
+          "logo_path": null,
+          "name": "Kapers Animation",
+          "origin_country": "GB"
+        },
+        {
+          "id": 200370,
+          "logo_path": null,
+          "name": "Fantabulous",
+          "origin_country": ""
+        },
+        {
+          "id": 50164,
+          "logo_path": null,
+          "name": "Fabrique d'images",
+          "origin_country": "LU"
+        },
+        {
+          "id": 243256,
+          "logo_path": null,
+          "name": "Freaks Factory",
+          "origin_country": ""
+        },
+        {
+          "id": 138014,
+          "logo_path": null,
+          "name": "Iron Box Films",
+          "origin_country": "GB"
+        },
+        {
+          "id": 299223,
+          "logo_path": null,
+          "name": "IheartCinema",
+          "origin_country": "GB"
+        }
+      ],
+      "rating": 8,
+      "length": 85,
+      "price": "7р. 00к."
+    },
+    {
+      "name": "Миньоны и монстры",
+      "times": {
+        "23.07": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-07-23T15:30:00.000Z"
+          }
+        ],
+        "24.07": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-07-24T15:30:00.000Z"
+          }
+        ],
+        "25.07": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-07-25T15:30:00.000Z"
+          }
+        ],
+        "26.07": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-07-26T15:30:00.000Z"
+          }
+        ],
+        "28.07": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-07-28T15:30:00.000Z"
+          }
+        ],
+        "29.07": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-07-29T15:30:00.000Z"
+          }
+        ]
+      },
+      "description": "1920-е годы. Миньоны снимаются в кино и покоряют Голливуд. Чтобы снять свой собственный фильм о монстрах, они отправляются на поиски самых пугающих существ.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/5Bu0nKJxTQd2bVUDF9qrpEEFt1a.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/kkcwhgSFd81QDlXo8ytrpHPQjhy.jpg",
+      "studio": [
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 6704,
+          "logo_path": "/fOG2oY4m1YuYTQh4bMqqZkmgOAI.png",
+          "name": "Illumination",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 6.374,
+      "length": 90,
+      "price": "10р. 00к."
+    },
+    {
+      "name": "На деревню дедушке 2",
+      "times": {
+        "23.07": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-07-23T17:00:00.000Z"
+          }
+        ],
+        "24.07": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-07-24T17:00:00.000Z"
+          }
+        ],
+        "25.07": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-07-25T17:00:00.000Z"
+          }
+        ],
+        "26.07": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-07-26T17:00:00.000Z"
+          }
+        ],
+        "28.07": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-07-28T17:00:00.000Z"
+          }
+        ],
+        "29.07": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-07-29T17:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Владик снова проводит летние каникулы у деда Юры, когда в деревне неожиданно появляется Виктор, бывший дипломат и дедушка Владика по папе. Он быстро находит общий язык с местными, дарит внуку дорогие подарки и увлекает его историями о путешествиях по миру. Между дедами вспыхивает соперничество за внимание внука — от едких подколов до открытого противостояния. Дед Юра всё больше чувствует, что проигрывает, но, когда всплывает опасная тайна из прошлого Виктора, у него появляется возможность избавиться от конкурента.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/7qPCkwW5NCdldGPlhaCMZPl6NpD.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/yMW4ZaoGsowlwXnJkCCgzPCMCj.jpg",
+      "studio": [
+        {
+          "id": 256310,
+          "logo_path": null,
+          "name": "Big Screen Production",
+          "origin_country": "RU"
+        },
+        {
+          "id": 205604,
+          "logo_path": null,
+          "name": "Infiniti Content",
+          "origin_country": "RU"
+        },
+        {
+          "id": 256362,
+          "logo_path": null,
+          "name": "R1 Film Company",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 86,
+      "price": "10р. 00к."
+    },
+    {
+      "name": "Патруль времени",
+      "times": {
+        "23.07": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-07-23T11:00:00.000Z"
+          }
+        ],
+        "24.07": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-07-24T11:00:00.000Z"
+          }
+        ],
+        "25.07": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-07-25T11:00:00.000Z"
+          }
+        ],
+        "26.07": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-07-26T11:00:00.000Z"
+          }
+        ],
+        "28.07": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-07-28T11:00:00.000Z"
+          }
+        ],
+        "29.07": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-07-29T11:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Лейла и её друзья Абдулла, Айша и Халид из академии Акли случайно открывают способ путешествовать во времени и попадают в прошлое. Им предстоит спасти великих учёных от коварного злодея Фасида, не нарушить ход истории — и найти дорогу домой.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/mIrmu83OaTmxYhZQUSjQedtz5Cs.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/cvq9cRMDJIGzNpHaPVGFftqPcLj.jpg",
+      "studio": [
+        {
+          "id": 10950,
+          "logo_path": "/6TdE9m9KgV2az7vNI8n95rQiYr3.png",
+          "name": "Screen Queensland",
+          "origin_country": "AU"
+        },
+        {
+          "id": 7584,
+          "logo_path": "/eGkfvvyf4fJTvBUR1xt1669IPA3.png",
+          "name": "Screen Australia",
+          "origin_country": "AU"
+        },
+        {
+          "id": 15392,
+          "logo_path": null,
+          "name": "Blacklab Entertainment",
+          "origin_country": ""
+        },
+        {
+          "id": 15393,
+          "logo_path": null,
+          "name": "Wolfhound Pictures",
+          "origin_country": "AU"
+        }
+      ],
+      "rating": 7.415,
+      "length": 98,
+      "price": "7р. 00к."
+    }
+  ]
 }
