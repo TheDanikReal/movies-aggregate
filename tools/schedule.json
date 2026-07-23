@@ -1,15 +1,9 @@
 {
-  "updated_at": "2026-07-23T07:56:38.599Z",
+  "updated_at": "2026-07-23T15:01:33.147Z",
   "movies": [
     {
       "name": "Колючая и ушастый",
       "times": {
-        "23.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-23T13:00:00.000Z"
-          }
-        ],
         "24.07": [
           {
             "time": "16:00",
@@ -221,14 +215,8 @@
       "price": "10р. 00к."
     },
     {
-      "name": "Патруль времени 2026",
+      "name": "Патруль времени",
       "times": {
-        "23.07": [
-          {
-            "time": "14:00",
-            "timestamp": "2026-07-23T11:00:00.000Z"
-          }
-        ],
         "24.07": [
           {
             "time": "14:00",
@@ -263,7 +251,7 @@
       "description": "Лейла и её друзья Абдулла, Айша и Халид из академии Акли случайно открывают способ путешествовать во времени и попадают в прошлое. Им предстоит спасти великих учёных от коварного злодея Фасида, не нарушить ход истории — и найти дорогу домой.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/4kvhX5E9qiBCreNVIGSp7gikD5j.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/mIrmu83OaTmxYhZQUSjQedtz5Cs.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/cvq9cRMDJIGzNpHaPVGFftqPcLj.jpg",
       "studio": [
         {
@@ -292,7 +280,7 @@
         }
       ],
       "rating": 7.415,
-      "length": 0,
+      "length": 98,
       "price": "7р. 00к."
     }
   ]
