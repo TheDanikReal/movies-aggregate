@@ -22,6 +22,7 @@ type MovieSchedule = {
   rating: number;
   length: number;
   price?: string;
+  year: string;
 };
 
 type ScheduleOutput = {
@@ -256,7 +257,7 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
   });
 };
 
-const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number, length: number }> => {
+const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number, length: number, year: string }> => {
   try {
     const searchResults = await tmdb.search.movies({
       query: movieName,
@@ -264,7 +265,11 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
     });
 
     if (searchResults.results && searchResults.results.length > 0) {
-      const movie = searchResults.results[0];
+      const movie = [...searchResults.results].sort((left, right) => {
+        const leftYear = Number((left.release_date ?? "").slice(0, 4)) || 0;
+        const rightYear = Number((right.release_date ?? "").slice(0, 4)) || 0;
+        return rightYear - leftYear;
+      })[0];
       const baseUrl = 'https://image.tmdb.org/t/p/w500';
       const details = await tmdb.movies.details(movie.id)
 
@@ -273,14 +278,15 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
         backdrop: movie.backdrop_path ? `${baseUrl}${movie.backdrop_path}` : '',
         studio: details.production_companies || [],
         rating: details.vote_average,
-        length: details.runtime
+        length: details.runtime,
+        year: details.release_date.slice(0, 4)
       };
     }
   } catch (error) {
     console.error(`Failed to fetch images for "${movieName}":`, error);
   }
 
-  return { poster: '', backdrop: '', studio: [], rating: 0, length: 0 };
+  return { poster: '', backdrop: '', studio: [], rating: 0, length: 0, year: "" };
 };
 
 const fetchSeancePrice = async (seanceUrl: string): Promise<string> => {
@@ -356,7 +362,7 @@ const main = async (): Promise<void> => {
     const price = await fetchConsistentSeancePrice(movie.name, movie.seanceUrls);
 
     console.log(`Fetching metadata for "${movie.name}"...`);
-    const { poster, backdrop, studio, rating, length } = await fetchMovieMetadata(movie.name);
+    const { poster, backdrop, studio, rating, length, year } = await fetchMovieMetadata(movie.name);
 
     movies.push({
       name: movie.name,
@@ -370,6 +376,7 @@ const main = async (): Promise<void> => {
       rating,
       length,
       ...(price ? { price } : {}),
+      year
     });
   }
 

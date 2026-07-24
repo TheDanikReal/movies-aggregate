@@ -17,6 +17,7 @@ interface Movie {
   format?: string;
   poster_link: string;
   backdrop_link?: string;
+  year: string;
 }
 
 interface Props {
@@ -94,7 +95,7 @@ const descriptionId = `desc-${crypto.randomUUID().slice(0, 8)}`;
         {movieFormat && <span class="format-badge" data-format={movieFormat}>{movieFormat}</span>}
         {movie.poster_link && movie.poster_link !== "" && (
           <a
-            href={`https://www.youtube.com/results?search_query=${encodeURIComponent(movie.name + " трейлер")}`}
+            href={`https://www.youtube.com/results?search_query=${encodeURIComponent(movie.name + " трейлер " + movie.year)}`}
             target="_blank"
             rel="noopener noreferrer"
             class="trailer-btn"
