@@ -1,83 +1,49 @@
 {
-  "updated_at": "2026-07-28T13:10:31.620Z",
+  "updated_at": "2026-07-29T14:57:42.812Z",
   "movies": [
-    {
-      "name": "Колючая и ушастый",
-      "times": {
-        "28.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-28T13:00:00.000Z"
-          }
-        ],
-        "29.07": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-07-29T13:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Холли — юная и любознательная ежиха, которую после гибели родителей чрезмерно опекает брат, а их сосед Уолтер — глава семейства кроликов, отец более 50 маленьких детей. Уолтер и Холли устали от размеренной жизни и жаждут приключений. Однажды Уолтер теряет память, и Холли идет на небольшой обман, чтобы отправиться с ним в незабываемое путешествие, полное новых знакомств, неожиданных опасностей и приключений.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/2MqG0Ziw3YGOotPFaN8t1MsOhWV.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/cRHb4KrWDuSFVzKGDuCHpCoXTmw.jpg",
-      "studio": [
-        {
-          "id": 189075,
-          "logo_path": null,
-          "name": "Kapers Animation",
-          "origin_country": "GB"
-        },
-        {
-          "id": 200370,
-          "logo_path": null,
-          "name": "Fantabulous",
-          "origin_country": ""
-        },
-        {
-          "id": 50164,
-          "logo_path": null,
-          "name": "Fabrique d'images",
-          "origin_country": "LU"
-        },
-        {
-          "id": 243256,
-          "logo_path": null,
-          "name": "Freaks Factory",
-          "origin_country": ""
-        },
-        {
-          "id": 138014,
-          "logo_path": null,
-          "name": "Iron Box Films",
-          "origin_country": "GB"
-        },
-        {
-          "id": 299223,
-          "logo_path": null,
-          "name": "IheartCinema",
-          "origin_country": "GB"
-        }
-      ],
-      "rating": 8,
-      "length": 85,
-      "price": "7р. 00к.",
-      "year": "2025"
-    },
     {
       "name": "Миньоны и монстры",
       "times": {
-        "28.07": [
+        "01.08": [
           {
-            "time": "18:30",
-            "timestamp": "2026-07-28T15:30:00.000Z"
+            "time": "13:00",
+            "timestamp": "2026-08-01T10:00:00.000Z"
+          }
+        ],
+        "02.08": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-08-02T10:00:00.000Z"
+          }
+        ],
+        "04.08": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-08-04T10:00:00.000Z"
+          }
+        ],
+        "05.08": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-08-05T10:00:00.000Z"
           }
         ],
         "29.07": [
           {
             "time": "18:30",
             "timestamp": "2026-07-29T15:30:00.000Z"
+          }
+        ],
+        "30.07": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-07-30T10:00:00.000Z"
+          }
+        ],
+        "31.07": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-07-31T10:00:00.000Z"
           }
         ]
       },
@@ -100,7 +66,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.0,
+      "rating": 6.4,
       "length": 90,
       "price": "10р. 00к.",
       "year": "2026"
@@ -108,12 +74,6 @@
     {
       "name": "На деревню дедушке 2",
       "times": {
-        "28.07": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-07-28T17:00:00.000Z"
-          }
-        ],
         "29.07": [
           {
             "time": "20:00",
@@ -152,12 +112,176 @@
       "year": "2026"
     },
     {
+      "name": "Ограбить Лондон",
+      "times": {
+        "01.08": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-08-01T14:00:00.000Z"
+          }
+        ],
+        "02.08": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-08-02T14:00:00.000Z"
+          }
+        ],
+        "04.08": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-08-04T14:00:00.000Z"
+          }
+        ],
+        "05.08": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-08-05T14:00:00.000Z"
+          }
+        ],
+        "30.07": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-07-30T14:00:00.000Z"
+          }
+        ],
+        "31.07": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-07-31T14:00:00.000Z"
+          }
+        ]
+      },
+      "description": "В центре Лондона находят неразорвавшуюся бомбу времен Второй мировой. Людей из соседних домов эвакуируют, включая работников крупнейшего банка Великобритании. Именно в этот момент там находится крупная партия алмазов. Вооружившись современными гаджетами, команда первоклассных взломщиков готовит невероятно дерзкое ограбление.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/xVmjdt4czNK8pfLHDb0oxcM7D2i.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/8wIaBCeGv3UhIn5CJOWQGHT1Cif.jpg",
+      "studio": [
+        {
+          "id": 138743,
+          "logo_path": "/abFJGmtPFs6Bq5cBavmrnXDcpf8.png",
+          "name": "Anton",
+          "origin_country": "GB"
+        },
+        {
+          "id": 53874,
+          "logo_path": "/mZJMAPElHQBIuWWXSyHtyaMf26C.png",
+          "name": "Sigma Films",
+          "origin_country": "GB"
+        },
+        {
+          "id": 181068,
+          "logo_path": "/8XjNmpBDZrMOoKRhA14wp1FLuvN.png",
+          "name": "Sky",
+          "origin_country": "GB"
+        }
+      ],
+      "rating": 7,
+      "length": 96,
+      "price": "8р. 00к.",
+      "year": "2026"
+    },
+    {
+      "name": "Одиссея",
+      "times": {
+        "01.08": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-08-01T16:00:00.000Z"
+          }
+        ],
+        "02.08": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-08-02T16:00:00.000Z"
+          }
+        ],
+        "04.08": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-08-04T16:00:00.000Z"
+          }
+        ],
+        "05.08": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-08-05T16:00:00.000Z"
+          }
+        ],
+        "30.07": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-07-30T16:00:00.000Z"
+          }
+        ],
+        "31.07": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-07-31T16:00:00.000Z"
+          }
+        ]
+      },
+      "description": "После Троянской войны Одиссей, царь Итаки, во главе небольшого войска возвращается домой к своей жене Пенелопе. На своём пути Одиссей сталкивается со множеством испытаний, встречает циклопов, сирен и великанов-людоедов.",
+      "age": "16+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/n7NR7SH7CyiiF70yN96r3d1jWr0.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/tYuC9kUwqhpDQ3pv1kLMqyMF1Jw.jpg",
+      "studio": [
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 9996,
+          "logo_path": "/3tvBqYsBhxWeHlu62SIJ1el93O7.png",
+          "name": "Syncopy",
+          "origin_country": "GB"
+        }
+      ],
+      "rating": 7.965,
+      "length": 173,
+      "price": "10р. 00к.",
+      "year": "2026"
+    },
+    {
       "name": "Патруль времени",
       "times": {
-        "29.07": [
+        "01.08": [
           {
-            "time": "14:00",
-            "timestamp": "2026-07-29T11:00:00.000Z"
+            "time": "15:00",
+            "timestamp": "2026-08-01T12:00:00.000Z"
+          }
+        ],
+        "02.08": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-08-02T12:00:00.000Z"
+          }
+        ],
+        "04.08": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-08-04T12:00:00.000Z"
+          }
+        ],
+        "05.08": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-08-05T12:00:00.000Z"
+          }
+        ],
+        "30.07": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-07-30T12:00:00.000Z"
+          }
+        ],
+        "31.07": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-07-31T12:00:00.000Z"
           }
         ]
       },
