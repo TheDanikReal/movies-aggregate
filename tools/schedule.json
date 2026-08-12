@@ -1,42 +1,135 @@
 {
-  "updated_at": "2026-08-12T14:18:33.780Z",
+  "updated_at": "2026-08-12T16:26:14.746Z",
   "movies": [
     {
-      "name": "Ограбить Лондон",
+      "name": "40 свиданий, 40 ночей",
       "times": {
-        "12.08": [
+        "13.08": [
           {
-            "time": "17:00",
-            "timestamp": "2026-08-12T14:00:00.000Z"
+            "time": "20:30",
+            "timestamp": "2026-08-13T17:30:00.000Z"
+          }
+        ],
+        "14.08": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-08-14T17:30:00.000Z"
+          }
+        ],
+        "15.08": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-08-15T13:00:00.000Z"
+          }
+        ],
+        "16.08": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-08-16T17:30:00.000Z"
+          }
+        ],
+        "18.08": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-08-18T13:00:00.000Z"
+          }
+        ],
+        "19.08": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-08-19T13:00:00.000Z"
           }
         ]
       },
-      "description": "В центре Лондона находят неразорвавшуюся бомбу времен Второй мировой. Людей из соседних домов эвакуируют, включая работников крупнейшего банка Великобритании. Именно в этот момент там находится крупная партия алмазов. Вооружившись современными гаджетами, команда первоклассных взломщиков готовит невероятно дерзкое ограбление.",
-      "age": "18+",
+      "description": "У Леа в жизни всё под контролем, кроме мужчин и аренды за квартиру, которую надо платить. После очередного неудачного свидания бабушка предлагает ей сделку: найти достойного парня за 40 свиданий, и та покроет аренду ее квартиры на целый год.",
+      "age": "16+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/xVmjdt4czNK8pfLHDb0oxcM7D2i.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/8wIaBCeGv3UhIn5CJOWQGHT1Cif.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/lWEhjO801M52CY5Gx6OAwZZ6m7o.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/dgleeErFcEHEacYabCTDwr1zAl2.jpg",
       "studio": [
         {
-          "id": 138743,
-          "logo_path": "/abFJGmtPFs6Bq5cBavmrnXDcpf8.png",
-          "name": "Anton",
-          "origin_country": "GB"
+          "id": 183322,
+          "logo_path": "/nGrB4bYbXYyXJf8TprEUEpKqYyd.png",
+          "name": "Lucky Number 8 Productions",
+          "origin_country": "US"
         },
         {
-          "id": 53874,
-          "logo_path": "/mZJMAPElHQBIuWWXSyHtyaMf26C.png",
-          "name": "Sigma Films",
-          "origin_country": "GB"
-        },
-        {
-          "id": 181068,
-          "logo_path": "/8XjNmpBDZrMOoKRhA14wp1FLuvN.png",
-          "name": "Sky",
-          "origin_country": "GB"
+          "id": 214050,
+          "logo_path": "/tH3zOqGk3MzCU9ZB7STpquI2Pd7.png",
+          "name": "Rebellium Films",
+          "origin_country": "US"
         }
       ],
-      "rating": 7.114,
+      "rating": 6.7,
+      "length": 101,
+      "year": "2026"
+    },
+    {
+      "name": "Во власти страха",
+      "times": {
+        "13.08": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-08-13T13:00:00.000Z"
+          }
+        ],
+        "14.08": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-08-14T13:00:00.000Z"
+          }
+        ],
+        "15.08": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-08-15T17:30:00.000Z"
+          }
+        ],
+        "16.08": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-08-16T13:00:00.000Z"
+          }
+        ],
+        "18.08": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-08-18T17:30:00.000Z"
+          }
+        ],
+        "19.08": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-08-19T17:30:00.000Z"
+          }
+        ]
+      },
+      "description": "Пятеро друзей отправляются в отпуск, чтобы заняться дайвингом и погружаться в клетке на морское дно, наблюдая за белыми акулами. Но опасная забава перерастает в схватку со смертью, когда на лодку проникает расчётливый и безжалостный контрабандист, который требует поднять на борт затонувший неподалёку груз.",
+      "age": "16+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/6AHnijQqg3f5KYDkhuSzBdyuExG.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/lSd6nEnlaeQkswLLUgHC5gyuXyU.jpg",
+      "studio": [
+        {
+          "id": 154063,
+          "logo_path": "/r4anaxYa8OL5KaUbU35VkrIe88L.png",
+          "name": "Capstone Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 210197,
+          "logo_path": "/hDX0eQxjfNiV4sBU8CH1oTQ2Jdk.png",
+          "name": "AF Films",
+          "origin_country": "ES"
+        },
+        {
+          "id": 304095,
+          "logo_path": null,
+          "name": "Match Point",
+          "origin_country": ""
+        }
+      ],
+      "rating": 0,
       "length": 96,
       "year": "2026"
     },
@@ -69,9 +162,140 @@
           "origin_country": "GB"
         }
       ],
-      "rating": 8,
+      "rating": 7.993,
       "length": 173,
-      "price": "10р. 00к.",
+      "year": "2026"
+    },
+    {
+      "name": "Смешарики сквозь вселенные",
+      "times": {
+        "13.08": [
+          {
+            "time": "14:15",
+            "timestamp": "2026-08-13T11:15:00.000Z"
+          }
+        ],
+        "14.08": [
+          {
+            "time": "14:15",
+            "timestamp": "2026-08-14T11:15:00.000Z"
+          }
+        ],
+        "15.08": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-08-15T11:00:00.000Z"
+          }
+        ],
+        "16.08": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-08-16T11:00:00.000Z"
+          }
+        ],
+        "18.08": [
+          {
+            "time": "14:15",
+            "timestamp": "2026-08-18T11:15:00.000Z"
+          }
+        ],
+        "19.08": [
+          {
+            "time": "14:15",
+            "timestamp": "2026-08-19T11:15:00.000Z"
+          }
+        ]
+      },
+      "description": "Крош и Ёжик находят в Ромашковой долине необычное устройство, которое переносит их в игру про будущее, где они — обычные дети на космическом корабле, летящем на Марс. Приключения начинаются тогда, когда они осознают, что это не игра.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/ewlHTioaExcrODbgz0IC7eZUuwj.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/rzpbPONqTazEuR4JfGucBZIftLv.jpg",
+      "studio": [
+        {
+          "id": 123331,
+          "logo_path": null,
+          "name": "Riki Group",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 85,
+      "year": "2026"
+    },
+    {
+      "name": "Человек-паук: Новый день",
+      "times": {
+        "13.08": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-08-13T15:00:00.000Z"
+          }
+        ],
+        "14.08": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-08-14T15:00:00.000Z"
+          }
+        ],
+        "15.08": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-08-15T15:00:00.000Z"
+          }
+        ],
+        "16.08": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-08-16T15:00:00.000Z"
+          }
+        ],
+        "18.08": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-08-18T15:00:00.000Z"
+          }
+        ],
+        "19.08": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-08-19T15:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Одинокий и повзрослевший Питер Паркер полностью посвящает себя борьбе с преступностью в Нью-Йорке, поскольку 4 года назад после заклинания Доктора Стренджа мир и все близкие забыли его. Но с ростом угроз и нагрузки на Человека-паука его способности претерпевают странные изменения, способные поставить под угрозу его существование. Тем временем в городе случается новая цепочка преступлений, которая приводит к появлению одного из самых опасных противников в жизни Питера.",
+      "age": "12+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/jjY37mmqRWvKPRafuroumvRbR9p.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
+      "studio": [
+        {
+          "id": 420,
+          "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+          "name": "Marvel Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 5,
+          "logo_path": "/71BqEFAF4V3qjjMPCpLuyJFB9A.png",
+          "name": "Columbia Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 84041,
+          "logo_path": "/nw4kyc29QRpNtFbdsBHkRSFavvt.png",
+          "name": "Pascal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 22213,
+          "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
+          "name": "TSG Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 7.9,
+      "length": 145,
       "year": "2026"
     }
   ]
