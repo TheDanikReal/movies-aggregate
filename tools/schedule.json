@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T16:26:14.746Z",
+  "updated_at": "2026-08-12T21:23:57.828Z",
   "movies": [
     {
       "name": "40 свиданий, 40 ночей",
@@ -134,39 +134,6 @@
       "year": "2026"
     },
     {
-      "name": "Одиссея",
-      "times": {
-        "12.08": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-08-12T16:00:00.000Z"
-          }
-        ]
-      },
-      "description": "После Троянской войны Одиссей, царь Итаки, во главе небольшого войска возвращается домой к своей жене Пенелопе. На своём пути Одиссей сталкивается со множеством испытаний, встречает циклопов, сирен и великанов-людоедов.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/n7NR7SH7CyiiF70yN96r3d1jWr0.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/RMXG8myu1aGlNUsRjtxzmpdMK0.jpg",
-      "studio": [
-        {
-          "id": 33,
-          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
-          "name": "Universal Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 9996,
-          "logo_path": "/3tvBqYsBhxWeHlu62SIJ1el93O7.png",
-          "name": "Syncopy",
-          "origin_country": "GB"
-        }
-      ],
-      "rating": 7.993,
-      "length": 173,
-      "year": "2026"
-    },
-    {
       "name": "Смешарики сквозь вселенные",
       "times": {
         "13.08": [
@@ -221,6 +188,7 @@
       ],
       "rating": 0,
       "length": 85,
+      "price": "7р. 00к.",
       "year": "2026"
     },
     {
@@ -294,8 +262,9 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.9,
+      "rating": 7.863,
       "length": 145,
+      "price": "10р. 00к.",
       "year": "2026"
     }
   ]
