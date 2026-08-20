@@ -1,19 +1,13 @@
 {
-  "updated_at": "2026-08-19T15:00:49.723Z",
+  "updated_at": "2026-08-20T15:01:25.561Z",
   "movies": [
     {
       "name": "40 свиданий, 40 ночей",
       "times": {
-        "20.08": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-08-20T13:00:00.000Z"
-          }
-        ],
         "21.08": [
           {
-            "time": "16:00",
-            "timestamp": "2026-08-21T13:00:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-08-21T15:00:00.000Z"
           }
         ],
         "22.08": [
@@ -65,58 +59,18 @@
       "year": "2026"
     },
     {
-      "name": "Во власти страха",
-      "times": {
-        "19.08": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-08-19T17:30:00.000Z"
-          }
-        ]
-      },
-      "description": "Пятеро друзей отправляются в отпуск, чтобы заняться дайвингом и погружаться в клетке на морское дно, наблюдая за белыми акулами. Но опасная забава перерастает в схватку со смертью, когда на лодку проникает расчётливый и безжалостный контрабандист, который требует поднять на борт затонувший неподалёку груз.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/6AHnijQqg3f5KYDkhuSzBdyuExG.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/lSd6nEnlaeQkswLLUgHC5gyuXyU.jpg",
-      "studio": [
-        {
-          "id": 154063,
-          "logo_path": "/r4anaxYa8OL5KaUbU35VkrIe88L.png",
-          "name": "Capstone Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 210197,
-          "logo_path": "/hDX0eQxjfNiV4sBU8CH1oTQ2Jdk.png",
-          "name": "AF Films",
-          "origin_country": "ES"
-        },
-        {
-          "id": 304095,
-          "logo_path": null,
-          "name": "Match Point",
-          "origin_country": ""
-        }
-      ],
-      "rating": 0,
-      "length": 96,
-      "price": "8р. 00к.",
-      "year": "2026"
-    },
-    {
       "name": "Лидия и Всадник Тумана",
       "times": {
         "20.08": [
           {
-            "time": "14:30",
-            "timestamp": "2026-08-20T11:30:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-08-20T15:00:00.000Z"
           }
         ],
         "21.08": [
           {
-            "time": "14:30",
-            "timestamp": "2026-08-21T11:30:00.000Z"
+            "time": "16:30",
+            "timestamp": "2026-08-21T13:30:00.000Z"
           }
         ],
         "22.08": [
@@ -147,7 +101,7 @@
       "description": "Когда старшего брата Лидии похищает таинственный Заклинатель, девочка отправляется на поиски по Туманному морю. Подобранная командой летающего корабля «Дельфин», Лидия становится ученицей астромага Амброзии, которая ищет своего сына и других пропавших детей. Чтобы спасти брата, Лидии предстоит освоить магию созвездий — и научиться доверять силе собственных воспоминаний.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/zRK1GjEq5bfdugSiqkJsDL3WSUw.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/jD7f4Rg5NHQkAs7KlHX8ZlKFmXO.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/9UJDSMHKN1ENK9sOYf1iDghCgxo.jpg",
       "studio": [
         {
@@ -165,18 +119,6 @@
     {
       "name": "Моана",
       "times": {
-        "20.08": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-08-20T15:00:00.000Z"
-          }
-        ],
-        "21.08": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-08-21T15:00:00.000Z"
-          }
-        ],
         "22.08": [
           {
             "time": "15:00",
@@ -233,7 +175,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.015,
+      "rating": 6.01,
       "length": 115,
       "price": "10р. 00к.",
       "year": "2026"
@@ -241,12 +183,6 @@
     {
       "name": "Человек-паук: Новый день",
       "times": {
-        "19.08": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-08-19T15:00:00.000Z"
-          }
-        ],
         "20.08": [
           {
             "time": "20:00",
@@ -288,7 +224,7 @@
       "age": "12+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/pK8CH9JxrgX2ZIq3WclTwnX0cCL.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/7iwUUcKURMT7aKfCwMy6YnGtchD.jpg",
       "studio": [
         {
           "id": 420,
@@ -315,7 +251,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.9,
+      "rating": 7.885,
       "length": 145,
       "price": "10р. 00к.",
       "year": "2026"
