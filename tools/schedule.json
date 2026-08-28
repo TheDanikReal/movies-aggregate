@@ -1,39 +1,6 @@
 {
-  "updated_at": "2026-08-26T13:51:21.382Z",
+  "updated_at": "2026-08-28T09:58:17.118Z",
   "movies": [
-    {
-      "name": "40 свиданий, 40 ночей",
-      "times": {
-        "26.08": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-08-26T13:00:00.000Z"
-          }
-        ]
-      },
-      "description": "У Леа в жизни всё под контролем, кроме мужчин и аренды за квартиру, которую надо платить. После очередного неудачного свидания бабушка предлагает ей сделку: найти достойного парня за 40 свиданий, и та покроет аренду ее квартиры на целый год.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/lWEhjO801M52CY5Gx6OAwZZ6m7o.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/dgleeErFcEHEacYabCTDwr1zAl2.jpg",
-      "studio": [
-        {
-          "id": 183322,
-          "logo_path": "/nGrB4bYbXYyXJf8TprEUEpKqYyd.png",
-          "name": "Lucky Number 8 Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 214050,
-          "logo_path": "/tH3zOqGk3MzCU9ZB7STpquI2Pd7.png",
-          "name": "Rebellium Films",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.8,
-      "length": 101,
-      "year": "2026"
-    },
     {
       "name": "Лидия и Всадник Тумана",
       "times": {
@@ -99,12 +66,6 @@
           {
             "time": "12:00",
             "timestamp": "2026-09-02T09:00:00.000Z"
-          }
-        ],
-        "27.08": [
-          {
-            "time": "15:00",
-            "timestamp": "2026-08-27T12:00:00.000Z"
           }
         ],
         "28.08": [
@@ -177,18 +138,6 @@
             "timestamp": "2026-09-02T12:30:00.000Z"
           }
         ],
-        "26.08": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-08-26T15:00:00.000Z"
-          }
-        ],
-        "27.08": [
-          {
-            "time": "16:30",
-            "timestamp": "2026-08-27T13:30:00.000Z"
-          }
-        ],
         "28.08": [
           {
             "time": "15:30",
@@ -239,7 +188,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.087,
+      "rating": 6.134,
       "length": 115,
       "price": "10р. 00к.",
       "year": "2026"
@@ -257,12 +206,6 @@
           {
             "time": "20:00",
             "timestamp": "2026-09-02T17:00:00.000Z"
-          }
-        ],
-        "27.08": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-08-27T15:30:00.000Z"
           }
         ],
         "28.08": [
@@ -303,7 +246,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.541,
+      "rating": 6.453,
       "length": 95,
       "price": "8р. 00к.",
       "year": "2026"
@@ -321,18 +264,6 @@
           {
             "time": "17:30",
             "timestamp": "2026-09-02T14:30:00.000Z"
-          }
-        ],
-        "26.08": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-08-26T17:00:00.000Z"
-          }
-        ],
-        "27.08": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-08-27T17:00:00.000Z"
           }
         ],
         "28.08": [
@@ -385,7 +316,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.893,
+      "rating": 7.9,
       "length": 145,
       "price": "10р. 00к.",
       "year": "2026"
