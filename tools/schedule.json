@@ -1,89 +1,125 @@
 {
-  "updated_at": "2026-08-28T09:58:17.118Z",
+  "updated_at": "2026-09-02T16:35:20.175Z",
   "movies": [
     {
-      "name": "Лидия и Всадник Тумана",
+      "name": "Астрал 6: Они уже здесь",
       "times": {
-        "01.09": [
+        "03.09": [
           {
-            "time": "14:15",
-            "timestamp": "2026-09-01T11:15:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-09-03T15:00:00.000Z"
           }
         ],
-        "02.09": [
+        "04.09": [
           {
-            "time": "14:15",
-            "timestamp": "2026-09-02T11:15:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-09-04T15:00:00.000Z"
           }
         ],
-        "28.08": [
+        "05.09": [
           {
-            "time": "14:15",
-            "timestamp": "2026-08-28T11:15:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-09-05T15:00:00.000Z"
           }
         ],
-        "29.08": [
+        "06.09": [
           {
-            "time": "14:00",
-            "timestamp": "2026-08-29T11:00:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-09-06T15:00:00.000Z"
           }
         ],
-        "30.08": [
+        "08.09": [
           {
-            "time": "14:00",
-            "timestamp": "2026-08-30T11:00:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-09-08T15:00:00.000Z"
+          }
+        ],
+        "09.09": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-09-09T15:00:00.000Z"
           }
         ]
       },
-      "description": "Когда старшего брата Лидии похищает таинственный Заклинатель, девочка отправляется на поиски по Туманному морю. Подобранная командой летающего корабля «Дельфин», Лидия становится ученицей астромага Амброзии, которая ищет своего сына и других пропавших детей. Чтобы спасти брата, Лидии предстоит освоить магию созвездий — и научиться доверять силе собственных воспоминаний.",
-      "age": "6+",
+      "description": "Молодая женщина обнаруживает, что может перемещаться в небытие и приносить оттуда в наш мир зловещих призраков.",
+      "age": "18+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/6nbDgRyJ2p9dJP2WnCnvpzN2kxw.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/9UJDSMHKN1ENK9sOYf1iDghCgxo.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/2hfvVae4Jjbfe4yIc2ygGfqI1Mt.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/hD8y787ciNWQ2bn396YrSsOIzdN.jpg",
       "studio": [
         {
-          "id": 20183,
-          "logo_path": "/uTFqSaBC6BMJegqq8WECicS79YE.png",
-          "name": "Productions 10th Ave",
-          "origin_country": "CA"
+          "id": 3172,
+          "logo_path": "/rzKluDcRkIwHZK2pHsiT667A2Kw.png",
+          "name": "Blumhouse Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 3287,
+          "logo_path": "/bz6GbCQQXGNE56LTW9dwgksW0Iw.png",
+          "name": "Screen Gems",
+          "origin_country": "US"
+        },
+        {
+          "id": 11341,
+          "logo_path": "/eZuaGAonSPXsmXR44huTBXgPUSd.png",
+          "name": "Stage 6 Films",
+          "origin_country": "US"
+        },
+        {
+          "id": 76907,
+          "logo_path": "/ygMQtjsKX7BZkCQhQZY82lgnCUO.png",
+          "name": "Atomic Monster",
+          "origin_country": "US"
+        },
+        {
+          "id": 22213,
+          "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
+          "name": "TSG Entertainment",
+          "origin_country": "US"
         }
       ],
-      "rating": 4,
-      "length": 80,
-      "price": "7р. 00к.",
+      "rating": 6.617,
+      "length": 106,
+      "price": "8р. 00к.",
       "year": "2026"
     },
     {
       "name": "Лунтик. Обратная сторона Луны",
       "times": {
-        "01.09": [
+        "03.09": [
           {
-            "time": "12:00",
-            "timestamp": "2026-09-01T09:00:00.000Z"
+            "time": "14:30",
+            "timestamp": "2026-09-03T11:30:00.000Z"
           }
         ],
-        "02.09": [
+        "04.09": [
           {
-            "time": "12:00",
-            "timestamp": "2026-09-02T09:00:00.000Z"
+            "time": "14:30",
+            "timestamp": "2026-09-04T11:30:00.000Z"
           }
         ],
-        "28.08": [
+        "05.09": [
           {
-            "time": "12:00",
-            "timestamp": "2026-08-28T09:00:00.000Z"
+            "time": "14:00",
+            "timestamp": "2026-09-05T11:00:00.000Z"
           }
         ],
-        "29.08": [
+        "06.09": [
           {
-            "time": "12:00",
-            "timestamp": "2026-08-29T09:00:00.000Z"
+            "time": "14:00",
+            "timestamp": "2026-09-06T11:00:00.000Z"
           }
         ],
-        "30.08": [
+        "08.09": [
           {
-            "time": "12:00",
-            "timestamp": "2026-08-30T09:00:00.000Z"
+            "time": "14:30",
+            "timestamp": "2026-09-08T11:30:00.000Z"
+          }
+        ],
+        "09.09": [
+          {
+            "time": "14:30",
+            "timestamp": "2026-09-09T11:30:00.000Z"
           }
         ]
       },
@@ -124,106 +160,48 @@
       "year": "2026"
     },
     {
-      "name": "Моана",
-      "times": {
-        "01.09": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-09-01T12:30:00.000Z"
-          }
-        ],
-        "02.09": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-09-02T12:30:00.000Z"
-          }
-        ],
-        "28.08": [
-          {
-            "time": "15:30",
-            "timestamp": "2026-08-28T12:30:00.000Z"
-          }
-        ],
-        "29.08": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-08-29T13:00:00.000Z"
-          }
-        ],
-        "30.08": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-08-30T13:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Моана откликается на зов океана. Впервые в жизни она отправляется за риф своего острова Мотунуи вместе с прославленным полубогом Мауи. Их ждёт незабываемое путешествие, которое должно вернуть процветание её народу.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/s7o0gbvgpjwb8S0Uc5QaEdwJntb.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/c6BPbkO5Npt1OdwttAxCFo06wtH.jpg",
-      "studio": [
-        {
-          "id": 2,
-          "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
-          "name": "Walt Disney Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 73669,
-          "logo_path": "/pZ1sOLrUxvCvW1jODdCFgU6RxUA.png",
-          "name": "Seven Bucks Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 34081,
-          "logo_path": null,
-          "name": "Flynn Picture Company",
-          "origin_country": "US"
-        },
-        {
-          "id": 122645,
-          "logo_path": "/ujqjqvWtJxP24nAwmRvksaPTDoo.png",
-          "name": "5000 Broadway Productions",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.134,
-      "length": 115,
-      "price": "10р. 00к.",
-      "year": "2026"
-    },
-    {
       "name": "Мятеж",
       "times": {
-        "01.09": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-09-01T17:00:00.000Z"
-          }
-        ],
         "02.09": [
           {
             "time": "20:00",
             "timestamp": "2026-09-02T17:00:00.000Z"
           }
         ],
-        "28.08": [
+        "03.09": [
           {
             "time": "20:00",
-            "timestamp": "2026-08-28T17:00:00.000Z"
+            "timestamp": "2026-09-03T17:00:00.000Z"
           }
         ],
-        "29.08": [
+        "04.09": [
           {
-            "time": "18:00",
-            "timestamp": "2026-08-29T15:00:00.000Z"
+            "time": "20:00",
+            "timestamp": "2026-09-04T17:00:00.000Z"
           }
         ],
-        "30.08": [
+        "05.09": [
           {
-            "time": "18:00",
-            "timestamp": "2026-08-30T15:00:00.000Z"
+            "time": "20:00",
+            "timestamp": "2026-09-05T17:00:00.000Z"
+          }
+        ],
+        "06.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-06T17:00:00.000Z"
+          }
+        ],
+        "08.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-08T17:00:00.000Z"
+          }
+        ],
+        "09.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-09T17:00:00.000Z"
           }
         ]
       },
@@ -246,79 +224,121 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.453,
+      "rating": 6.354,
       "length": 95,
       "price": "8р. 00к.",
       "year": "2026"
     },
     {
-      "name": "Человек-паук: Новый день",
+      "name": "Тайная жизнь вещей",
       "times": {
-        "01.09": [
+        "03.09": [
           {
-            "time": "17:30",
-            "timestamp": "2026-09-01T14:30:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-09-03T13:00:00.000Z"
           }
         ],
-        "02.09": [
+        "04.09": [
           {
-            "time": "17:30",
-            "timestamp": "2026-09-02T14:30:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-09-04T13:00:00.000Z"
           }
         ],
-        "28.08": [
+        "05.09": [
           {
-            "time": "17:30",
-            "timestamp": "2026-08-28T14:30:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-09-05T13:00:00.000Z"
           }
         ],
-        "29.08": [
+        "06.09": [
           {
-            "time": "20:00",
-            "timestamp": "2026-08-29T17:00:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-09-06T13:00:00.000Z"
           }
         ],
-        "30.08": [
+        "08.09": [
           {
-            "time": "20:00",
-            "timestamp": "2026-08-30T17:00:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-09-08T13:00:00.000Z"
+          }
+        ],
+        "09.09": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-09-09T13:00:00.000Z"
           }
         ]
       },
-      "description": "Одинокий и повзрослевший Питер Паркер полностью посвящает себя борьбе с преступностью в Нью-Йорке, поскольку 4 года назад после заклинания Доктора Стренджа мир и все близкие забыли его. Но с ростом угроз и нагрузки на Человека-паука его способности претерпевают странные изменения, способные поставить под угрозу его существование. Тем временем в городе случается новая цепочка преступлений, которая приводит к появлению одного из самых опасных противников в жизни Питера.",
-      "age": "12+",
+      "description": "Юный Том не только видит забавные рожицы во всём на свете — от кондиционеров до авто, но и водит с ними дружбу. А трое любимцев, заводной будильник, жестяная банка и бумажный пакет, даже живут у него в комнате. Но необычные друзья мальчика раздражают его отчима. Он видит в них лишь бездушный мусор и однажды отправляет их на свалку. Теперь цель Тома — во что бы то ни стало спасти старых друзей, а заодно и обрести новых.",
+      "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/pK8CH9JxrgX2ZIq3WclTwnX0cCL.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/7iwUUcKURMT7aKfCwMy6YnGtchD.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/xZblxKLzgXameNgEdcE8o37Ch8I.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/c9kyFqOJj7PVn87JBkRBmKvFAfI.jpg",
       "studio": [
         {
-          "id": 420,
-          "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
-          "name": "Marvel Studios",
+          "id": 61011,
+          "logo_path": "/kDPeollsOtUtGqqEF4P29NwEjf5.png",
+          "name": "Scythia Films",
+          "origin_country": "CA"
+        },
+        {
+          "id": 55251,
+          "logo_path": null,
+          "name": "Southern Light Films",
+          "origin_country": "AU"
+        },
+        {
+          "id": 160007,
+          "logo_path": "/dsUGgrrbqYZcHLKZQnrf3zEs6db.png",
+          "name": "Orogen Entertainment",
           "origin_country": "US"
         },
         {
-          "id": 5,
-          "logo_path": "/71BqEFAF4V3qjjMPCpLuyJFB9A.png",
-          "name": "Columbia Pictures",
+          "id": 127522,
+          "logo_path": "/bEeTzk7aLDNHWW2L0L0yRbFegGA.png",
+          "name": "The Mediapro Studio",
+          "origin_country": "ES"
+        },
+        {
+          "id": 11317,
+          "logo_path": "/hMboqqmeILXFeOJjuCsn3FvCIT3.png",
+          "name": "Phoenix Pictures",
           "origin_country": "US"
         },
         {
-          "id": 84041,
-          "logo_path": "/nw4kyc29QRpNtFbdsBHkRSFavvt.png",
-          "name": "Pascal Pictures",
+          "id": 306610,
+          "logo_path": null,
+          "name": "BLD Ventures",
           "origin_country": "US"
         },
         {
-          "id": 22213,
-          "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
-          "name": "TSG Entertainment",
+          "id": 54874,
+          "logo_path": "/gniXmIsykPPXw7Lys1Fkm4LlB9O.png",
+          "name": "Umbrella Entertainment",
+          "origin_country": "AU"
+        },
+        {
+          "id": 25140,
+          "logo_path": "/6SeV4YCwyIDktJlvrVwiEDSLovF.png",
+          "name": "The Exchange",
           "origin_country": "US"
+        },
+        {
+          "id": 64740,
+          "logo_path": "/N9CoGbHpYbA93wogwbKGN3MhDh.png",
+          "name": "Mongrel Media",
+          "origin_country": "CA"
+        },
+        {
+          "id": 157740,
+          "logo_path": "/psBLfwHCfU9A4U9bWmeWF8AlSqr.png",
+          "name": "Crave",
+          "origin_country": "CA"
         }
       ],
-      "rating": 7.9,
-      "length": 145,
-      "price": "10р. 00к.",
+      "rating": 0,
+      "length": 92,
+      "price": "7р. 00к.",
       "year": "2026"
     }
   ]
