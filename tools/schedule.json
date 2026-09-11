@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T08:07:16.521Z",
+  "updated_at": "2026-09-11T15:01:57.998Z",
   "movies": [
     {
       "name": "Астрал 6: Они уже здесь",
@@ -66,7 +66,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.5,
+      "rating": 6.481,
       "length": 106,
       "price": "8р. 00к.",
       "year": "2026"
@@ -74,12 +74,6 @@
     {
       "name": "Край чудес",
       "times": {
-        "11.09": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-09-11T09:00:00.000Z"
-          }
-        ],
         "12.09": [
           {
             "time": "12:00",
@@ -108,8 +102,8 @@
       "description": "Юный художник Филипп неожиданно попадает в настоящий Край чудес — тайный волшебный мир, скрытый на просторах Сибири. Его ждет захватывающее приключение, знакомство с фантастическим народом иморов и их удивительными животными. Но из-за вмешательства человека Краю чудес и его обитателям угрожает гибель. Филиппу предстоит во чтобы то ни стало спасти сказочный мир и своих новых друзей.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/m5AEUTaTBEOcFq18VdFqVGeumKW.jpg",
-      "backdrop_link": "",
+      "poster_link": "https://image.tmdb.org/t/p/w500/lOfegKBDxDJK2mzHuJFXPBIzD5G.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/ncozR9FOS3GZ3ycTfTDlExxwSrc.jpg",
       "studio": [
         {
           "id": 269917,
@@ -212,7 +206,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.119,
+      "rating": 7.115,
       "length": 107,
       "price": "8р. 00к.",
       "year": "2026"
@@ -220,12 +214,6 @@
     {
       "name": "Тайная жизнь вещей",
       "times": {
-        "11.09": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-09-11T13:00:00.000Z"
-          }
-        ],
         "12.09": [
           {
             "time": "14:00",
@@ -324,7 +312,7 @@
       "year": "2026"
     },
     {
-      "name": "Хитрый койот",
+      "name": "Хитрый койот против всех",
       "times": {
         "11.09": [
           {
@@ -360,37 +348,12 @@
       "description": "Легендарный Хитрый Койот оказывается среди людей. Устав быть вечной жертвой неудачных изобретений корпорации «АКМЕ», он нанимает адвоката и подает на компанию в суд. Теперь вместо погони за Дорожным Бегуном его ждет судебная битва с безжалостным корпоративным юристом Бадди Крейном, для которого прибыль важнее справедливости.",
       "age": "12+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/gwCwmTk2EfDccd4RtIPsWEwzd1r.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/l9mFW9HQnAZ4r1ChZJHoOT3jaal.jpg",
-      "studio": [
-        {
-          "id": 94218,
-          "logo_path": "/kxuhS8wyKtVprOn5nckdHyNuSg1.png",
-          "name": "Troll Court Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 296158,
-          "logo_path": null,
-          "name": "Keylight Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 25120,
-          "logo_path": "/6RLMWBcGF2COzjjBORPUy705yF7.png",
-          "name": "Warner Animation Group",
-          "origin_country": "US"
-        },
-        {
-          "id": 174,
-          "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
-          "name": "Warner Bros. Pictures",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 7.615,
-      "length": 103,
-      "year": "2026"
+      "poster_link": "",
+      "backdrop_link": "",
+      "studio": [],
+      "rating": 0,
+      "length": 0,
+      "year": ""
     }
   ]
 }
