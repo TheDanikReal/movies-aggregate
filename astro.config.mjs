@@ -21,7 +21,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      lastmod: new Date("2026-08-19T16:33:49.953Z"),
+      lastmod: new Date(),
       filter: (page) => {
         return page !== "https://kinoslon.netlify.app/thanks/"
       }
