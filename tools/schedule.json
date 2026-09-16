@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T14:01:40.570Z",
+  "updated_at": "2026-09-16T17:27:23.122Z",
   "movies": [
     {
       "name": "Как Иван в сказку попал",
@@ -39,7 +39,7 @@
       "age": "6+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/aIy2zoBDniIDve581vIGUnKq6uB.jpg",
-      "backdrop_link": "",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/p5tdONE6x1GOIFBU0liJbuPJLBA.jpg",
       "studio": [
         {
           "id": 3467,
@@ -211,7 +211,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.173,
+      "rating": 7.18,
       "length": 107,
       "price": "8р. 00к.",
       "year": "2026"
@@ -319,12 +319,6 @@
     {
       "name": "Хитрый койот против всех",
       "times": {
-        "16.09": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-09-16T16:00:00.000Z"
-          }
-        ],
         "19.09": [
           {
             "time": "14:00",
@@ -358,6 +352,7 @@
       "studio": [],
       "rating": 0,
       "length": 0,
+      "price": "7р. 00к.",
       "year": ""
     }
   ]
