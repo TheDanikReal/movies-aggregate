@@ -1,83 +1,100 @@
 {
-  "updated_at": "2026-09-12T19:47:51.276Z",
+  "updated_at": "2026-09-16T14:01:40.570Z",
   "movies": [
     {
-      "name": "Астрал 6: Они уже здесь",
+      "name": "Как Иван в сказку попал",
       "times": {
-        "13.09": [
+        "17.09": [
           {
-            "time": "18:00",
-            "timestamp": "2026-09-13T15:00:00.000Z"
+            "time": "17:00",
+            "timestamp": "2026-09-17T14:00:00.000Z"
           }
         ],
-        "15.09": [
+        "19.09": [
           {
-            "time": "18:00",
-            "timestamp": "2026-09-15T15:00:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-09-19T13:00:00.000Z"
+          }
+        ],
+        "20.09": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-09-20T13:00:00.000Z"
+          }
+        ],
+        "22.09": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-09-22T13:00:00.000Z"
+          }
+        ],
+        "23.09": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-09-23T14:00:00.000Z"
           }
         ]
       },
-      "description": "Молодая женщина обнаруживает, что может перемещаться в небытие и приносить оттуда в наш мир зловещих призраков.",
-      "age": "18+",
+      "description": "Современный мальчик Иван Добрынин не любит русские сказки и не верит в них. Однажды он случайно попадает в волшебный сундук и оказывается в мире русских сказок. Чтобы вернуться домой, Ивану предстоит столкнуться с нечистой силой, обрести друзей и совершить самый настоящий подвиг.",
+      "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/2hfvVae4Jjbfe4yIc2ygGfqI1Mt.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/hD8y787ciNWQ2bn396YrSsOIzdN.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/aIy2zoBDniIDve581vIGUnKq6uB.jpg",
+      "backdrop_link": "",
       "studio": [
         {
-          "id": 3172,
-          "logo_path": "/rzKluDcRkIwHZK2pHsiT667A2Kw.png",
-          "name": "Blumhouse Productions",
-          "origin_country": "US"
+          "id": 3467,
+          "logo_path": "/pumbDNR4udEagb3ldNUMFSA85Fn.png",
+          "name": "Studio Trite",
+          "origin_country": "RU"
         },
         {
-          "id": 3287,
-          "logo_path": "/bz6GbCQQXGNE56LTW9dwgksW0Iw.png",
-          "name": "Screen Gems",
-          "origin_country": "US"
+          "id": 3419,
+          "logo_path": "/byrxE2pJD9JLyBCIzyK0pYVanyG.png",
+          "name": "Central Partnership",
+          "origin_country": "RU"
         },
         {
-          "id": 11341,
-          "logo_path": "/eZuaGAonSPXsmXR44huTBXgPUSd.png",
-          "name": "Stage 6 Films",
-          "origin_country": "US"
-        },
-        {
-          "id": 76907,
-          "logo_path": "/ygMQtjsKX7BZkCQhQZY82lgnCUO.png",
-          "name": "Atomic Monster",
-          "origin_country": "US"
-        },
-        {
-          "id": 22213,
-          "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
-          "name": "TSG Entertainment",
-          "origin_country": "US"
+          "id": 69587,
+          "logo_path": "/u0Jy8wJ05m3MZCNiba1EXgf0zoK.png",
+          "name": "Russia 1",
+          "origin_country": "RU"
         }
       ],
-      "rating": 6.5,
-      "length": 106,
-      "price": "8р. 00к.",
+      "rating": 0,
+      "length": 0,
       "year": "2026"
     },
     {
       "name": "Край чудес",
       "times": {
-        "13.09": [
+        "17.09": [
           {
-            "time": "12:00",
-            "timestamp": "2026-09-13T09:00:00.000Z"
+            "time": "10:00",
+            "timestamp": "2026-09-17T07:00:00.000Z"
           }
         ],
-        "15.09": [
+        "19.09": [
           {
             "time": "12:00",
-            "timestamp": "2026-09-15T09:00:00.000Z"
+            "timestamp": "2026-09-19T09:00:00.000Z"
           }
         ],
-        "16.09": [
+        "20.09": [
           {
-            "time": "11:00",
-            "timestamp": "2026-09-16T08:00:00.000Z"
+            "time": "12:00",
+            "timestamp": "2026-09-20T09:00:00.000Z"
+          }
+        ],
+        "22.09": [
+          {
+            "time": "12:00",
+            "timestamp": "2026-09-22T09:00:00.000Z"
+          }
+        ],
+        "23.09": [
+          {
+            "time": "10:00",
+            "timestamp": "2026-09-23T07:00:00.000Z"
           }
         ]
       },
@@ -102,22 +119,40 @@
     {
       "name": "Крушение рейса",
       "times": {
-        "13.09": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-09-13T17:00:00.000Z"
-          }
-        ],
-        "15.09": [
-          {
-            "time": "20:00",
-            "timestamp": "2026-09-15T17:00:00.000Z"
-          }
-        ],
         "16.09": [
           {
             "time": "21:00",
             "timestamp": "2026-09-16T18:00:00.000Z"
+          }
+        ],
+        "17.09": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-09-17T18:00:00.000Z"
+          }
+        ],
+        "19.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-19T17:00:00.000Z"
+          }
+        ],
+        "20.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-20T17:00:00.000Z"
+          }
+        ],
+        "22.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-22T17:00:00.000Z"
+          }
+        ],
+        "23.09": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-09-23T18:00:00.000Z"
           }
         ]
       },
@@ -176,124 +211,142 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.11,
+      "rating": 7.173,
       "length": 107,
       "price": "8р. 00к.",
       "year": "2026"
     },
     {
-      "name": "Тайная жизнь вещей",
+      "name": "Курьер",
       "times": {
-        "13.09": [
+        "17.09": [
           {
-            "time": "14:00",
-            "timestamp": "2026-09-13T11:00:00.000Z"
+            "time": "19:00",
+            "timestamp": "2026-09-17T16:00:00.000Z"
           }
         ],
-        "15.09": [
+        "18.09": [
           {
-            "time": "14:00",
-            "timestamp": "2026-09-15T11:00:00.000Z"
+            "time": "20:00",
+            "timestamp": "2026-09-18T17:00:00.000Z"
           }
         ],
-        "16.09": [
+        "19.09": [
           {
-            "time": "12:30",
-            "timestamp": "2026-09-16T09:30:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-09-19T15:00:00.000Z"
+          }
+        ],
+        "20.09": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-09-20T15:00:00.000Z"
+          }
+        ],
+        "22.09": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-09-22T15:00:00.000Z"
+          }
+        ],
+        "23.09": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-09-23T16:00:00.000Z"
           }
         ]
       },
-      "description": "Юный Том не только видит забавные рожицы во всём на свете — от кондиционеров до авто, но и водит с ними дружбу. А трое любимцев, заводной будильник, жестяная банка и бумажный пакет, даже живут у него в комнате. Но необычные друзья мальчика раздражают его отчима. Он видит в них лишь бездушный мусор и однажды отправляет их на свалку. Теперь цель Тома — во что бы то ни стало спасти старых друзей, а заодно и обрести новых.",
-      "age": "6+",
+      "description": "У Хэнка Мэлоуна, элитного курьера, есть три часа, чтобы доставить печень и спасти семилетнюю девочку, которой требуется срочная пересадка. Простая задача превращается в смертельное испытание, когда глава известной преступной группировки решает любой ценой завладеть органом.",
+      "age": "16+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/xZblxKLzgXameNgEdcE8o37Ch8I.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/c9kyFqOJj7PVn87JBkRBmKvFAfI.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/vnrrZCe2sDMdEY7xyGSZMpSsZyG.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/iXR79oKsLHwLno9jdzxxeFP21sy.jpg",
       "studio": [
         {
-          "id": 61011,
-          "logo_path": "/kDPeollsOtUtGqqEF4P29NwEjf5.png",
-          "name": "Scythia Films",
-          "origin_country": "CA"
+          "id": 8000,
+          "logo_path": "/f8NwLg72BByt3eav7lX1lcJfe60.png",
+          "name": "Broken Road Productions",
+          "origin_country": "US"
         },
         {
-          "id": 55251,
+          "id": 72954,
           "logo_path": null,
-          "name": "Southern Light Films",
+          "name": "AllyCat Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 110723,
+          "logo_path": "/27Od860h9Xc7gDS3Pph6yRlUyBI.png",
+          "name": "Nickel City Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 221397,
+          "logo_path": "/aj3EiCWM5jKxDJGZh34KV6L9HcE.png",
+          "name": "A Higher Standard",
+          "origin_country": "US"
+        },
+        {
+          "id": 219277,
+          "logo_path": null,
+          "name": "G2 Dispatch",
           "origin_country": "AU"
         },
         {
-          "id": 160007,
-          "logo_path": "/dsUGgrrbqYZcHLKZQnrf3zEs6db.png",
-          "name": "Orogen Entertainment",
+          "id": 165435,
+          "logo_path": "/pDh2WDdOajWST9jlkFo6TOvETnB.png",
+          "name": "Angel Studios",
           "origin_country": "US"
         },
         {
-          "id": 127522,
-          "logo_path": "/bEeTzk7aLDNHWW2L0L0yRbFegGA.png",
-          "name": "The Mediapro Studio",
-          "origin_country": "ES"
-        },
-        {
-          "id": 11317,
-          "logo_path": "/hMboqqmeILXFeOJjuCsn3FvCIT3.png",
-          "name": "Phoenix Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 306610,
-          "logo_path": null,
-          "name": "BLD Ventures",
-          "origin_country": "US"
-        },
-        {
-          "id": 54874,
-          "logo_path": "/gniXmIsykPPXw7Lys1Fkm4LlB9O.png",
-          "name": "Umbrella Entertainment",
+          "id": 309655,
+          "logo_path": "/9IYQkwgJlOzBiWANI6krDsE3QvR.png",
+          "name": "International Media Funds Management",
           "origin_country": "AU"
         },
         {
-          "id": 25140,
-          "logo_path": "/6SeV4YCwyIDktJlvrVwiEDSLovF.png",
-          "name": "The Exchange",
-          "origin_country": "US"
-        },
-        {
-          "id": 64740,
-          "logo_path": "/N9CoGbHpYbA93wogwbKGN3MhDh.png",
-          "name": "Mongrel Media",
-          "origin_country": "CA"
-        },
-        {
-          "id": 157740,
-          "logo_path": "/psBLfwHCfU9A4U9bWmeWF8AlSqr.png",
-          "name": "Crave",
-          "origin_country": "CA"
+          "id": 209819,
+          "logo_path": "/lvqsgXsWHX4r5jBOuvbNCpZCnBf.png",
+          "name": "Bright White Light",
+          "origin_country": "GB"
         }
       ],
-      "rating": 0,
-      "length": 92,
-      "price": "7р. 00к.",
+      "rating": 7.8,
+      "length": 97,
+      "price": "8р. 00к.",
       "year": "2026"
     },
     {
       "name": "Хитрый койот против всех",
       "times": {
-        "13.09": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-09-13T13:00:00.000Z"
-          }
-        ],
-        "15.09": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-09-15T13:00:00.000Z"
-          }
-        ],
         "16.09": [
           {
             "time": "19:00",
             "timestamp": "2026-09-16T16:00:00.000Z"
+          }
+        ],
+        "19.09": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-09-19T11:00:00.000Z"
+          }
+        ],
+        "20.09": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-09-20T11:00:00.000Z"
+          }
+        ],
+        "22.09": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-09-22T11:00:00.000Z"
+          }
+        ],
+        "23.09": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-09-23T12:00:00.000Z"
           }
         ]
       },
