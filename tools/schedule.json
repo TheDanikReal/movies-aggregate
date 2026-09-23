@@ -1,73 +1,335 @@
 {
-  "updated_at": "2026-09-23T17:40:28.306Z",
+  "updated_at": "2026-09-23T20:20:15.708Z",
   "movies": [
     {
-      "name": "Крушение рейса",
+      "name": "Девятая планета",
       "times": {
-        "23.09": [
+        "24.09": [
           {
-            "time": "21:00",
-            "timestamp": "2026-09-23T18:00:00.000Z"
+            "time": "13:30",
+            "timestamp": "2026-09-24T10:30:00.000Z"
+          }
+        ],
+        "25.09": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-09-25T15:30:00.000Z"
+          }
+        ],
+        "26.09": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-09-26T15:00:00.000Z"
+          }
+        ],
+        "27.09": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-09-27T15:00:00.000Z"
+          }
+        ],
+        "29.09": [
+          {
+            "time": "18:30",
+            "timestamp": "2026-09-29T15:30:00.000Z"
+          }
+        ],
+        "30.09": [
+          {
+            "time": "17:30",
+            "timestamp": "2026-09-30T14:30:00.000Z"
           }
         ]
       },
-      "description": "Самолёт международного рейса Лос-Анджелес – Шанхай вынужден совершить аварийную посадку в океане. Те, кто выжили в авиакатастрофе, вскоре пожалеют, что не погибли при падении самолета. Теперь им предстоит объединиться, чтобы спастись от кровожадных акул, привлеченных обломками самолета. Они теряют веру в спасение, но продолжают отчаянную борьбу за жизнь.",
+      "description": "После несчастного случая в сознании автомеханика Димы Хруста вспыхивают воспоминания о службе на Девятой планете: удивительные пейзажи, база землян, сражения с чудовищами, друзья и любимая девушка Полина, которую он однажды спас. Сослуживцы Хруста крутят пальцем у виска, ведь у них совершенно другие — обычные армейские — воспоминания. Но когда Дима в реальной жизни встречает Полину, он уже не сомневается: кто-то скорректировал им всем память. Правду можно узнать, только вернувшись на опасную планету.",
       "age": "16+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/1M5z4uIpAQWPVeVj78NKyAKCd7c.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/szKv713FcUXx6hcfdY369vtkmzr.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/86glDjzo8CIcOzE8C4jFloo9Trr.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/rmwu1PqEUznBKNIDtCbJycUV5od.jpg",
       "studio": [
         {
-          "id": 231386,
-          "logo_path": "/4WS75ndvhPMm7Rj2RFZnFYwBS2o.png",
-          "name": "Magenta Light Studios",
-          "origin_country": "US"
+          "id": 318,
+          "logo_path": "/q0UG4oZERwIywJdDPF4lRlvdYGW.png",
+          "name": "CTB Film Company",
+          "origin_country": "RU"
         },
         {
-          "id": 2520,
-          "logo_path": "/dAfMKKimOSxL147xNghoXM1Tuah.png",
-          "name": "Arclight Films",
-          "origin_country": "US"
+          "id": 78191,
+          "logo_path": "/3mmmEA0dRl3LtTx1i7L66giX5IW.png",
+          "name": "DixiMedia",
+          "origin_country": "RU"
         },
         {
-          "id": 200176,
+          "id": 106390,
           "logo_path": null,
-          "name": "Simmons/Hamilton Productions",
+          "name": "Gazprom-Media",
+          "origin_country": "RU"
+        },
+        {
+          "id": 76049,
+          "logo_path": "/tam9pIV4QK1ZPwdxBgtVkK1WTYC.png",
+          "name": "Cinema Foundation of Russia",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 106,
+      "year": "2026"
+    },
+    {
+      "name": "Как Иван в сказку попал",
+      "times": {
+        "24.09": [
+          {
+            "time": "10:00",
+            "timestamp": "2026-09-24T07:00:00.000Z"
+          }
+        ],
+        "25.09": [
+          {
+            "time": "14:30",
+            "timestamp": "2026-09-25T11:30:00.000Z"
+          }
+        ],
+        "26.09": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-09-26T11:00:00.000Z"
+          }
+        ],
+        "27.09": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-09-27T11:00:00.000Z"
+          }
+        ],
+        "29.09": [
+          {
+            "time": "14:30",
+            "timestamp": "2026-09-29T11:30:00.000Z"
+          }
+        ],
+        "30.09": [
+          {
+            "time": "12:00",
+            "timestamp": "2026-09-30T09:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Современный мальчик Иван Добрынин не любит русские сказки и не верит в них. Однажды он случайно попадает в волшебный сундук и оказывается в мире русских сказок. Чтобы вернуться домой, Ивану предстоит столкнуться с нечистой силой, обрести друзей и совершить самый настоящий подвиг.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/aIy2zoBDniIDve581vIGUnKq6uB.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/p5tdONE6x1GOIFBU0liJbuPJLBA.jpg",
+      "studio": [
+        {
+          "id": 3467,
+          "logo_path": "/pumbDNR4udEagb3ldNUMFSA85Fn.png",
+          "name": "Studio Trite",
+          "origin_country": "RU"
+        },
+        {
+          "id": 3419,
+          "logo_path": "/byrxE2pJD9JLyBCIzyK0pYVanyG.png",
+          "name": "Central Partnership",
+          "origin_country": "RU"
+        },
+        {
+          "id": 69587,
+          "logo_path": "/u0Jy8wJ05m3MZCNiba1EXgf0zoK.png",
+          "name": "Russia 1",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 0,
+      "price": "7р. 00к.",
+      "year": "2026"
+    },
+    {
+      "name": "Курьер",
+      "times": {
+        "24.09": [
+          {
+            "time": "11:50",
+            "timestamp": "2026-09-24T08:50:00.000Z"
+          }
+        ],
+        "25.09": [
+          {
+            "time": "16:30",
+            "timestamp": "2026-09-25T13:30:00.000Z"
+          }
+        ],
+        "26.09": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-09-26T13:00:00.000Z"
+          }
+        ],
+        "27.09": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-09-27T13:00:00.000Z"
+          }
+        ],
+        "29.09": [
+          {
+            "time": "16:30",
+            "timestamp": "2026-09-29T13:30:00.000Z"
+          }
+        ],
+        "30.09": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-09-30T18:00:00.000Z"
+          }
+        ]
+      },
+      "description": "У Хэнка Мэлоуна, элитного курьера, есть три часа, чтобы доставить печень и спасти семилетнюю девочку, которой требуется срочная пересадка. Простая задача превращается в смертельное испытание, когда глава известной преступной группировки решает любой ценой завладеть органом.",
+      "age": "16+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/vnrrZCe2sDMdEY7xyGSZMpSsZyG.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/2c9zNZJL0ZdagD6JbmU3hH4hovs.jpg",
+      "studio": [
+        {
+          "id": 8000,
+          "logo_path": "/f8NwLg72BByt3eav7lX1lcJfe60.png",
+          "name": "Broken Road Productions",
           "origin_country": "US"
         },
         {
-          "id": 11068,
-          "logo_path": "/jOdUllzDZRFy0tPIFDEwpP4Mpv4.png",
-          "name": "Nostromo Pictures",
-          "origin_country": "ES"
-        },
-        {
-          "id": 76098,
-          "logo_path": "/1DMLx7ZtpYPu9MvYH8Yswwsx0oH.png",
-          "name": "Aristos Films",
-          "origin_country": ""
-        },
-        {
-          "id": 293380,
+          "id": 72954,
           "logo_path": null,
-          "name": "DW Film Holdings",
+          "name": "AllyCat Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 110723,
+          "logo_path": "/27Od860h9Xc7gDS3Pph6yRlUyBI.png",
+          "name": "Nickel City Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 221397,
+          "logo_path": "/aj3EiCWM5jKxDJGZh34KV6L9HcE.png",
+          "name": "A Higher Standard",
+          "origin_country": "US"
+        },
+        {
+          "id": 219277,
+          "logo_path": null,
+          "name": "G2 Dispatch",
           "origin_country": "AU"
         },
         {
-          "id": 229487,
-          "logo_path": "/vF5HUjsJU0jFtlhpUdcodrECXBk.png",
-          "name": "Rabbits Black",
+          "id": 165435,
+          "logo_path": "/pDh2WDdOajWST9jlkFo6TOvETnB.png",
+          "name": "Angel Studios",
           "origin_country": "US"
         },
         {
-          "id": 2623,
-          "logo_path": "/7Bkm1yUF0y8x6jw8dHRfzS3B6dq.png",
-          "name": "Blue Rider Pictures",
-          "origin_country": "US"
+          "id": 309655,
+          "logo_path": "/9IYQkwgJlOzBiWANI6krDsE3QvR.png",
+          "name": "International Media Funds Management",
+          "origin_country": "AU"
+        },
+        {
+          "id": 209819,
+          "logo_path": "/lvqsgXsWHX4r5jBOuvbNCpZCnBf.png",
+          "name": "Bright White Light",
+          "origin_country": "GB"
         }
       ],
-      "rating": 7.372,
-      "length": 107,
+      "rating": 7.7,
+      "length": 97,
+      "year": "2026"
+    },
+    {
+      "name": "Флорист",
+      "times": {
+        "24.09": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-09-24T17:30:00.000Z"
+          }
+        ],
+        "25.09": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-09-25T17:30:00.000Z"
+          }
+        ],
+        "26.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-26T17:00:00.000Z"
+          }
+        ],
+        "27.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-27T17:00:00.000Z"
+          }
+        ],
+        "29.09": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-09-29T17:30:00.000Z"
+          }
+        ],
+        "30.09": [
+          {
+            "time": "19:20",
+            "timestamp": "2026-09-30T16:20:00.000Z"
+          }
+        ]
+      },
+      "description": "Тихий садовод, ведущий тайную жизнь наемного убийцы, обнаруживает, что его истинная личность находится под угрозой, когда он заводит неожиданную дружбу со свидетелем коррупции в полиции.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/w2bdIz33mMXq382aIL6VLGaGEnp.jpg",
+      "backdrop_link": "",
+      "studio": [
+        {
+          "id": 137373,
+          "logo_path": "/4OzujMDSLnAm7I0BCPL1D6RIoJ4.png",
+          "name": "CaliWood Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 121204,
+          "logo_path": "/vbtvY4IxgUZk713rkmoTO4MHIac.png",
+          "name": "BondIt Media Capital",
+          "origin_country": "US"
+        },
+        {
+          "id": 41735,
+          "logo_path": "/je9Ko1f6iu0AfLL3dINJEaxLvEb.png",
+          "name": "Buffalo 8",
+          "origin_country": "US"
+        },
+        {
+          "id": 43652,
+          "logo_path": null,
+          "name": "Volcanic Films",
+          "origin_country": ""
+        },
+        {
+          "id": 100121,
+          "logo_path": null,
+          "name": "Film Bridge International",
+          "origin_country": "US"
+        },
+        {
+          "id": 242727,
+          "logo_path": null,
+          "name": "Midwest",
+          "origin_country": ""
+        }
+      ],
+      "rating": 0,
+      "length": 0,
       "price": "8р. 00к.",
       "year": "2026"
     }
