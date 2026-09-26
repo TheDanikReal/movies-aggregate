@@ -11,6 +11,7 @@ type Showtime = {
 };
 
 type MovieSchedule = {
+  id: string;
   name: string;
   times: Record<string, Showtime[]>;
   description: string;
@@ -257,7 +258,7 @@ const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>
   });
 };
 
-const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; backdrop: string, studio: ProductionCompany[], rating: number, length: number, year: string }> => {
+const fetchMovieMetadata = async (movieName: string): Promise<{ id: string; poster: string; backdrop: string, studio: ProductionCompany[], rating: number, length: number, year: string }> => {
   try {
     const searchResults = await tmdb.search.movies({
       query: movieName,
@@ -274,6 +275,7 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
       const details = await tmdb.movies.details(movie.id)
 
       return {
+        id: details.imdb_id ?? "",
         poster: movie.poster_path ? `${baseUrl}${movie.poster_path}` : '',
         backdrop: movie.backdrop_path ? `${baseUrl}${movie.backdrop_path}` : '',
         studio: details.production_companies || [],
@@ -286,7 +288,7 @@ const fetchMovieMetadata = async (movieName: string): Promise<{ poster: string; 
     console.error(`Failed to fetch images for "${movieName}":`, error);
   }
 
-  return { poster: '', backdrop: '', studio: [], rating: 0, length: 0, year: "" };
+  return { id: '', poster: '', backdrop: '', studio: [], rating: 0, length: 0, year: "" };
 };
 
 const fetchSeancePrice = async (seanceUrl: string): Promise<string> => {
@@ -362,9 +364,10 @@ const main = async (): Promise<void> => {
     const price = await fetchConsistentSeancePrice(movie.name, movie.seanceUrls);
 
     console.log(`Fetching metadata for "${movie.name}"...`);
-    const { poster, backdrop, studio, rating, length, year } = await fetchMovieMetadata(movie.name);
+    const { id, poster, backdrop, studio, rating, length, year } = await fetchMovieMetadata(movie.name);
 
     movies.push({
+      id,
       name: movie.name,
       times,
       description: movie.description,

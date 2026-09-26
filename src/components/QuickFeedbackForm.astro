@@ -4,7 +4,7 @@ interface Props {
   choices: string[];
 }
 
-const { text, choices } = Astro.props;
+const { text, choices }: Props = Astro.props;
 ---
 
 <section class="feedback" aria-label="Форма быстрого отзыва">

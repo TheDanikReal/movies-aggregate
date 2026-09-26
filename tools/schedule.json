@@ -1,28 +1,11 @@
 {
-  "updated_at": "2026-10-30T15:01:25.726Z",
+  "updated_at": "2026-09-26T09:04:23.872Z",
   "movies": [
     {
-      "name": "Клэйфейс",
+      "id": "tt32880884",
+      "name": "Девятая планета",
       "times": {
-        "03.11": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-11-03T16:00:00.000Z"
-          }
-        ],
-        "04.11": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-11-04T16:00:00.000Z"
-          }
-        ],
-        "30.10": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-10-30T16:00:00.000Z"
-          }
-        ],
-        "31.10": [
+        "26.09": [
           {
             "time": "18:00",
             "timestamp": "2026-10-31T15:00:00.000Z"
@@ -66,27 +49,16 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.471,
-      "length": 109,
-      "price": "10р. 00к.",
+      "rating": 0,
+      "length": 106,
+      "price": "8р. 00к.",
       "year": "2026"
     },
     {
-      "name": "Остров забвения",
+      "id": "tt39302540",
+      "name": "Как Иван в сказку попал",
       "times": {
-        "03.11": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-11-03T14:00:00.000Z"
-          }
-        ],
-        "04.11": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-11-04T14:00:00.000Z"
-          }
-        ],
-        "30.10": [
+        "26.09": [
           {
             "time": "17:00",
             "timestamp": "2026-10-30T14:00:00.000Z"
@@ -163,21 +135,10 @@
       "year": "2026"
     },
     {
-      "name": "Чудо-Юдо (2026)",
+      "id": "tt31349844",
+      "name": "Курьер",
       "times": {
-        "03.11": [
-          {
-            "time": "13:30",
-            "timestamp": "2026-11-03T10:30:00.000Z"
-          }
-        ],
-        "04.11": [
-          {
-            "time": "13:30",
-            "timestamp": "2026-11-04T10:30:00.000Z"
-          }
-        ],
-        "31.10": [
+        "26.09": [
           {
             "time": "12:00",
             "timestamp": "2026-10-31T09:00:00.000Z"
@@ -187,10 +148,135 @@
       "description": "Чудо-Юдо — верный слуга лесной волшебницы. Он не знает, кто он и откуда, но умеет по собственному желанию превращаться в любое живое существо. Его новое задание — охранять от любых неприятностей своенравную юную волшебницу Отраду — дочь могучих магов Черногора и Болотницы — в её опасном путешествии в мир обычных людей. Скоро Чудо-Юдо понимает, что ради Отрады готов на всё, даже без приказа хозяйки.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "",
+      "poster_link": "https://image.tmdb.org/t/p/w500/vnrrZCe2sDMdEY7xyGSZMpSsZyG.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/2c9zNZJL0ZdagD6JbmU3hH4hovs.jpg",
+      "studio": [
+        {
+          "id": 8000,
+          "logo_path": "/f8NwLg72BByt3eav7lX1lcJfe60.png",
+          "name": "Broken Road Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 72954,
+          "logo_path": null,
+          "name": "AllyCat Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 110723,
+          "logo_path": "/27Od860h9Xc7gDS3Pph6yRlUyBI.png",
+          "name": "Nickel City Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 221397,
+          "logo_path": "/aj3EiCWM5jKxDJGZh34KV6L9HcE.png",
+          "name": "A Higher Standard",
+          "origin_country": "US"
+        },
+        {
+          "id": 219277,
+          "logo_path": null,
+          "name": "G2 Dispatch",
+          "origin_country": "AU"
+        },
+        {
+          "id": 165435,
+          "logo_path": "/pDh2WDdOajWST9jlkFo6TOvETnB.png",
+          "name": "Angel Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 309655,
+          "logo_path": "/9IYQkwgJlOzBiWANI6krDsE3QvR.png",
+          "name": "International Media Funds Management",
+          "origin_country": "AU"
+        },
+        {
+          "id": 209819,
+          "logo_path": "/lvqsgXsWHX4r5jBOuvbNCpZCnBf.png",
+          "name": "Bright White Light",
+          "origin_country": "GB"
+        }
+      ],
+      "rating": 7.6,
+      "length": 97,
+      "year": "2026"
+    },
+    {
+      "id": "tt33214716",
+      "name": "Флорист",
+      "times": {
+        "26.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-26T17:00:00.000Z"
+          }
+        ],
+        "27.09": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-09-27T17:00:00.000Z"
+          }
+        ],
+        "29.09": [
+          {
+            "time": "20:30",
+            "timestamp": "2026-09-29T17:30:00.000Z"
+          }
+        ],
+        "30.09": [
+          {
+            "time": "19:20",
+            "timestamp": "2026-09-30T16:20:00.000Z"
+          }
+        ]
+      },
+      "description": "Тихий садовод, ведущий тайную жизнь наемного убийцы, обнаруживает, что его истинная личность находится под угрозой, когда он заводит неожиданную дружбу со свидетелем коррупции в полиции.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/w2bdIz33mMXq382aIL6VLGaGEnp.jpg",
       "backdrop_link": "",
-      "studio": [],
-      "rating": 0,
+      "studio": [
+        {
+          "id": 137373,
+          "logo_path": "/4OzujMDSLnAm7I0BCPL1D6RIoJ4.png",
+          "name": "CaliWood Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 121204,
+          "logo_path": "/vbtvY4IxgUZk713rkmoTO4MHIac.png",
+          "name": "BondIt Media Capital",
+          "origin_country": "US"
+        },
+        {
+          "id": 41735,
+          "logo_path": "/je9Ko1f6iu0AfLL3dINJEaxLvEb.png",
+          "name": "Buffalo 8",
+          "origin_country": "US"
+        },
+        {
+          "id": 43652,
+          "logo_path": null,
+          "name": "Volcanic Films",
+          "origin_country": ""
+        },
+        {
+          "id": 100121,
+          "logo_path": null,
+          "name": "Film Bridge International",
+          "origin_country": "US"
+        },
+        {
+          "id": 242727,
+          "logo_path": null,
+          "name": "Midwest",
+          "origin_country": ""
+        }
+      ],
+      "rating": 10,
       "length": 0,
       "price": "7р. 00к.",
       "year": ""
