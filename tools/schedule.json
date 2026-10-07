@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T14:02:23.780Z",
+  "updated_at": "2026-10-07T19:11:05.729Z",
   "movies": [
     {
       "name": "Битва моторов",
@@ -80,6 +80,7 @@
       ],
       "rating": 0,
       "length": 144,
+      "price": "8р. 00к.",
       "year": "2026"
     },
     {
@@ -113,46 +114,8 @@
       ],
       "rating": 6.45,
       "length": 123,
+      "price": "7р. 00к.",
       "year": "2025"
-    },
-    {
-      "name": "Девятая планета",
-      "times": {
-        "07.10": [
-          {
-            "time": "19:10",
-            "timestamp": "2026-10-07T16:10:00.000Z"
-          }
-        ]
-      },
-      "description": "После несчастного случая в сознании автомеханика Димы Хруста вспыхивают воспоминания о службе на Девятой планете: удивительные пейзажи, база землян, сражения с чудовищами, друзья и любимая девушка Полина, которую он однажды спас. Сослуживцы Хруста крутят пальцем у виска, ведь у них совершенно другие — обычные армейские — воспоминания. Но когда Дима в реальной жизни встречает Полину, он уже не сомневается: кто-то скорректировал им всем память. Правду можно узнать, только вернувшись на опасную планету.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/86glDjzo8CIcOzE8C4jFloo9Trr.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/rmwu1PqEUznBKNIDtCbJycUV5od.jpg",
-      "studio": [
-        {
-          "id": 318,
-          "logo_path": "/q0UG4oZERwIywJdDPF4lRlvdYGW.png",
-          "name": "CTB Film Company",
-          "origin_country": "RU"
-        },
-        {
-          "id": 78191,
-          "logo_path": "/3mmmEA0dRl3LtTx1i7L66giX5IW.png",
-          "name": "DixiMedia",
-          "origin_country": "RU"
-        },
-        {
-          "id": 106390,
-          "logo_path": null,
-          "name": "Gazprom-Media",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 0,
-      "length": 106,
-      "year": "2026"
     },
     {
       "name": "Диггер",
@@ -221,74 +184,12 @@
       ],
       "rating": 7.502,
       "length": 129,
-      "year": "2026"
-    },
-    {
-      "name": "Флорист",
-      "times": {
-        "07.10": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-10-07T18:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Тихий садовод, ведущий тайную жизнь наемного убийцы, обнаруживает, что его истинная личность находится под угрозой, когда он заводит неожиданную дружбу со свидетелем коррупции в полиции.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/8z3fQjifTGXnzF4q2MtDjqthMXN.jpg",
-      "backdrop_link": "",
-      "studio": [
-        {
-          "id": 137373,
-          "logo_path": "/4OzujMDSLnAm7I0BCPL1D6RIoJ4.png",
-          "name": "CaliWood Pictures",
-          "origin_country": "US"
-        },
-        {
-          "id": 121204,
-          "logo_path": "/vbtvY4IxgUZk713rkmoTO4MHIac.png",
-          "name": "BondIt Media Capital",
-          "origin_country": "US"
-        },
-        {
-          "id": 41735,
-          "logo_path": "/je9Ko1f6iu0AfLL3dINJEaxLvEb.png",
-          "name": "Buffalo 8",
-          "origin_country": "US"
-        },
-        {
-          "id": 43652,
-          "logo_path": null,
-          "name": "Volcanic Films",
-          "origin_country": ""
-        },
-        {
-          "id": 100121,
-          "logo_path": null,
-          "name": "Film Bridge International",
-          "origin_country": "US"
-        },
-        {
-          "id": 242727,
-          "logo_path": null,
-          "name": "Midwest",
-          "origin_country": ""
-        }
-      ],
-      "rating": 5.5,
-      "length": 97,
+      "price": "8р. 00к.",
       "year": "2026"
     },
     {
       "name": "Царевна Несмеяна",
       "times": {
-        "07.10": [
-          {
-            "time": "17:30",
-            "timestamp": "2026-10-07T14:30:00.000Z"
-          }
-        ],
         "08.10": [
           {
             "time": "18:30",
@@ -347,6 +248,7 @@
       ],
       "rating": 0,
       "length": 0,
+      "price": "8р. 00к.",
       "year": "2026"
     }
   ]
