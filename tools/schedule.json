@@ -1,15 +1,9 @@
 {
-  "updated_at": "2026-10-08T15:01:43.754Z",
+  "updated_at": "2026-10-09T15:01:35.334Z",
   "movies": [
     {
       "name": "Битва моторов",
       "times": {
-        "08.10": [
-          {
-            "time": "20:40",
-            "timestamp": "2026-10-08T17:40:00.000Z"
-          }
-        ],
         "09.10": [
           {
             "time": "18:00",
@@ -20,12 +14,6 @@
           {
             "time": "18:00",
             "timestamp": "2026-10-10T15:00:00.000Z"
-          }
-        ],
-        "11.10": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-10-11T15:00:00.000Z"
           }
         ],
         "13.10": [
@@ -45,7 +33,7 @@
       "age": "12+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/oxvc4t0IzHUnkQGfYqUAbLV7zY8.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/NduaBiNKBAk5264NZ8kHYWuyqI.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/wg9sEXRKcGAb74Ef2H3ZOTzUrMR.jpg",
       "studio": [
         {
           "id": 3419,
@@ -94,8 +82,8 @@
         ],
         "11.10": [
           {
-            "time": "14:00",
-            "timestamp": "2026-10-11T11:00:00.000Z"
+            "time": "11:00",
+            "timestamp": "2026-10-11T08:00:00.000Z"
           }
         ]
       },
@@ -182,7 +170,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.521,
+      "rating": 7.5,
       "length": 129,
       "price": "8р. 00к.",
       "year": "2026"
@@ -190,18 +178,6 @@
     {
       "name": "Царевна Несмеяна",
       "times": {
-        "08.10": [
-          {
-            "time": "18:30",
-            "timestamp": "2026-10-08T15:30:00.000Z"
-          }
-        ],
-        "09.10": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-10-09T13:00:00.000Z"
-          }
-        ],
         "10.10": [
           {
             "time": "16:00",
@@ -210,8 +186,8 @@
         ],
         "11.10": [
           {
-            "time": "16:00",
-            "timestamp": "2026-10-11T13:00:00.000Z"
+            "time": "12:10",
+            "timestamp": "2026-10-11T09:10:00.000Z"
           }
         ],
         "13.10": [
