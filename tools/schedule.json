@@ -1,31 +1,49 @@
 {
-  "updated_at": "2026-10-09T15:01:35.334Z",
+  "updated_at": "2026-10-14T15:01:42.155Z",
   "movies": [
     {
       "name": "Битва моторов",
       "times": {
-        "09.10": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-10-09T15:00:00.000Z"
-          }
-        ],
-        "10.10": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-10-10T15:00:00.000Z"
-          }
-        ],
-        "13.10": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-10-13T15:00:00.000Z"
-          }
-        ],
         "14.10": [
           {
             "time": "18:35",
             "timestamp": "2026-10-14T15:35:00.000Z"
+          }
+        ],
+        "15.10": [
+          {
+            "time": "20:45",
+            "timestamp": "2026-10-15T17:45:00.000Z"
+          }
+        ],
+        "16.10": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-10-16T17:00:00.000Z"
+          }
+        ],
+        "17.10": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-10-17T17:00:00.000Z"
+          }
+        ],
+        "18.10": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-10-18T17:00:00.000Z"
+          }
+        ],
+        "20.10": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-10-20T18:00:00.000Z"
+          }
+        ],
+        "21.10": [
+          {
+            "time": "20:45",
+            "timestamp": "2026-10-21T17:45:00.000Z"
           }
         ]
       },
@@ -74,16 +92,16 @@
     {
       "name": "Волчок",
       "times": {
-        "10.10": [
+        "17.10": [
           {
-            "time": "14:00",
-            "timestamp": "2026-10-10T11:00:00.000Z"
+            "time": "12:00",
+            "timestamp": "2026-10-17T09:00:00.000Z"
           }
         ],
-        "11.10": [
+        "18.10": [
           {
-            "time": "11:00",
-            "timestamp": "2026-10-11T08:00:00.000Z"
+            "time": "12:00",
+            "timestamp": "2026-10-18T09:00:00.000Z"
           }
         ]
       },
@@ -114,39 +132,45 @@
     {
       "name": "Диггер",
       "times": {
-        "09.10": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-10-09T17:30:00.000Z"
-          }
-        ],
-        "10.10": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-10-10T17:30:00.000Z"
-          }
-        ],
-        "11.10": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-10-11T17:30:00.000Z"
-          }
-        ],
-        "13.10": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-10-13T17:30:00.000Z"
-          }
-        ],
         "14.10": [
           {
             "time": "21:00",
             "timestamp": "2026-10-14T18:00:00.000Z"
           }
+        ],
+        "15.10": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-10-15T11:00:00.000Z"
+          }
+        ],
+        "16.10": [
+          {
+            "time": "15:30",
+            "timestamp": "2026-10-16T12:30:00.000Z"
+          }
+        ],
+        "17.10": [
+          {
+            "time": "15:30",
+            "timestamp": "2026-10-17T12:30:00.000Z"
+          }
+        ],
+        "18.10": [
+          {
+            "time": "15:30",
+            "timestamp": "2026-10-18T12:30:00.000Z"
+          }
+        ],
+        "20.10": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-10-20T14:00:00.000Z"
+          }
         ]
       },
       "description": "Самый могущественный человек в мире отправляется на миссию, чтобы спасти человечество от катастрофы, которую он сам и устроил.",
-      "age": "18+",
+      "age": "16+",
       "format": "2D",
       "poster_link": "https://image.tmdb.org/t/p/w500/biovC0fjDUUSGJiR4joGaGERUS3.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/b7t3r39Oll5qPxBKzLZ8eHMBD7l.jpg",
@@ -170,32 +194,177 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.5,
+      "rating": 7.479,
       "length": 129,
+      "year": "2026"
+    },
+    {
+      "name": "Подводная братва. На страже рифа",
+      "times": {
+        "15.10": [
+          {
+            "time": "12:00",
+            "timestamp": "2026-10-15T09:00:00.000Z"
+          }
+        ],
+        "16.10": [
+          {
+            "time": "12:00",
+            "timestamp": "2026-10-16T09:00:00.000Z"
+          }
+        ],
+        "17.10": [
+          {
+            "time": "13:30",
+            "timestamp": "2026-10-17T10:30:00.000Z"
+          }
+        ],
+        "18.10": [
+          {
+            "time": "13:30",
+            "timestamp": "2026-10-18T10:30:00.000Z"
+          }
+        ],
+        "20.10": [
+          {
+            "time": "11:30",
+            "timestamp": "2026-10-20T08:30:00.000Z"
+          }
+        ],
+        "21.10": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-10-21T12:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Молодой горбатый кит Винсент вместе с командой друзей отправляется в опасное путешествие к неизведанным глубинам океана. Впереди их ждут таинственные подводные миры, серьёзные испытания и встреча с древним монстром, наводящим ужас на морских обитателей. Чтобы спасти океан, друзьям предстоит проявить смелость, преодолеть свои страхи и понять, что настоящая сила рождается из дружбы и веры друг в друга.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/yor3mLGIU1toeE4tAQWlTAj8Egt.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/l57zMmISH0SCWsXR7iorceZTm8y.jpg",
+      "studio": [
+        {
+          "id": 129734,
+          "logo_path": "/whxrWm6CLdICEQXkXLQtImZuv1a.png",
+          "name": "Telescope Animation",
+          "origin_country": "DE"
+        },
+        {
+          "id": 117604,
+          "logo_path": "/hHAOkqSR2G3jh4Ui5I6ICLI4KTG.png",
+          "name": "PFX",
+          "origin_country": "CZ"
+        },
+        {
+          "id": 16039,
+          "logo_path": "/8vVMTmyjT5tRgiVeptu5cvjVc8Y.png",
+          "name": "La Boîte à Fanny",
+          "origin_country": "CA"
+        },
+        {
+          "id": 4606,
+          "logo_path": "/otZHbf1HmzLRQsZFSqJXkf8EHz7.png",
+          "name": "ZDF",
+          "origin_country": "DE"
+        },
+        {
+          "id": 50519,
+          "logo_path": "/1dtumlarEVXeYX1BrUFS9qLoG2Z.png",
+          "name": "KiKA",
+          "origin_country": "DE"
+        }
+      ],
+      "rating": 7,
+      "length": 91,
+      "price": "7р. 00к.",
+      "year": "2026"
+    },
+    {
+      "name": "Руки вверх! 2",
+      "times": {
+        "15.10": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-10-15T16:00:00.000Z"
+          }
+        ],
+        "16.10": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-10-16T15:00:00.000Z"
+          }
+        ],
+        "17.10": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-10-17T15:00:00.000Z"
+          }
+        ],
+        "18.10": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-10-18T15:00:00.000Z"
+          }
+        ],
+        "20.10": [
+          {
+            "time": "19:15",
+            "timestamp": "2026-10-20T16:15:00.000Z"
+          }
+        ],
+        "21.10": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-10-21T16:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Спустя 30 лет после начала истории группы «Руки Вверх!» Сергей Жуков вместе с детьми возвращается к воспоминаниям о своей молодости — первой любви, первых больших мечтах, дружбе, семье и пути к сцене.",
+      "age": "12+",
+      "format": "2D",
+      "poster_link": "https://image.tmdb.org/t/p/w500/6KKadNSD9vA4otJSAslJJI4nRGf.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/eGrXlD0bHsCxUrDXDJA8q5rVIB8.jpg",
+      "studio": [
+        {
+          "id": 12546,
+          "logo_path": null,
+          "name": "Berg Sound",
+          "origin_country": "RU"
+        },
+        {
+          "id": 213691,
+          "logo_path": null,
+          "name": "Temp Film Company",
+          "origin_country": "RU"
+        },
+        {
+          "id": 189362,
+          "logo_path": null,
+          "name": "Ruki Vverkh! Production",
+          "origin_country": "RU"
+        },
+        {
+          "id": 114676,
+          "logo_path": "/aVsos0RDN9Ib7H8nW5Vv5kHKykz.png",
+          "name": "START Studio",
+          "origin_country": "RU"
+        },
+        {
+          "id": 42877,
+          "logo_path": "/15THT1W3NROsbDXPbrcmWFVkrSv.png",
+          "name": "Yellow, Black & White",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 0,
       "price": "8р. 00к.",
       "year": "2026"
     },
     {
       "name": "Царевна Несмеяна",
       "times": {
-        "10.10": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-10-10T13:00:00.000Z"
-          }
-        ],
-        "11.10": [
-          {
-            "time": "12:10",
-            "timestamp": "2026-10-11T09:10:00.000Z"
-          }
-        ],
-        "13.10": [
-          {
-            "time": "16:00",
-            "timestamp": "2026-10-13T13:00:00.000Z"
-          }
-        ],
         "14.10": [
           {
             "time": "17:00",
@@ -224,7 +393,6 @@
       ],
       "rating": 0,
       "length": 0,
-      "price": "8р. 00к.",
       "year": "2026"
     }
   ]
