@@ -1,15 +1,9 @@
 {
-  "updated_at": "2026-10-14T15:01:42.155Z",
+  "updated_at": "2026-10-14T17:45:25.405Z",
   "movies": [
     {
       "name": "Битва моторов",
       "times": {
-        "14.10": [
-          {
-            "time": "18:35",
-            "timestamp": "2026-10-14T15:35:00.000Z"
-          }
-        ],
         "15.10": [
           {
             "time": "20:45",
@@ -360,39 +354,6 @@
       "rating": 0,
       "length": 0,
       "price": "8р. 00к.",
-      "year": "2026"
-    },
-    {
-      "name": "Царевна Несмеяна",
-      "times": {
-        "14.10": [
-          {
-            "time": "17:00",
-            "timestamp": "2026-10-14T14:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Прагматичный Ерёма вместе с младшей сестрой случайно попадает в волшебное Тридевятое царство. Единственный путь домой — рассмешить хмурую Царевну Несмеяну. Но чем ближе он узнает Царевну, тем яснее понимает: за её печалью скрывается мечта о настоящей любви. Теперь Ерёме предстоит пройти через множество испытаний и совершить самый важный подвиг — открыть своё сердце и понять, что настоящее чудо — не награда, а любовь.",
-      "age": "6+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/xdicQiwhe17Z7A8km7PRpa9vgSW.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/sfj8GAwFrUkLHevETSg58mQtg6P.jpg",
-      "studio": [
-        {
-          "id": 46939,
-          "logo_path": "/ui0aY1K8PqGL97loUiFpo33KvZc.png",
-          "name": "Nashe Kino",
-          "origin_country": "RU"
-        },
-        {
-          "id": 175169,
-          "logo_path": "/qyqiYpqa9IWKfy48MSXTnquWYau.png",
-          "name": "Okko",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 0,
-      "length": 0,
       "year": "2026"
     }
   ]
