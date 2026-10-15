@@ -102,26 +102,13 @@
       "description": "Познавательный анимационный проект рассказывает о приключениях маленького героя и знакомит юных зрителей с окружающим миром",
       "age": "0+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/xKkKrAZM3L123tBoY47vDgghE6Z.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/aH9J1Z3WvxD5LbOBVS1tJ93HCR4.jpg",
-      "studio": [
-        {
-          "id": 127641,
-          "logo_path": "/8TFROqkdpDPL73kOhPTxHnTcu0v.png",
-          "name": "MEM Cinema Production",
-          "origin_country": "RU"
-        },
-        {
-          "id": 175169,
-          "logo_path": "/qyqiYpqa9IWKfy48MSXTnquWYau.png",
-          "name": "Okko",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 6.45,
-      "length": 123,
+      "poster_link": "",
+      "backdrop_link": "",
+      "studio": [],
+      "rating": 0,
+      "length": 0,
       "price": "7р. 00к.",
-      "year": "2025"
+      "year": "2026"
     },
     {
       "name": "Диггер",
