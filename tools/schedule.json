@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T17:01:41.989Z",
+  "updated_at": "2026-10-28T18:38:03.230Z",
   "movies": [
     {
       "name": "Клэйфейс",
@@ -72,7 +72,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.46,
+      "rating": 7.5,
       "length": 109,
       "price": "10р. 00к.",
       "year": "2026"
@@ -124,60 +124,8 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.563,
+      "rating": 7.6,
       "length": 109,
-      "year": "2026"
-    },
-    {
-      "name": "Руки вверх! 2",
-      "times": {
-        "28.10": [
-          {
-            "time": "20:30",
-            "timestamp": "2026-10-28T17:30:00.000Z"
-          }
-        ]
-      },
-      "description": "Спустя 30 лет после начала истории группы «Руки Вверх!» Сергей Жуков вместе с детьми возвращается к воспоминаниям о своей молодости — первой любви, первых больших мечтах, дружбе, семье и пути к сцене.",
-      "age": "16+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/6KKadNSD9vA4otJSAslJJI4nRGf.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/eGrXlD0bHsCxUrDXDJA8q5rVIB8.jpg",
-      "studio": [
-        {
-          "id": 12546,
-          "logo_path": null,
-          "name": "Berg Sound",
-          "origin_country": "RU"
-        },
-        {
-          "id": 213691,
-          "logo_path": null,
-          "name": "Temp Film Company",
-          "origin_country": "RU"
-        },
-        {
-          "id": 189362,
-          "logo_path": null,
-          "name": "Ruki Vverkh! Production",
-          "origin_country": "RU"
-        },
-        {
-          "id": 114676,
-          "logo_path": "/aVsos0RDN9Ib7H8nW5Vv5kHKykz.png",
-          "name": "START Studio",
-          "origin_country": "RU"
-        },
-        {
-          "id": 42877,
-          "logo_path": "/15THT1W3NROsbDXPbrcmWFVkrSv.png",
-          "name": "Yellow, Black & White",
-          "origin_country": "RU"
-        }
-      ],
-      "rating": 0,
-      "length": 0,
-      "price": "8р. 00к.",
       "year": "2026"
     },
     {
