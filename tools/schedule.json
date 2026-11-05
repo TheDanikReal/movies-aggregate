@@ -1,4 +1,264 @@
 {
-  "updated_at": "2026-09-26T09:04:23.872Z",
-  "movies": []
+  "updated_at": "2026-11-05T16:21:27.818Z",
+  "movies": [
+    {
+      "id": "tt41913724",
+      "name": "Живая книга",
+      "times": {
+        "06.11": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-11-06T14:00:00.000Z"
+          }
+        ],
+        "07.11": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-11-07T13:00:00.000Z"
+          }
+        ],
+        "08.11": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-11-08T13:00:00.000Z"
+          }
+        ],
+        "10.11": [
+          {
+            "time": "13:00",
+            "timestamp": "2026-11-10T10:00:00.000Z"
+          }
+        ],
+        "11.11": [
+          {
+            "time": "12:00",
+            "timestamp": "2026-11-11T09:00:00.000Z"
+          }
+        ]
+      },
+      "description": "После потери отца Рома перестал верить в добро и стал дерзким и непослушным. Вместе с робким младшеклассником Витей они пробираются в дом таинственного старика, где находят волшебные книги с ожившими персонажами. По неосторожности мальчики выпускают на свет злого колдуна. Чтобы спасти друга и вернуть все на свои места, Рома должен сделать невозможное: снова поверить в себя.",
+      "age": "6+",
+      "format": "2D",
+      "poster_link": "https://new.megamag.by/legacy-images/newsdesk_img/zhivaya_kniga_b1.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/4YqB6JRy1d0HDWmzf1xsCbOCLhX.jpg",
+      "studio": [
+        {
+          "id": 255914,
+          "logo_path": null,
+          "name": "Cinema Plus",
+          "origin_country": "RU"
+        },
+        {
+          "id": 295043,
+          "logo_path": null,
+          "name": "Mediaterra",
+          "origin_country": "RU"
+        },
+        {
+          "id": 271183,
+          "logo_path": null,
+          "name": "Papini Production",
+          "origin_country": "RU"
+        },
+        {
+          "id": 218336,
+          "logo_path": null,
+          "name": "SoFilm",
+          "origin_country": "RU"
+        }
+      ],
+      "rating": 0,
+      "length": 0,
+      "year": "2026"
+    },
+    {
+      "id": "tt28535715",
+      "name": "Кит: Во тьме глубин",
+      "times": {
+        "05.11": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-11-05T17:00:00.000Z"
+          }
+        ],
+        "06.11": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-11-06T16:00:00.000Z"
+          }
+        ],
+        "07.11": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-11-07T15:00:00.000Z"
+          }
+        ],
+        "08.11": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-11-08T15:00:00.000Z"
+          }
+        ],
+        "11.11": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-11-11T18:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Калифорния. Молодой аквалангист Джей Гардинер погружается в океан в поисках останков своего отца. Парень оказывается не в том месте, не в то время, и его утягивает за собой гигантский кальмар, которого проглатывает кашалот. Теперь у Джея есть час, чтобы выбраться из кита, пока у него не закончился запас кислорода.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://new.megamag.by/legacy-images/newsdesk_img/kit_vo_tme_glubin_b1.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/shW2jHkQLZVv4Fko2rJDqTGU0gx.jpg",
+      "studio": [
+        {
+          "id": 23,
+          "logo_path": "/bJOFo2ufq7iFC1F4qZm8aLxF5aS.png",
+          "name": "Imagine Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 127928,
+          "logo_path": "/h0rjX5vjW5r8yEnUBStFarjcLT4.png",
+          "name": "20th Century Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 118800,
+          "logo_path": null,
+          "name": "Jurassic Party",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 6.577,
+      "length": 106,
+      "price": "8",
+      "year": "2026"
+    },
+    {
+      "id": "tt34890576",
+      "name": "Клэйфейс",
+      "times": {
+        "06.11": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-11-06T18:00:00.000Z"
+          }
+        ],
+        "07.11": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-11-07T17:00:00.000Z"
+          }
+        ],
+        "08.11": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-11-08T17:00:00.000Z"
+          }
+        ],
+        "10.11": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-11-10T17:00:00.000Z"
+          }
+        ]
+      },
+      "description": "После травмы, обезобразившей его лицо, молодой актёр Мэтт Хейген соглашается пройти особое лечение. Однако научный эксперимент не даёт тех результатов, на которые рассчитывал Мэтт, и в результате его тело и кожа становятся гибкими и податливыми, как глина. Потерявший чувство личности и человечности актёр превращается в движимого жаждой мести монстра.",
+      "age": "18+",
+      "format": "2D",
+      "poster_link": "https://new.megamag.by/legacy-images/newsdesk_img/kleyfeys_b1.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/xSDoxv4pHvs4xZjvTb0Iqg1A6ro.jpg",
+      "studio": [
+        {
+          "id": 184898,
+          "logo_path": "/uVpjHYq5AbiG2qj82ZRBM4VFL3o.png",
+          "name": "DC Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 216687,
+          "logo_path": "/kKVYqekveOvLK1IgqdJojLjQvtu.png",
+          "name": "Domain Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 101405,
+          "logo_path": "/iusVPF9AJD1DiHEWbZEXgn1hpOf.png",
+          "name": "6th & Idaho Motion Picture Company",
+          "origin_country": "US"
+        },
+        {
+          "id": 94218,
+          "logo_path": "/kxuhS8wyKtVprOn5nckdHyNuSg1.png",
+          "name": "Troll Court Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 11565,
+          "logo_path": "/odU3l6csuBmXUrzFm6araUgEUHQ.png",
+          "name": "The Safran Company",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 7.421,
+      "length": 109,
+      "price": "10",
+      "year": "2026"
+    },
+    {
+      "id": "tt36583977",
+      "name": "Остров забвения",
+      "times": {
+        "06.11": [
+          {
+            "time": "10:30",
+            "timestamp": "2026-11-06T07:30:00.000Z"
+          }
+        ],
+        "07.11": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-11-07T11:00:00.000Z"
+          }
+        ],
+        "08.11": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-11-08T11:00:00.000Z"
+          }
+        ],
+        "10.11": [
+          {
+            "time": "11:00",
+            "timestamp": "2026-11-10T08:00:00.000Z"
+          }
+        ],
+        "11.11": [
+          {
+            "time": "10:00",
+            "timestamp": "2026-11-11T07:00:00.000Z"
+          }
+        ]
+      },
+      "description": "Две лучшие подруги оказываются в ловушке на мистической планете Накали, и единственный шанс вернуться домой может стоить им всех воспоминаний, которые они хранят друг о друге.",
+      "age": "12+",
+      "format": "2D",
+      "poster_link": "https://new.megamag.by/legacy-images/newsdesk_img/ostrov_zabveniya_b1.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/cNICUho5uiAGkfCAQq1ihyaMla4.jpg",
+      "studio": [
+        {
+          "id": 521,
+          "logo_path": "/3BPX5VGBov8SDqTV7wC1L1xShAS.png",
+          "name": "DreamWorks Animation",
+          "origin_country": "US"
+        }
+      ],
+      "rating": 8.012,
+      "length": 98,
+      "price": "7",
+      "year": "2026"
+    }
+  ]
 }
