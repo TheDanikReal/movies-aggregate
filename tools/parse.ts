@@ -1,9 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import * as cheerio from "cheerio";
-import "dotenv/config"
-import { TMDB, type ProductionCompany } from 'tmdb-ts';
+import "dotenv/config";
+import { TMDB, type ProductionCompany } from "tmdb-ts";
 
 type Showtime = {
   time: string;
@@ -31,363 +30,243 @@ type ScheduleOutput = {
   movies: MovieSchedule[];
 };
 
+type ApiSession = {
+  movieName: string;
+  posterUrl: string | null;
+  description: string | null;
+  duration: string | null;
+  date: string;
+  time: string;
+  price: number | string | null;
+  in3D: boolean;
+};
+
+type ApiResponse = {
+  sessions: ApiSession[];
+};
+
 type MovieAccumulator = {
   name: string;
   age: string;
   format: string;
   description: string;
+  length: number;
+  prices: Set<string>;
   times: Map<string, Map<string, Showtime>>;
-  seanceUrls: Set<string>;
 };
 
-const tmdbToken = process.env["TMDB_TOKEN"]
-if (!tmdbToken) throw new Error("tmdb token is not specified")
+const API_URL =
+  process.env["SCHEDULE_API_URL"] ??
+  "https://new.megamag.by/api/schedule?region=%D0%A1%D0%BB%D0%BE%D0%BD%D0%B8%D0%BC";
+const FIXTURE_PATH = join(dirname(fileURLToPath(import.meta.url)), "response.json");
+const OUTPUT_PATH = join(dirname(fileURLToPath(import.meta.url)), "schedule.json");
+const CINEMA_OFFSET_MINUTES = 3 * 60;
+
+const tmdbToken = process.env["TMDB_TOKEN"];
+if (!tmdbToken) throw new Error("tmdb token is not specified");
 const tmdb = new TMDB(tmdbToken);
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const INPUT_PATH = join(__dirname, "page.html");
-const OUTPUT_PATH = join(__dirname, "schedule.json");
-
-const MONTH_NAME_TO_MM: Record<string, string> = {
-  january: "01",
-  february: "02",
-  march: "03",
-  april: "04",
-  may: "05",
-  june: "06",
-  july: "07",
-  august: "08",
-  september: "09",
-  october: "10",
-  november: "11",
-  december: "12",
-  // Russian month names
-  январь: "01", января: "01",
-  февраль: "02", февраля: "02",
-  март: "03", марта: "03",
-  апрель: "04", апреля: "04",
-  май: "05", мая: "05",
-  июнь: "06", июня: "06",
-  июль: "07", июля: "07",
-  август: "08", августа: "08",
-  сентябрь: "09", сентября: "09",
-  октябрь: "10", октября: "10",
-  ноябрь: "11", ноября: "11",
-  декабрь: "12", декабря: "12",
-};
 
 const normalizeText = (value: string): string =>
   value.replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
 
-
 const parseMainData = (
   rawTitle: string,
-): {
-  parsedName: string;
-  parsedAge: string;
-  parsedFormat: string;
-} => {
-  const withoutTrailingId = normalizeText(rawTitle).replace(/\s+\d{5,}$/, "");
-  const formatMatch = withoutTrailingId.match(/\b([23])\s*[dд]\b/i);
+): { parsedName: string; parsedAge: string; parsedFormat: string } => {
+  const title = normalizeText(rawTitle);
+  const formatMatch = title.match(/\b([23])\s*[dд]\b/i);
   const parsedFormat = formatMatch ? `${formatMatch[1]}D` : "";
-  const withoutFormat = normalizeText(withoutTrailingId.replace(/\b[23]\s*[dд]\b/gi, ""));
-
+  const withoutFormat = normalizeText(title.replace(/\b[23]\s*[dд]\b/gi, ""));
   const ageMatch = withoutFormat.match(/\(?\b\d{1,2}\+\)?/);
 
   if (!ageMatch || ageMatch.index === undefined) {
     return { parsedName: withoutFormat, parsedAge: "", parsedFormat };
   }
 
-  const parsedName = normalizeText(withoutFormat.slice(0, ageMatch.index)).replace(
-    /[.,;:\-]+$/,
-    "",
-  );
-
   return {
-    parsedName,
+    parsedName: normalizeText(withoutFormat.slice(0, ageMatch.index)).replace(
+      /[.,;:\-]+$/,
+      "",
+    ),
     parsedAge: ageMatch[0].replace(/[()]/g, ""),
     parsedFormat,
   };
 };
 
-const parseDateFromLabel = (text: string): string | null => {
-  // Try both English and Russian month patterns
-  const englishMatch = normalizeText(text).match(/^(\d{1,2})\s+([A-Za-z]+)/);
-  const russianMatch = normalizeText(text).match(/^(\d{1,2})\s+([А-Яа-я]+)/);
-
-  const match = englishMatch || russianMatch;
-  if (!match) return null;
-
-  const [, dayRaw, monthRaw] = match;
-  const month = MONTH_NAME_TO_MM[monthRaw.toLowerCase()];
-  if (!month) return null;
-
-  return `${dayRaw.padStart(2, "0")}.${month}`;
+const parseDateKey = (date: string): string => {
+  const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) throw new Error(`Invalid session date: "${date}"`);
+  return `${match[3]}.${match[2]}`;
 };
 
-const generateTimestamp = (dateKey: string, time: string): string => {
-  const [day, month] = dateKey.split('.').map(Number);
+const generateTimestamp = (date: string, time: string): string => {
+  const dateMatch = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const timeMatch = time.match(/^(\d{2}):(\d{2})$/);
+  if (!dateMatch || !timeMatch) {
+    throw new Error(`Invalid session datetime: "${date} ${time}"`);
+  }
 
-  // Determine year (handle Dec/Jan boundary)
-  const now = new Date();
-  const currentMonth = now.getMonth() + 1;
-  let year = now.getFullYear();
+  const [, year, month, day] = dateMatch;
+  const [, hour, minute] = timeMatch;
+  const utcMillis =
+    Date.UTC(Number(year), Number(month) - 1, Number(day), Number(hour), Number(minute)) -
+    CINEMA_OFFSET_MINUTES * 60 * 1000;
+  return new Date(utcMillis).toISOString();
+};
 
-  // January dates in December = next year
-  if (month === 1 && currentMonth === 12) year += 1;
-  // December dates in January = last year
-  else if (month === 12 && currentMonth === 1) year -= 1;
-
-  // Parse time
-  const [hour, minute] = time.split(':').map(Number);
-
-  // Create date in UTC+3 (cinema timezone), convert to UTC
-  const localDate = new Date(year, month - 1, day, hour, minute, 0, 0);
-  const utcOffset = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
-  const utcTimestamp = new Date(localDate.getTime() - utcOffset);
-
-  return utcTimestamp.toISOString();
+const parseDuration = (duration: string | null): number => {
+  if (!duration) return 0;
+  const match = duration.match(/(\d+)\s*мин\./i);
+  return match ? Number(match[1]) : 0;
 };
 
 const ensureMovie = (
-  map: Map<string, MovieAccumulator>,
-  movieName: string,
+  movies: Map<string, MovieAccumulator>,
+  session: ApiSession,
 ): MovieAccumulator => {
-  const existing = map.get(movieName);
-  if (existing) return existing;
+  const { parsedName, parsedAge, parsedFormat } = parseMainData(session.movieName);
+  if (!parsedName) throw new Error(`Session has an empty movie name: "${session.movieName}"`);
+
+  const existing = movies.get(parsedName);
+  if (existing) {
+    if (parsedAge && !existing.age) existing.age = parsedAge;
+    if (parsedFormat && !existing.format) existing.format = parsedFormat;
+    if (!existing.length) existing.length = parseDuration(session.duration);
+    return existing;
+  }
 
   const created: MovieAccumulator = {
-    name: movieName,
-    age: "",
-    format: "",
-    description: "",
+    name: parsedName,
+    age: parsedAge,
+    format: parsedFormat,
+    description: normalizeText(session.description ?? ""),
+    length: parseDuration(session.duration),
+    prices: new Set(),
     times: new Map(),
-    seanceUrls: new Set(),
   };
-
-  map.set(movieName, created);
+  movies.set(parsedName, created);
   return created;
 };
 
-const addTimes = (movie: MovieAccumulator, dateKey: string, times: string[]): void => {
-  if (!movie.times.has(dateKey)) {
-    movie.times.set(dateKey, new Map<string, Showtime>());
-  }
-
-  const bucket = movie.times.get(dateKey);
-  if (!bucket) return;
-
-  for (const time of times) {
-    // Use time as key to avoid duplicates
-    bucket.set(time, {
-      time,
-      timestamp: generateTimestamp(dateKey, time)
-    });
-  }
-};
-
-const parseEventBlocks = (html: string, moviesMap: Map<string, MovieAccumulator>): void => {
-  const $ = cheerio.load(html);
-
-  $('td.eventsHeading a[name^="event_"]').each((_, element) => {
-    const $anchor = $(element);
-    const title = normalizeText($anchor.text());
-    if (!title) return;
-
-    const { parsedName, parsedAge, parsedFormat } = parseMainData(title);
-    if (!parsedName) return;
-
-    const movie = ensureMovie(moviesMap, parsedName);
-    if (parsedAge && !movie.age) {
-      movie.age = parsedAge;
-    }
-    if (parsedFormat && !movie.format) {
-      movie.format = parsedFormat;
-    }
-
-    // Navigate up to find the top-level <tr> that contains this event
-    // Structure: <tr><td><table><tr><td class="eventsHeading">
-    const $topLevelTr = $anchor.closest('tr').parent().closest('tr');
-
-    // Find the next <tr> sibling which contains the description
-    let $current = $topLevelTr.next('tr');
-
-    // Look for description in eventsContents
-    const $descriptionCell = $current.find('td.eventsContents[valign="top"]');
-    if ($descriptionCell.length > 0) {
-      const description = normalizeText($descriptionCell.text());
-      if (description.length > movie.description.length) {
-        movie.description = description;
-      }
-      $current = $current.next('tr');
-    }
-
-    // Continue through the next sibling <tr> elements to find schedule data
-    while ($current.length > 0) {
-      // Check if we've hit the next event (contains eventsHeading)
-      if ($current.find('td.eventsHeading').length > 0) {
-        break;
-      }
-
-      $current.find('a[href*="seance.php"]').each((_, link) => {
-        const seanceHref = $(link).attr('href');
-        if (seanceHref) {
-          movie.seanceUrls.add(seanceHref);
-        }
-      });
-
-      // Look for date/time rows in nested tables
-      $current.find('td.main[width="195"]').each((_, dateCell) => {
-        const $dateCell = $(dateCell);
-        const dateKey = parseDateFromLabel($dateCell.text());
-        if (!dateKey) return;
-
-        // Get the parent row to find all times in this row
-        const $row = $dateCell.parent();
-        const rowHtml = $row.html() || '';
-        const times = rowHtml.match(/\b\d{2}:\d{2}\b/g) ?? [];
-        if (times.length === 0) return;
-
-        addTimes(movie, dateKey, times);
-      });
-
-      $current = $current.next('tr');
-    }
+const addSession = (movies: Map<string, MovieAccumulator>, session: ApiSession): void => {
+  const movie = ensureMovie(movies, session);
+  const dateKey = parseDateKey(session.date);
+  const dateTimes = movie.times.get(dateKey) ?? new Map<string, Showtime>();
+  dateTimes.set(session.time, {
+    time: session.time,
+    timestamp: generateTimestamp(session.date, session.time),
   });
+  movie.times.set(dateKey, dateTimes);
+
+  const price = String(session.price ?? "").trim();
+  if (price) movie.prices.add(price);
+  if (session.description && session.description.length > movie.description.length) {
+    movie.description = normalizeText(session.description);
+  }
 };
 
-const fetchMovieMetadata = async (movieName: string): Promise<{ id: string; poster: string; backdrop: string, studio: ProductionCompany[], rating: number, length: number, year: string }> => {
-  try {
-    const searchResults = await tmdb.search.movies({
-      query: movieName,
-      language: "ru-RU"
-    });
+const fetchSchedule = async (): Promise<ApiResponse> => {
+  const fixturePath = process.env["SCHEDULE_FIXTURE"];
+  const responseText = fixturePath
+    ? await readFile(fixturePath === "default" ? FIXTURE_PATH : fixturePath, "utf-8")
+    : await (async () => {
+        const response = await fetch(API_URL, {
+          headers: { "User-Agent": "Mozilla/5.0 (compatible; KinoSlonBot/1.0)" },
+        });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch schedule: ${response.status} ${response.statusText}`);
+        }
+        return response.text();
+      })();
 
-    if (searchResults.results && searchResults.results.length > 0) {
+  const data: unknown = JSON.parse(responseText);
+  if (
+    !data ||
+    typeof data !== "object" ||
+    !Array.isArray((data as { sessions?: unknown }).sessions)
+  ) {
+    throw new Error("Schedule API response does not contain a sessions array");
+  }
+  return data as ApiResponse;
+};
+
+const fetchMovieMetadata = async (
+  movieName: string,
+): Promise<{
+  id: string;
+  poster: string;
+  backdrop: string;
+  studio: ProductionCompany[];
+  rating: number;
+  length: number;
+  year: string;
+}> => {
+  try {
+    const searchResults = await tmdb.search.movies({ query: movieName, language: "ru-RU" });
+    if (searchResults.results?.length) {
       const movie = [...searchResults.results].sort((left, right) => {
         const leftYear = Number((left.release_date ?? "").slice(0, 4)) || 0;
         const rightYear = Number((right.release_date ?? "").slice(0, 4)) || 0;
         return rightYear - leftYear;
       })[0];
-      const baseUrl = 'https://image.tmdb.org/t/p/w500';
-      const details = await tmdb.movies.details(movie.id)
-
+      const details = await tmdb.movies.details(movie.id);
+      const baseUrl = "https://image.tmdb.org/t/p/w500";
       return {
         id: details.imdb_id ?? "",
-        poster: movie.poster_path ? `${baseUrl}${movie.poster_path}` : '',
-        backdrop: movie.backdrop_path ? `${baseUrl}${movie.backdrop_path}` : '',
+        poster: movie.poster_path ? `${baseUrl}${movie.poster_path}` : "",
+        backdrop: movie.backdrop_path ? `${baseUrl}${movie.backdrop_path}` : "",
         studio: details.production_companies || [],
         rating: details.vote_average,
         length: details.runtime,
-        year: details.release_date.slice(0, 4)
+        year: details.release_date.slice(0, 4),
       };
     }
   } catch (error) {
-    console.error(`Failed to fetch images for "${movieName}":`, error);
+    console.error(`Failed to fetch metadata for "${movieName}":`, error);
   }
 
-  return { id: '', poster: '', backdrop: '', studio: [], rating: 0, length: 0, year: "" };
-};
-
-const fetchSeancePrice = async (seanceUrl: string): Promise<string> => {
-  try {
-    const response = await fetch(seanceUrl, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; KinoslonBot/1.0)"
-      }
-    });
-
-    if (!response.ok) {
-      console.warn(`Failed to fetch seance page "${seanceUrl}": ${response.status} ${response.statusText}`);
-      return "";
-    }
-
-    const html = await response.text();
-    const $ = cheerio.load(html);
-    const priceDisplay = $('div.hall-info__story-descr[data-price-display]')
-      .first()
-      .attr('data-price-display');
-
-    return priceDisplay ? normalizeText(priceDisplay) : "";
-  } catch (error) {
-    console.error(`Failed to fetch seance price from "${seanceUrl}":`, error);
-    return "";
-  }
-};
-
-const fetchConsistentSeancePrice = async (
-  movieName: string,
-  seanceUrls: Set<string>,
-): Promise<string> => {
-  const urls = [...seanceUrls];
-  if (urls.length === 0) return "";
-
-  console.log(`Fetching prices for "${movieName}"...`);
-  const prices = await Promise.all(
-    urls.map(async (url) => fetchSeancePrice(url)),
-  );
-
-  if (prices.some((price) => !price)) {
-    console.warn(`Missing price for "${movieName}", skipping price field.`);
-    return "";
-  }
-
-  const uniquePrices = new Set(prices);
-  if (uniquePrices.size !== 1) {
-    console.warn(`Multiple prices for "${movieName}", skipping price field.`);
-    return "";
-  }
-
-  return prices[0] ?? "";
+  return { id: "", poster: "", backdrop: "", studio: [], rating: 0, length: 0, year: "" };
 };
 
 const main = async (): Promise<void> => {
-  const html = await readFile(INPUT_PATH, "utf-8");
-  const moviesMap = new Map<string, MovieAccumulator>();
+  const schedule = await fetchSchedule();
+  if (schedule.sessions.length === 0) {
+    throw new Error("Schedule API returned no sessions");
+  }
 
-  parseEventBlocks(html, moviesMap);
+  const moviesMap = new Map<string, MovieAccumulator>();
+  for (const session of schedule.sessions) addSession(moviesMap, session);
 
   const movies: MovieSchedule[] = [];
-
-  for (const movie of [...moviesMap.values()].sort((left, right) => left.name.localeCompare(right.name))) {
-    const times: Record<string, Showtime[]> = Object.fromEntries(
+  for (const movie of [...moviesMap.values()].sort((left, right) =>
+    left.name.localeCompare(right.name),
+  )) {
+    console.log(`Fetching metadata for "${movie.name}"...`);
+    const metadata = await fetchMovieMetadata(movie.name);
+    const times = Object.fromEntries(
       [...movie.times.entries()]
         .sort(([left], [right]) => left.localeCompare(right))
-        .map(([date, showtimesMap]) => {
-          const showtimesArray = [...showtimesMap.values()];
-          return [date, showtimesArray];
-        }),
+        .map(([date, showtimes]) => [date, [...showtimes.values()].sort((a, b) => a.time.localeCompare(b.time))]),
     );
-
-    const price = await fetchConsistentSeancePrice(movie.name, movie.seanceUrls);
-
-    console.log(`Fetching metadata for "${movie.name}"...`);
-    const { id, poster, backdrop, studio, rating, length, year } = await fetchMovieMetadata(movie.name);
+    const price = movie.prices.size === 1 ? [...movie.prices][0] : undefined;
 
     movies.push({
-      id,
+      id: metadata.id,
       name: movie.name,
       times,
       description: movie.description,
       age: movie.age,
       format: movie.format,
-      poster_link: poster,
-      backdrop_link: backdrop,
-      studio,
-      rating,
-      length,
+      poster_link: metadata.poster,
+      backdrop_link: metadata.backdrop,
+      studio: metadata.studio,
+      rating: metadata.rating,
+      length: movie.length || metadata.length,
       ...(price ? { price } : {}),
-      year
+      year: metadata.year,
     });
   }
 
-  const result: ScheduleOutput = {
-    updated_at: new Date().toISOString(),
-    movies,
-  };
-
+  const result: ScheduleOutput = { updated_at: new Date().toISOString(), movies };
   await writeFile(OUTPUT_PATH, `${JSON.stringify(result, null, 2)}\n`, "utf-8");
   console.log(`Schedule written to ${OUTPUT_PATH}`);
 };

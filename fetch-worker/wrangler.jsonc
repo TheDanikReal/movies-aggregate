@@ -7,7 +7,7 @@
     "crons": ["0 15 * * SUN,MON,TUE,THU,FRI,SAT", "0 12-17 * * WED"],
   },
   "vars": {
-    "SCHEDULE_PAGE_URL": "http://kinoteatr.megamag.by/index.php?cPath=353299",
+    "SCHEDULE_API_URL": "https://new.megamag.by/api/schedule?region=%D0%A1%D0%BB%D0%BE%D0%BD%D0%B8%D0%BC",
     "REPO": "TheDanikReal/movies-aggregate",
     // info on getting workflow id: https://docs.github.com/en/rest/actions/workflows?apiVersion=2026-03-10
     "WORKFLOW_ID": 249763023,

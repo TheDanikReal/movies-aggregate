@@ -3,14 +3,8 @@
  * 
  * Cloudflare Worker: cinema schedule change detector.
  *
- * Lighter replacement for the Node script: no cheerio (heavy DOM parser),
- * no tmdb-ts, no price fetching, no fs. Uses only:
- *  - global `fetch` to grab the live page and the baseline schedule.json
- *  - Cloudflare's built-in `HTMLRewriter` (native to the Workers runtime,
- *    streaming, adds ~0 bytes to your bundle) instead of cheerio, just to
- *    drop lightweight text markers around the elements we care about.
- *  - plain string/regex parsing for everything else (same regex logic the
- *    original script already used internally).
+ * Lightweight change detector: it fetches the MegaMag API and the baseline
+ * schedule.json, then compares only movie/date/time entries.
  *
  * Change semantics:
  *  - New or modified showtimes (a new movie, a new date, or a new time on an
@@ -27,8 +21,8 @@
  */
 
 export interface Env {
-  /** URL of the live cinema schedule page (HTML) to poll. */
-  SCHEDULE_PAGE_URL: string;
+  /** URL of the live MegaMag schedule API to poll. */
+  SCHEDULE_API_URL: string;
   /** GitHub repo of project, like TheDanikReal/movies-aggregate. */
   REPO: string;
   /** GitHub workflow id to dispatch. */
@@ -44,54 +38,6 @@ export interface Env {
 const DEFAULT_BASELINE_URL =
   "https://github.com/TheDanikReal/movies-aggregate/raw/refs/heads/main/tools/schedule.json";
 
-// ---------------------------------------------------------------------------
-// Shared helpers (ported from the original script, fs/cheerio-free)
-// ---------------------------------------------------------------------------
-
-const MONTH_NAME_TO_MM: Record<string, string> = {
-  january: "01",
-  february: "02",
-  march: "03",
-  april: "04",
-  may: "05",
-  june: "06",
-  july: "07",
-  august: "08",
-  september: "09",
-  october: "10",
-  november: "11",
-  december: "12",
-  // Russian month names
-  январь: "01", января: "01",
-  февраль: "02", февраля: "02",
-  март: "03", марта: "03",
-  апрель: "04", апреля: "04",
-  май: "05", мая: "05",
-  июнь: "06", июня: "06",
-  июль: "07", июля: "07",
-  август: "08", августа: "08",
-  сентябрь: "09", сентября: "09",
-  октябрь: "10", октября: "10",
-  ноябрь: "11", ноября: "11",
-  декабрь: "12", декабря: "12",
-};
-
-const normalizeText = (value: string): string =>
-  value.replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-
-const stripTags = (html: string): string => normalizeText(html.replace(/<[^>]*>/g, " "));
-
-const extractMovieName = (rawTitle: string): string => {
-  const withoutTrailingId = normalizeText(rawTitle).replace(/\s+\d{5,}$/, "");
-  const withoutFormat = normalizeText(withoutTrailingId.replace(/\b[23]\s*[dд]\b/gi, ""));
-  const ageMatch = withoutFormat.match(/\(?\b\d{1,2}\+\)?/);
-
-  if (!ageMatch || ageMatch.index === undefined) return withoutFormat;
-
-  return normalizeText(withoutFormat.slice(0, ageMatch.index)).replace(/[.,;:\-]+$/, "");
-};
-
-/** Cinema's local UTC offset (UTC+3), matching the source site's own listed times. */
 const CINEMA_UTC_OFFSET_MS = 3 * 60 * 60 * 1000;
 
 /** Cinema-local (UTC+3) calendar date for a given instant, as plain numbers. */
@@ -143,107 +89,66 @@ const isPastShowtime = (dateKey: string, timeKey: string, now: Date = new Date()
   return resolveShowtimeInstant(dateKey, timeKey, now).getTime() < now.getTime();
 };
 
-const parseDateFromLabel = (text: string): string | null => {
-  const englishMatch = normalizeText(text).match(/^(\d{1,2})\s+([A-Za-z]+)/);
-  const russianMatch = normalizeText(text).match(/^(\d{1,2})\s+([А-Яа-я]+)/);
-  const match = englishMatch || russianMatch;
-  if (!match) return null;
-
-  const [, dayRaw, monthRaw] = match;
-  const month = MONTH_NAME_TO_MM[monthRaw.toLowerCase()];
-  if (!month) return null;
-
-  return `${dayRaw.padStart(2, "0")}.${month}`;
-};
-
-// ---------------------------------------------------------------------------
-// Live page parsing via HTMLRewriter markers (no full DOM built anywhere)
-// ---------------------------------------------------------------------------
-
-const EVENT_MARK = "\u0001EVENT\u0001";
-const EVENT_END_MARK = "\u0001/EVENT\u0001";
-const DATE_MARK = "\u0001DATE\u0001";
-const DATE_END_MARK = "\u0001/DATE\u0001";
-const ROW_MARK = "\u0001TR\u0001";
-
-/**
- * Streams the HTML through HTMLRewriter, injecting cheap text markers
- * around the elements we care about (event title anchors, date cells, and
- * row boundaries). The rest of the markup passes through untouched — we
- * never build a DOM, so this is O(1) memory relative to the page size.
- */
-async function annotateHtml(html: string): Promise<string> {
-
-  const rewriter = new HTMLRewriter()
-    .on('td.eventsHeading a[name^="event_"]', {
-      element(el) {
-        el.before(EVENT_MARK, { html: false });
-        el.after(EVENT_END_MARK, { html: false });
-      },
-    })
-    .on('td.main[width="195"]', {
-      element(el) {
-        el.before(DATE_MARK, { html: false });
-        el.after(DATE_END_MARK, { html: false });
-      },
-    })
-    .on("tr", {
-      element(el) {
-        el.before(ROW_MARK, { html: false });
-      },
-    });
-
-  const response = rewriter.transform(
-    new Response(html, { headers: { "content-type": "text/html; charset=utf-8" } }),
-  );
-
-  return response.text();
-}
-
-/** movieName -> date ("DD.MM") -> set of "HH:MM" showtimes */
 type ScheduleMap = Map<string, Map<string, Set<string>>>;
 
-function parseAnnotatedSchedule(annotated: string): ScheduleMap {
+type ApiSession = {
+  movieName: string;
+  date: string;
+  time: string;
+};
+
+type ApiResponse = { sessions: ApiSession[] };
+
+const extractMovieName = (movieName: string): string => {
+  const withoutFormat = movieName.replace(/\b[23]\s*[dд]\b/gi, "").trim();
+  const ageIndex = withoutFormat.search(/\(?\b\d{1,2}\+\)?/);
+  return (ageIndex === -1 ? withoutFormat : withoutFormat.slice(0, ageIndex))
+    .replace(/[.,;:\-]+$/, "")
+    .trim();
+};
+
+const parseApiDate = (date: string): string => {
+  const match = date.match(/^\d{4}-(\d{2})-(\d{2})$/);
+  if (!match) throw new Error(`Invalid API session date: "${date}"`);
+  return `${match[2]}.${match[1]}`;
+};
+
+async function fetchLiveSchedule(url: string): Promise<ScheduleMap> {
+  const response = await fetch(url, { cf: { cacheTtl: 0 } });
+  if (!response.ok) throw new Error(`Failed to fetch live schedule API: ${response.status}`);
+
+  const data: unknown = await response.json();
+  if (
+    !data ||
+    typeof data !== "object" ||
+    !Array.isArray((data as { sessions?: unknown }).sessions)
+  ) {
+    throw new Error("Live schedule API response does not contain a sessions array");
+  }
+
   const schedule: ScheduleMap = new Map();
-
-  // Everything before the first event marker is irrelevant chrome/markup.
-  const eventChunks = annotated.split(EVENT_MARK).slice(1);
-
-  for (const chunk of eventChunks) {
-    const titleEndIdx = chunk.indexOf(EVENT_END_MARK);
-    if (titleEndIdx === -1) continue;
-
-    const movieName = extractMovieName(stripTags(chunk.slice(0, titleEndIdx)));
+  for (const session of (data as ApiResponse).sessions) {
+    if (!session || typeof session !== "object") continue;
+    if (
+      typeof session.movieName !== "string" ||
+      typeof session.date !== "string" ||
+      typeof session.time !== "string" ||
+      !session.movieName ||
+      !session.date ||
+      !session.time
+    ) continue;
+    const movieName = extractMovieName(session.movieName);
     if (!movieName) continue;
 
-    // Body = everything up to the next event marker (already sliced out by split).
-    const body = chunk.slice(titleEndIdx + EVENT_END_MARK.length);
+    const dateKey = parseApiDate(session.date);
     const dateMap = schedule.get(movieName) ?? new Map<string, Set<string>>();
-
-    const dateSegments = body.split(DATE_MARK).slice(1);
-    for (const seg of dateSegments) {
-      const dateEndIdx = seg.indexOf(DATE_END_MARK);
-      if (dateEndIdx === -1) continue;
-
-      const dateKey = parseDateFromLabel(stripTags(seg.slice(0, dateEndIdx)));
-      if (!dateKey) continue;
-
-      // Times live in the rest of this table row, i.e. up to the next row marker.
-      const afterDate = seg.slice(dateEndIdx + DATE_END_MARK.length);
-      const rowEndIdx = afterDate.indexOf(ROW_MARK);
-      const rowScope = rowEndIdx === -1 ? afterDate : afterDate.slice(0, rowEndIdx);
-
-      const times = rowScope.match(/\b\d{2}:\d{2}\b/g) ?? [];
-      if (times.length === 0) continue;
-
-      const timeSet = dateMap.get(dateKey) ?? new Set<string>();
-      for (const time of times) timeSet.add(time);
-      dateMap.set(dateKey, timeSet);
-    }
-
+    const times = dateMap.get(dateKey) ?? new Set<string>();
+    times.add(session.time);
+    dateMap.set(dateKey, times);
     schedule.set(movieName, dateMap);
   }
 
+  if (schedule.size === 0) throw new Error("Live schedule API returned no usable sessions");
   return schedule;
 }
 
@@ -379,18 +284,14 @@ async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<v
 async function checkForScheduleUpdates(
   env: Env,
 ): Promise<{ changed: boolean; changes: ScheduleChange[] }> {
-  const [pageRes, baseline] = await Promise.all([
-    fetch(env.SCHEDULE_PAGE_URL),
-    fetchBaselineSchedule(env.BASELINE_SCHEDULE_URL ?? DEFAULT_BASELINE_URL),
-  ]);
-
-  if (!pageRes.ok) {
-    throw new Error(`Failed to fetch live schedule page: ${pageRes.status}`);
+  if (!env.SCHEDULE_API_URL) {
+    throw new Error("Missing SCHEDULE_API_URL environment variable");
   }
 
-  const html = await pageRes.text();
-  const annotated = await annotateHtml(html);
-  const live = parseAnnotatedSchedule(annotated);
+  const [live, baseline] = await Promise.all([
+    fetchLiveSchedule(env.SCHEDULE_API_URL),
+    fetchBaselineSchedule(env.BASELINE_SCHEDULE_URL ?? DEFAULT_BASELINE_URL),
+  ]);
 
   const changes = diffSchedules(live, baseline, new Date());
 

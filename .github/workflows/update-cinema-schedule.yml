@@ -51,17 +51,6 @@ jobs:
           npm ci --prefer-offline --no-audit
           echo "Dependencies installed successfully"
 
-      - name: Download cinema schedule page
-        run: |
-          echo "Downloading cinema schedule from source..."
-
-          wget \
-           --timeout=30 \
-           --tries=1 \
-           --user-agent="Mozilla/5.0 (compatible; KinoSlon/1.0)" \
-           --output-document="tools/page.html" \
-           "http://kinoteatr.megamag.by/index.php?cPath=353299"
-
       - name: Parse schedule data
         env:
           # Use GitHub secret for TMDB API access
@@ -102,7 +91,7 @@ jobs:
           echo "Checking for changes in schedule files..."
 
           # Check if files have changed
-          if git diff --quiet tools/page.html tools/schedule.json; then
+          if git diff --quiet tools/schedule.json; then
             echo "No changes detected in schedule files"
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "commit_needed=false" >> $GITHUB_OUTPUT
@@ -112,7 +101,7 @@ jobs:
 
             # Show what changed
             echo "📝 File changes:"
-            git diff --name-only tools/page.html tools/schedule.json | sed 's/^/  - /'
+            git diff --name-only tools/schedule.json | sed 's/^/  - /'
 
             # Check if we should commit
             if [ "${{ github.event.inputs.force_commit }}" = "true" ]; then
