@@ -1,45 +1,51 @@
 {
-  "updated_at": "2026-11-05T16:21:27.818Z",
+  "updated_at": "2026-11-12T08:55:28.166Z",
   "movies": [
     {
       "id": "tt41913724",
       "name": "Живая книга",
       "times": {
-        "06.11": [
+        "12.11": [
           {
-            "time": "17:00",
-            "timestamp": "2026-11-06T14:00:00.000Z"
+            "time": "14:00",
+            "timestamp": "2026-11-12T11:00:00.000Z"
           }
         ],
-        "07.11": [
+        "13.11": [
+          {
+            "time": "15:00",
+            "timestamp": "2026-11-13T12:00:00.000Z"
+          }
+        ],
+        "14.11": [
+          {
+            "time": "14:00",
+            "timestamp": "2026-11-14T11:00:00.000Z"
+          }
+        ],
+        "15.11": [
           {
             "time": "16:00",
-            "timestamp": "2026-11-07T13:00:00.000Z"
+            "timestamp": "2026-11-15T13:00:00.000Z"
           }
         ],
-        "08.11": [
+        "17.11": [
           {
-            "time": "16:00",
-            "timestamp": "2026-11-08T13:00:00.000Z"
+            "time": "14:00",
+            "timestamp": "2026-11-17T11:00:00.000Z"
           }
         ],
-        "10.11": [
+        "18.11": [
           {
-            "time": "13:00",
-            "timestamp": "2026-11-10T10:00:00.000Z"
-          }
-        ],
-        "11.11": [
-          {
-            "time": "12:00",
-            "timestamp": "2026-11-11T09:00:00.000Z"
+            "time": "15:00",
+            "timestamp": "2026-11-18T12:00:00.000Z"
           }
         ]
       },
       "description": "После потери отца Рома перестал верить в добро и стал дерзким и непослушным. Вместе с робким младшеклассником Витей они пробираются в дом таинственного старика, где находят волшебные книги с ожившими персонажами. По неосторожности мальчики выпускают на свет злого колдуна. Чтобы спасти друга и вернуть все на свои места, Рома должен сделать невозможное: снова поверить в себя.",
       "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/4YqB6JRy1d0HDWmzf1xsCbOCLhX.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/huBvsWOlXvQ3rxPLwkOi3J3WxYj.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/4YqB6JRy1d0HDWmzf1xsCbOCLhX.jpg",
       "studio": [
         {
@@ -69,47 +75,54 @@
       ],
       "rating": 0,
       "length": 0,
+      "price": "7",
       "year": "2026"
     },
     {
       "id": "tt28535715",
       "name": "Кит: Во тьме глубин",
       "times": {
-        "05.11": [
+        "12.11": [
           {
             "time": "20:00",
-            "timestamp": "2026-11-05T17:00:00.000Z"
+            "timestamp": "2026-11-12T17:00:00.000Z"
           }
         ],
-        "06.11": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-11-06T16:00:00.000Z"
-          }
-        ],
-        "07.11": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-11-07T15:00:00.000Z"
-          }
-        ],
-        "08.11": [
-          {
-            "time": "18:00",
-            "timestamp": "2026-11-08T15:00:00.000Z"
-          }
-        ],
-        "11.11": [
+        "13.11": [
           {
             "time": "21:00",
-            "timestamp": "2026-11-11T18:00:00.000Z"
+            "timestamp": "2026-11-13T18:00:00.000Z"
+          }
+        ],
+        "14.11": [
+          {
+            "time": "18:00",
+            "timestamp": "2026-11-14T15:00:00.000Z"
+          }
+        ],
+        "15.11": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-11-15T17:00:00.000Z"
+          }
+        ],
+        "17.11": [
+          {
+            "time": "20:00",
+            "timestamp": "2026-11-17T17:00:00.000Z"
+          }
+        ],
+        "18.11": [
+          {
+            "time": "21:00",
+            "timestamp": "2026-11-18T18:00:00.000Z"
           }
         ]
       },
       "description": "Калифорния. Молодой аквалангист Джей Гардинер погружается в океан в поисках останков своего отца. Парень оказывается не в том месте, не в то время, и его утягивает за собой гигантский кальмар, которого проглатывает кашалот. Теперь у Джея есть час, чтобы выбраться из кита, пока у него не закончился запас кислорода.",
       "age": "18+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/shW2jHkQLZVv4Fko2rJDqTGU0gx.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/sqrx5rMkdSSaXTmd19jAbUx5Cpc.jpg",
       "backdrop_link": "https://image.tmdb.org/t/p/w500/shW2jHkQLZVv4Fko2rJDqTGU0gx.jpg",
       "studio": [
         {
@@ -131,50 +144,80 @@
           "origin_country": "US"
         }
       ],
-      "rating": 6.577,
+      "rating": 6.594,
       "length": 106,
       "price": "8",
       "year": "2026"
     },
     {
-      "id": "tt34890576",
-      "name": "Клэйфейс",
+      "id": "tt2321555",
+      "name": "Кот в шляпе",
       "times": {
-        "06.11": [
+        "12.11": [
           {
-            "time": "21:00",
-            "timestamp": "2026-11-06T18:00:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-11-12T13:00:00.000Z"
           }
         ],
-        "07.11": [
+        "13.11": [
           {
-            "time": "20:00",
-            "timestamp": "2026-11-07T17:00:00.000Z"
+            "time": "17:00",
+            "timestamp": "2026-11-13T14:00:00.000Z"
           }
         ],
-        "08.11": [
+        "14.11": [
           {
-            "time": "20:00",
-            "timestamp": "2026-11-08T17:00:00.000Z"
+            "time": "16:00",
+            "timestamp": "2026-11-14T13:00:00.000Z"
           }
         ],
-        "10.11": [
+        "15.11": [
           {
-            "time": "20:00",
-            "timestamp": "2026-11-10T17:00:00.000Z"
+            "time": "14:00",
+            "timestamp": "2026-11-15T11:00:00.000Z"
+          }
+        ],
+        "17.11": [
+          {
+            "time": "16:00",
+            "timestamp": "2026-11-17T13:00:00.000Z"
+          }
+        ],
+        "18.11": [
+          {
+            "time": "17:00",
+            "timestamp": "2026-11-18T14:00:00.000Z"
           }
         ]
       },
-      "description": "После травмы, обезобразившей его лицо, молодой актёр Мэтт Хейген соглашается пройти особое лечение. Однако научный эксперимент не даёт тех результатов, на которые рассчитывал Мэтт, и в результате его тело и кожа становятся гибкими и податливыми, как глина. Потерявший чувство личности и человечности актёр превращается в движимого жаждой мести монстра.",
-      "age": "18+",
+      "description": "Кот работает в Институте воображения и вдохновения. Однажды его отправляют на задание к брату и сестре, которые не знают, чем заняться.",
+      "age": "6+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/xSDoxv4pHvs4xZjvTb0Iqg1A6ro.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/xSDoxv4pHvs4xZjvTb0Iqg1A6ro.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/nKhLStG8o01QTv2Dr5xtY6So1hV.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/9y9o686DsQg0KzPtERzcW7Cf8IE.jpg",
       "studio": [
         {
-          "id": 184898,
-          "logo_path": "/uVpjHYq5AbiG2qj82ZRBM4VFL3o.png",
-          "name": "DC Studios",
+          "id": 31922,
+          "logo_path": "/omWPoru2LNayUOBqjMBLP9KrFrP.png",
+          "name": "DNEG",
+          "origin_country": "GB"
+        },
+        {
+          "id": 180651,
+          "logo_path": "/qYmXnLachOZkLaVn6UTaMDUpHey.png",
+          "name": "Dr. Seuss Enterprises",
+          "origin_country": "US"
+        },
+        {
+          "id": 257419,
+          "logo_path": "/1zFocMJY511uHdoHgIIkdA0l5JN.png",
+          "name": "Warner Bros. Pictures Animation",
+          "origin_country": "US"
+        },
+        {
+          "id": 173279,
+          "logo_path": null,
+          "name": "A Stern Talking To",
           "origin_country": "US"
         },
         {
@@ -182,82 +225,105 @@
           "logo_path": "/kKVYqekveOvLK1IgqdJojLjQvtu.png",
           "name": "Domain Entertainment",
           "origin_country": "US"
-        },
-        {
-          "id": 101405,
-          "logo_path": "/iusVPF9AJD1DiHEWbZEXgn1hpOf.png",
-          "name": "6th & Idaho Motion Picture Company",
-          "origin_country": "US"
-        },
-        {
-          "id": 94218,
-          "logo_path": "/kxuhS8wyKtVprOn5nckdHyNuSg1.png",
-          "name": "Troll Court Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 11565,
-          "logo_path": "/odU3l6csuBmXUrzFm6araUgEUHQ.png",
-          "name": "The Safran Company",
-          "origin_country": "US"
         }
       ],
-      "rating": 7.421,
-      "length": 109,
-      "price": "10",
+      "rating": 7.205,
+      "length": 108,
       "year": "2026"
     },
     {
-      "id": "tt36583977",
-      "name": "Остров забвения",
+      "id": "tt29611136",
+      "name": "Плетёный муж",
       "times": {
-        "06.11": [
+        "12.11": [
           {
-            "time": "10:30",
-            "timestamp": "2026-11-06T07:30:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-11-12T15:00:00.000Z"
           }
         ],
-        "07.11": [
+        "13.11": [
           {
-            "time": "14:00",
-            "timestamp": "2026-11-07T11:00:00.000Z"
+            "time": "19:00",
+            "timestamp": "2026-11-13T16:00:00.000Z"
           }
         ],
-        "08.11": [
+        "14.11": [
           {
-            "time": "14:00",
-            "timestamp": "2026-11-08T11:00:00.000Z"
+            "time": "20:00",
+            "timestamp": "2026-11-14T17:00:00.000Z"
           }
         ],
-        "10.11": [
+        "15.11": [
           {
-            "time": "11:00",
-            "timestamp": "2026-11-10T08:00:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-11-15T15:00:00.000Z"
           }
         ],
-        "11.11": [
+        "17.11": [
           {
-            "time": "10:00",
-            "timestamp": "2026-11-11T07:00:00.000Z"
+            "time": "18:00",
+            "timestamp": "2026-11-17T15:00:00.000Z"
+          }
+        ],
+        "18.11": [
+          {
+            "time": "19:00",
+            "timestamp": "2026-11-18T16:00:00.000Z"
           }
         ]
       },
-      "description": "Две лучшие подруги оказываются в ловушке на мистической планете Накали, и единственный шанс вернуться домой может стоить им всех воспоминаний, которые они хранят друг о друге.",
-      "age": "12+",
+      "description": "Одинокая рыбачка, живущая на окраине небольшой прибрежной деревни, всю жизнь терпит насмешки от своих соседей. Однажды, устав от одиночества, она обращается к местному корзинщику и заказывает себе мужа, сплетённого из лозы. Её неожиданная привязанность к причудливому творению пробуждает ревность и угрожает порядкам деревни.",
+      "age": "18+",
       "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/cNICUho5uiAGkfCAQq1ihyaMla4.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/cNICUho5uiAGkfCAQq1ihyaMla4.jpg",
+      "poster_link": "https://image.tmdb.org/t/p/w500/ej29DO6sC6IsxQLtYPj4ZxfwCQP.jpg",
+      "backdrop_link": "https://image.tmdb.org/t/p/w500/xVh1ypMoVkMf5IB7y3hnRplJ14c.jpg",
       "studio": [
         {
-          "id": 521,
-          "logo_path": "/3BPX5VGBov8SDqTV7wC1L1xShAS.png",
-          "name": "DreamWorks Animation",
+          "id": 99366,
+          "logo_path": "/r5UIazzNzEOUSEbxOfwWzEOBe5F.png",
+          "name": "Topic Studios",
           "origin_country": "US"
+        },
+        {
+          "id": 168181,
+          "logo_path": "/adHpT0fRW86W80jPtJRo96pqJE4.png",
+          "name": "Tango Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 167259,
+          "logo_path": "/bSwCootf79JLvjEKH9BC4pTOSUW.png",
+          "name": "South of the River Pictures",
+          "origin_country": "GB"
+        },
+        {
+          "id": 34455,
+          "logo_path": "/wTz9ZMSoxFBDnqrRZRwBLWpsQQO.png",
+          "name": "Votiv Films",
+          "origin_country": "US"
+        },
+        {
+          "id": 124854,
+          "logo_path": null,
+          "name": "Yoki",
+          "origin_country": "US"
+        },
+        {
+          "id": 129195,
+          "logo_path": null,
+          "name": "Escape Plan",
+          "origin_country": "GB"
+        },
+        {
+          "id": 173376,
+          "logo_path": null,
+          "name": "Lobo Films",
+          "origin_country": "GB"
         }
       ],
-      "rating": 8.012,
-      "length": 98,
-      "price": "7",
+      "rating": 7.554,
+      "length": 105,
+      "price": "8",
       "year": "2026"
     }
   ]
