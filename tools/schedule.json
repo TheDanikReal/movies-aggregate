@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T18:29:40.979Z",
+  "updated_at": "2026-11-18T19:22:18.374Z",
   "movies": [
     {
       "id": "tt0241527",
@@ -127,7 +127,7 @@
       ],
       "rating": 7.664,
       "length": 119,
-      "price": "8",
+      "price": "8 руб.",
       "year": "2026"
     },
     {
@@ -294,9 +294,9 @@
           "origin_country": "AU"
         }
       ],
-      "rating": 8.487,
+      "rating": 8.6,
       "length": 128,
-      "price": "8",
+      "price": "8 руб.",
       "year": "2026"
     }
   ]
