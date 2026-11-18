@@ -16,7 +16,7 @@ on:
 
 env:
   # Node.js version matching project requirements
-  NODE_VERSION: '22.12.0'
+  NODE_VERSION: '26.13.1'
 
 jobs:
   update-schedule:
