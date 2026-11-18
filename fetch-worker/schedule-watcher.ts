@@ -116,10 +116,10 @@ const parseApiDate = (date: string): string => {
   return `${match[2]}.${match[1]}`;
 };
 
-async function fetchLiveSchedule(url: string): Promise<ScheduleMap> {
+async function fetchLiveSchedule(url: string, apiKey: string): Promise<ScheduleMap> {
   const response = await fetch(url, {
     cf: { cacheTtl: 0 },
-    headers: { "X-API-KEY": env.MEGAMAG_API_KEY }
+    headers: { "X-API-KEY": apiKey }
   });
   if (!response.ok) throw new Error(`Failed to fetch live schedule API: ${response.status}`);
 
@@ -270,10 +270,6 @@ async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<v
     throw new Error("Missing GITHUB_TOKEN environment variable");
   }
 
-  if (!env.MEGAMAG_API_KEY) {
-    throw new Error("Missing MEGAMAG_API_KEY variable")
-  }
-
   const result = await fetch(`https://api.github.com/repos/${env.REPO}/actions/workflows/${String(env.WORKFLOW_ID)}/dispatches`, {
     headers: {
       Accept: "application/vnd.github+json",
@@ -297,9 +293,12 @@ async function checkForScheduleUpdates(
   if (!env.SCHEDULE_API_URL) {
     throw new Error("Missing SCHEDULE_API_URL environment variable");
   }
+  if (!env.MEGAMAG_API_KEY) {
+    throw new Error("Missing MEGAMAG_API_KEY environment variable");
+  }
 
   const [live, baseline] = await Promise.all([
-    fetchLiveSchedule(env.SCHEDULE_API_URL),
+    fetchLiveSchedule(env.SCHEDULE_API_URL, env.MEGAMAG_API_KEY),
     fetchBaselineSchedule(env.BASELINE_SCHEDULE_URL ?? DEFAULT_BASELINE_URL),
   ]);
 
