@@ -29,6 +29,8 @@ export interface Env {
   WORKFLOW_ID: string | number;
   /** GitHub token for dispatching workflow. */
   GITHUB_TOKEN: string;
+  /** Megamag API key */
+  MEGAMAG_API_KEY: string;
   /** Optional override for the baseline schedule.json URL. */
   BASELINE_SCHEDULE_URL?: string;
   /** kv storage for storing last updated time */
@@ -37,6 +39,7 @@ export interface Env {
 
 const DEFAULT_BASELINE_URL =
   "https://github.com/TheDanikReal/movies-aggregate/raw/refs/heads/main/tools/schedule.json";
+const SCHEDULE_PROXY_URL = "https://new.megamag.by/api/schedule";
 
 const CINEMA_UTC_OFFSET_MS = 3 * 60 * 60 * 1000;
 
@@ -114,7 +117,10 @@ const parseApiDate = (date: string): string => {
 };
 
 async function fetchLiveSchedule(url: string): Promise<ScheduleMap> {
-  const response = await fetch(url, { cf: { cacheTtl: 0 } });
+  const response = await fetch(url, {
+    cf: { cacheTtl: 0 },
+    headers: { "X-API-KEY": env.MEGAMAG_API_KEY }
+  });
   if (!response.ok) throw new Error(`Failed to fetch live schedule API: ${response.status}`);
 
   const data: unknown = await response.json();
@@ -264,6 +270,10 @@ async function onScheduleChanged(changes: ScheduleChange[], env: Env): Promise<v
     throw new Error("Missing GITHUB_TOKEN environment variable");
   }
 
+  if (!env.MEGAMAG_API_KEY) {
+    throw new Error("Missing MEGAMAG_API_KEY variable")
+  }
+
   const result = await fetch(`https://api.github.com/repos/${env.REPO}/actions/workflows/${String(env.WORKFLOW_ID)}/dispatches`, {
     headers: {
       Accept: "application/vnd.github+json",
@@ -317,6 +327,18 @@ async function handleUpdateRoute(env: Env) {
   }
 }
 
+async function handleScheduleProxy(request: Request): Promise<Response> {
+  const requestUrl = new URL(request.url);
+  const upstreamUrl = new URL(SCHEDULE_PROXY_URL);
+  upstreamUrl.search = requestUrl.search;
+
+  return fetch(upstreamUrl, {
+    method: request.method,
+    headers: request.headers,
+    redirect: "follow",
+  });
+}
+
 // todo: safety, but i think it's not very important for a simple last updated path
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -360,6 +382,8 @@ export default {
       return new Response(JSON.stringify({
         time
       }, null, 2), { headers: { ...corsHeaders, "content-type": "application/json; charset=utf-8" } })
+    } else if (path === "/api/schedule") {
+      return handleScheduleProxy(request)
     } else if (path === "/update") {
       // todo: secret so that we won't get spammed by someone
       return handleUpdateRoute(env)
