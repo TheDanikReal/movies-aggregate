@@ -48,7 +48,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --prefer-offline --no-audit
+          npm ci
           echo "Dependencies installed successfully"
 
       - name: Parse schedule data
