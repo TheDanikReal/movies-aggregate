@@ -266,7 +266,7 @@ const main = async (): Promise<void> => {
       studio: metadata.studio,
       rating: metadata.rating,
       length: movie.length || metadata.length,
-      ...(price ? { price } : {}),
+      ...(price ? { price: `${price} руб.` } : {}),
       year: metadata.year,
     });
   }
