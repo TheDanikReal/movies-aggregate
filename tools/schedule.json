@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:49:22.444Z",
+  "updated_at": "2026-11-18T18:19:14.356Z",
   "movies": [
     {
       "id": "tt0241527",
@@ -67,7 +67,7 @@
           "origin_country": "US"
         }
       ],
-      "rating": 7.9,
+      "rating": 7.905,
       "length": 152,
       "year": "2001"
     },
@@ -127,47 +127,6 @@
       ],
       "rating": 7.664,
       "length": 119,
-      "price": "8",
-      "year": "2026"
-    },
-    {
-      "id": "tt28535715",
-      "name": "Кит: Во тьме глубин",
-      "times": {
-        "18.11": [
-          {
-            "time": "21:00",
-            "timestamp": "2026-11-18T18:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Калифорния. Молодой аквалангист Джей Гардинер погружается в океан в поисках останков своего отца. Парень оказывается не в том месте, не в то время, и его утягивает за собой гигантский кальмар, которого проглатывает кашалот. Теперь у Джея есть час, чтобы выбраться из кита, пока у него не закончился запас кислорода.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/sqrx5rMkdSSaXTmd19jAbUx5Cpc.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/shW2jHkQLZVv4Fko2rJDqTGU0gx.jpg",
-      "studio": [
-        {
-          "id": 23,
-          "logo_path": "/bJOFo2ufq7iFC1F4qZm8aLxF5aS.png",
-          "name": "Imagine Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 127928,
-          "logo_path": "/h0rjX5vjW5r8yEnUBStFarjcLT4.png",
-          "name": "20th Century Studios",
-          "origin_country": "US"
-        },
-        {
-          "id": 118800,
-          "logo_path": null,
-          "name": "Jurassic Party",
-          "origin_country": "US"
-        }
-      ],
-      "rating": 6.6,
-      "length": 106,
       "price": "8",
       "year": "2026"
     },
@@ -255,71 +214,6 @@
       ],
       "rating": 7,
       "length": 108,
-      "year": "2026"
-    },
-    {
-      "id": "tt29611136",
-      "name": "Плетёный муж",
-      "times": {
-        "18.11": [
-          {
-            "time": "19:00",
-            "timestamp": "2026-11-18T16:00:00.000Z"
-          }
-        ]
-      },
-      "description": "Одинокая рыбачка, живущая на окраине небольшой прибрежной деревни, всю жизнь терпит насмешки от своих соседей. Однажды, устав от одиночества, она обращается к местному корзинщику и заказывает себе мужа, сплетённого из лозы. Её неожиданная привязанность к причудливому творению пробуждает ревность и угрожает порядкам деревни.",
-      "age": "18+",
-      "format": "2D",
-      "poster_link": "https://image.tmdb.org/t/p/w500/ej29DO6sC6IsxQLtYPj4ZxfwCQP.jpg",
-      "backdrop_link": "https://image.tmdb.org/t/p/w500/xVh1ypMoVkMf5IB7y3hnRplJ14c.jpg",
-      "studio": [
-        {
-          "id": 99366,
-          "logo_path": "/r5UIazzNzEOUSEbxOfwWzEOBe5F.png",
-          "name": "Topic Studios",
-          "origin_country": "US"
-        },
-        {
-          "id": 168181,
-          "logo_path": "/adHpT0fRW86W80jPtJRo96pqJE4.png",
-          "name": "Tango Entertainment",
-          "origin_country": "US"
-        },
-        {
-          "id": 167259,
-          "logo_path": "/bSwCootf79JLvjEKH9BC4pTOSUW.png",
-          "name": "South of the River Pictures",
-          "origin_country": "GB"
-        },
-        {
-          "id": 34455,
-          "logo_path": "/wTz9ZMSoxFBDnqrRZRwBLWpsQQO.png",
-          "name": "Votiv Films",
-          "origin_country": "US"
-        },
-        {
-          "id": 124854,
-          "logo_path": null,
-          "name": "Yoki",
-          "origin_country": "US"
-        },
-        {
-          "id": 129195,
-          "logo_path": null,
-          "name": "Escape Plan",
-          "origin_country": "GB"
-        },
-        {
-          "id": 173376,
-          "logo_path": null,
-          "name": "Lobo Films",
-          "origin_country": "GB"
-        }
-      ],
-      "rating": 7.472,
-      "length": 105,
-      "price": "8",
       "year": "2026"
     },
     {

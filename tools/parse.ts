@@ -60,6 +60,9 @@ const FIXTURE_PATH = join(dirname(fileURLToPath(import.meta.url)), "response.jso
 const OUTPUT_PATH = join(dirname(fileURLToPath(import.meta.url)), "schedule.json");
 const CINEMA_OFFSET_MINUTES = 3 * 60;
 
+const apiKey = process.env["MEGAMAG_API_KEY"];
+if (!apiKey) throw new Error("MEGAMAG_API_KEY is not specified");
+
 const tmdbToken = process.env["TMDB_TOKEN"]
 if (!tmdbToken) throw new Error("tmdb token is not specified");
 const tmdb = new TMDB(tmdbToken);
@@ -167,12 +170,13 @@ const fetchSchedule = async (): Promise<ApiResponse> => {
   const responseText = fixturePath
     ? await readFile(fixturePath === "default" ? FIXTURE_PATH : fixturePath, "utf-8")
     : await (async () => {
-        const response = await fetch(API_URL, {
-          headers: {
-            "User-Agent": "Mozilla/5.0 (compatible; KinoSlonBot/1.0)",
-            "X-API-KEY": process.env["MEGAMAG_API_KEY"]
-          }        
-        })
+        const headers = new Headers({
+          "User-Agent": "Mozilla/5.0 (compatible; KinoSlonBot/1.0)",
+        });
+        
+        headers.set("X-API-KEY", apiKey);
+
+        const response = await fetch(API_URL, { headers });
         if (!response.ok) {
           throw new Error(`Failed to fetch schedule: ${response.status} ${response.statusText}`);
         }
