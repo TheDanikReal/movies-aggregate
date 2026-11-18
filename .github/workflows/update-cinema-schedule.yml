@@ -55,7 +55,7 @@ jobs:
         env:
           # Use GitHub secret for TMDB API access
           TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
-          KINOSLON_API_KEY: ${{ secrets.KINOSLON_API_KEY }}
+          MEGAMAG_API_KEY: ${{ secrets.MEGAMAG_API_KEY }}
         run: |
           echo "Parsing cinema schedule data..."
 
