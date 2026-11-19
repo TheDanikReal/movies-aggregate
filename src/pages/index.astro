@@ -68,15 +68,13 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating)
         if (!timestamp) return
         const sessionTime = new Date(timestamp)
         if (sessionTime < hideTime) {
-          slot.style.opacity = "0.3"
-          slot.style.textDecoration = "line-through"
+          slot.style.display = "none"
         } else {
           hasUpcoming = true
         }
       })
       if (!hasUpcoming) {
-        card.style.order = "999"
-        card.style.opacity = "0.5"
+        card.style.display = "none"
       }
     })
   </script>
