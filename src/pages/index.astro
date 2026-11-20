@@ -71,15 +71,22 @@ const movies = sourceMovies.sort((a, b) => b.rating - a.rating);
             }
           }
         });
-      card.querySelectorAll<HTMLSpanElement>(".time-slot").forEach((slot) => {
-        const timestamp = slot.dataset.timestamp;
-        if (!timestamp) return;
-        const sessionTime = new Date(timestamp);
-        if (sessionTime < hideTime) {
-          slot.style.opacity = "0.3"
-          slot.style.textDecoration = "line-through"
-        } else {
-          hasUpcoming = true;
+      card.querySelectorAll<HTMLDivElement>(".schedule[data-date]").forEach((scheduleDiv) => {
+        let hasForThisDay = false;
+        scheduleDiv.querySelectorAll<HTMLSpanElement>(".time-slot").forEach((slot) => {
+          const timestamp = slot.dataset.timestamp;
+          if (!timestamp) return;
+          const sessionTime = new Date(timestamp);
+          if (sessionTime < hideTime) {
+            slot.style.opacity = "0.3"
+            slot.style.textDecoration = "line-through"
+          } else {
+            hasUpcoming = true;
+            hasForThisDay = true;
+          }
+        });
+        if (!hasForThisDay) {
+          scheduleDiv.remove()
         }
       });
       if (!hasUpcoming) {
